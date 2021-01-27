@@ -1,0 +1,132 @@
+html {
+  font-family: Source Sans Pro, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji !important;
+  line-height: 1.5;
+}
+
+.font-normal{
+    font-weight: 400 !important;
+}
+.font-semibold{
+    font-weight: 600 !important;
+}
+
+.btn-blue-gradient{
+    background: #53A8FC;
+    color: white !important;
+    transition:all .4s;
+    border: 2px solid #fff
+}
+
+.btn-blue-gradient:hover{
+    background: white;
+    color: #53A8FC !important;
+    border: 2px solid #53A8FC
+}
+
+.icon-sosmed{
+    font-size: 40px;
+    text-decoration: none;
+    color: #c4c4c4e9;
+    transition: all .3s ease-in-out;
+    margin: 0 .1em;
+}
+
+.icon{
+    font-size: 25px;
+    padding: 15px 15px;
+    border-radius: 8px;
+    color: #222;
+}
+
+.icon-sosmed:hover{
+    color: #c4c4c4e9;
+}
+
+.facebook, .instagram, .whatsapp, .github{
+    transition: all .3s ease-in-out;
+}
+
+.bg-transparent, .bg-white{
+    transition: all .3s ease-in-out;
+}
+
+.facebook:hover{
+    color: darkblue;
+}
+
+.instagram:hover{
+    color: rgb(255, 62, 95);
+}
+
+.whatsapp:hover{
+    color: rgb(30, 190, 30);
+}
+
+.github:hover{
+    color: black;
+}
+
+
+
+.logo{
+    background: #ff7984;
+    color: #fff;
+    padding: 10px 14px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+    transition: all .4s;
+}
+.logoScroll{
+    background: #ff7984;
+    color: #fff;
+    padding: 7px 10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+    transition: all .4s;
+    font-size: 14px;
+}
+
+.badge-style{
+    font-size: 13px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    display: inline-block;
+}
+.badge-blue{
+    background: #53A8FC;
+    color: #fff;
+}
+
+.btn-white-gradient{
+    background: white;
+    color: #53A8FC !important;
+    transition:all .4s;
+    border: 2px solid #53A8FC
+}
+
+.btn-white-gradient:hover{
+    background: #53A8FC;
+    color: white !important;
+    border: 2px solid #53A8FC
+}
+
+.btn-style{
+    padding-right:20px !important;
+    padding-left:20px !important;
+    border-radius: 50px;
+}
+
+.font-bold{
+    font-weight: 700 !important;
+}
+.color-blue{
+    color: #53A8FC !important;
+}
+
+.bg-blue{
+    background: #53A8FC;
+}
