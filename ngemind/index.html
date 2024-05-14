@@ -45,7 +45,7 @@
 <body>
 
     <section x-data="{ open : true }" class="flex h-screen bg-white">
-        <aside class="w-52 flex flex-none flex-col bg-white" x-data x-show="open">
+        <aside class="w-52 flex-none flex-col bg-white" x-data x-show="open">
             <section class="flex flex-col items-center h-20">
                 <img src="logo.png" class="w-24 h-24">
             </section>
@@ -190,7 +190,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="flex lg:flex-row flex-col space-y-5 lg:space-y-0 lg:space-x-5">
+                        <div class="flex lg:flex-row mb-5 flex-col space-y-5 lg:space-y-0 lg:space-x-5">
                             <div class="bg-white lg:w-3/5 w-full p-5 rounded-xl shadow-lg border border-gray-100">
                                 <div class="flex justify-between items-center mb-4">
                                     <div class="">
@@ -202,7 +202,7 @@
                                 </div>
                                 <div id="column-chart"></div>
                             </div>
-                            <div class="flex-auto bg-white rounded-xl shadow-lg border border-gray-100">
+                            <div class="flex-auto bg-white rounded-xl h-full shadow-lg border border-gray-100">
                                 <div class="flex h-full flex-col justify-between">
                                     <div class="p-5 border-b">
                                         <h3 class="text-slate-400">Total Working hour</h3>
@@ -221,10 +221,99 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="bg-white p-5 mb-5 rounded-xl shadow-lg border border-gray-100">
+                            <div class="flex justify-between items-center">
+                                <div class="">
+                                    <h3 class="text-lg font-semibold">Dashboard</h3>
+                                    <!-- <p class="text-slate-400 font-normal mt-1 text-sm">Add and manage all of your project</p> -->
+                                </div>
+                                <div class="">
+                                    <select name="" id="" class="bg-transparent border rounded-lg py-3 px-4">
+                                        <option value="">Lifetime</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="grid lg:grid-cols-4 grid-cols-2 gap-4 mt-4">
+                                <div class="bg-black text-white p-4 rounded-lg">
+                                    <i class='bx bx-clipboard text-3xl'></i>
+                                    <h3 class="text-base font-semibold mt-2">Total Tasks</h3>
+                                    <h1 class="text-xl font-black">100</h1>
+                                </div>
+                                <div class="bg-blue-400 text-white p-4 rounded-lg">
+                                    <i class='bx bx-check text-3xl'></i>
+                                    <h3 class="text-base font-semibold mt-2">Complete</h3>
+                                    <h1 class="text-xl font-black">5</h1>
+                                </div>
+                                <div class="bg-yellow-400 text-white p-4 rounded-lg">
+                                    <i class='bx bx-refresh text-3xl'></i>
+                                    <h3 class="text-base font-semibold mt-2">Working on</h3>
+                                    <h1 class="text-xl font-black">2</h1>
+                                </div>
+                                <div class="bg-red-400 text-white p-4 rounded-lg">
+                                    <i class='bx bx-time text-3xl'></i>
+                                    <h3 class="text-base font-semibold mt-2">Pending</h3>
+                                    <h1 class="text-xl font-black">1</h1>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="w-96 flex-none">
                         <div class="bg-white p-5 rounded-xl shadow-lg border border-gray-100">
-                            Content
+                            <div class="flex justify-between items-center">
+                                <div class="">
+                                    <h3 class="text-lg font-semibold">My Task</h3>
+                                    <!-- <p class="text-slate-400 font-normal mt-1 text-sm">Add and manage all of your project</p> -->
+                                </div>
+                                <div class="">
+                                    <select name="" id="" class="bg-transparent border rounded-lg py-1 px-2">
+                                        <option value="">On going</option>
+                                        <option value="">Complete</option>
+                                        <option value="">Pending</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <div class="flex flex-col space-y-4">
+                                    <div class="border rounded-lg p-4">
+                                        <div class="border-l border-yellow-400 flex justify-between items-center p-4 border-l-4">
+                                            <div class="flex-auto">
+                                                <h3 class="font-semibold text-slate-800 text-sm">Fintech App Design</h3>
+                                                <div class="text-gray-700 text-sm mt-2">
+                                                    <i class="bx bx-time"></i> 29 April 2024
+                                                </div>
+                                            </div>
+                                            <div class="w-1/2 flex-none">
+                                                <div class="flex justify-between mb-1">
+                                                    <span class="text-sm font-semibold text-gray-700">Progress</span>
+                                                    <span class="text-sm font-medium text-gray-500">45%</span>
+                                                </div>
+                                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                                    <div class="bg-black h-2 rounded-full" style="width: 45%"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="border rounded-lg p-4">
+                                        <div class="border-l border-blue-400 flex justify-between items-center p-4 border-l-4">
+                                            <div class="flex-auto">
+                                                <h3 class="font-semibold text-slate-800 text-sm">Feed Instagram Design</h3>
+                                                <div class="text-gray-700 text-sm mt-2">
+                                                    <i class="bx bx-time"></i> 01 Mei 2024
+                                                </div>
+                                            </div>
+                                            <div class="w-1/2 flex-none">
+                                                <div class="flex justify-between mb-1">
+                                                    <span class="text-sm font-semibold text-gray-700">Progress</span>
+                                                    <span class="text-sm font-medium text-gray-500">15%</span>
+                                                </div>
+                                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                                    <div class="bg-black h-2 rounded-full" style="width: 15%"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
