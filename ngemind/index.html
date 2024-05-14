@@ -116,7 +116,7 @@
         <!-- End Sidebar Desktop -->
 
         <!-- Sidebar Mobile -->
-        <aside class="w-56 fixed z-50 left-0 top-0 bottom-0 h-auto flex flex-col lg:hidden bg-white transition-all duration-300" :class="mobileNav ? 'translate-x-0' : 'translate-x-[-300px]'">
+        <aside class="w-56 fixed z-50 left-0 top-0 bottom-0 h-auto flex flex-col lg:hidden bg-white transition-all duration-300" style="margin-left: 0 !important;" :class="mobileNav ? 'translate-x-0' : 'translate-x-[-300px]'">
             <section class="flex flex-col items-center h-20">
                 <img src="logo.png" class="w-24 h-24">
             </section>
@@ -175,16 +175,16 @@
 
         <section class="flex-auto flex flex-col">
             <header class="bg-white h-20 p-4 flex justify-between items-center">
-                <div class="flex items-center space-x-3">
+                <div class="flex items-center">
                     <!-- Desktop Hamburger -->
-                    <div class="p-3 lg:block hidden hover:bg-slate-100 rounded-lg" @click="open = !open">
+                    <div class="p-3 lg:block hidden hover:bg-slate-100 rounded-lg me-3" @click="open = !open">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                             <path fill-rule="evenodd" d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
                         </svg>                                   
                     </div>
                     <!-- End Desktop Hamburger -->
                     <!-- Mobile Hamburger -->
-                    <div class="p-3 lg:hidden block hover:bg-slate-100 rounded-lg" @click="mobileNav = !mobileNav">
+                    <div class="p-3 lg:hidden block m-0 hover:bg-slate-100 rounded-lg" @click="mobileNav = !mobileNav">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                             <path fill-rule="evenodd" d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
                         </svg>                                   
@@ -455,11 +455,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="border rounded-lg bg-slate-100 p-4">
+                                    <div class="border rounded-lg bg-green-100 p-4">
                                         <div class="flex space-x-3">
                                             <img src="https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg" class="w-7 rounded-full mb-3 flex-none">
                                             <div class="text-sm">
-                                                <strong>Fadila Fitra K J</strong> added progress on <strong>Feed Instagram Design</strong>
+                                                <strong>Niken Oktavia H</strong> gived ❤️ on <strong>Feed Instagram Design</strong>
                                             </div>
                                         </div>
                                     </div>
@@ -493,11 +493,11 @@
                     </div>
                 </div>
             </main>
-            <footer class="bg-white p-4 flex justify-between">
+            <footer class="bg-white p-4 flex lg:flex-row lg:text-left text-center flex-col justify-between">
                 <div class="text-sm">
                     Create with ❤️ by Fadila Fitra Kusuma Jaya - v1.0.0
                 </div>
-                <div class=""></div>
+                <div class="text-sm">Supporting Niken Oktavia Hidayah 🖤</div>
             </footer>
         </section>
     </section>
