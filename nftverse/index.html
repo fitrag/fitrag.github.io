@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-black/30 border-b border-white/5">
+        <nav class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-r from-purple-600 to-cyan-500 flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">N</span>
+                    </div>
+                    <span class="text-white font-bold text-xl">NFTverse</span>
+                </a>
+
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-white hover:text-purple-400 transition-colors">Marketplace</a>
+                    <a href="#" class="text-white hover:text-purple-400 transition-colors">Collections</a>
+                    <a href="#" class="text-white hover:text-purple-400 transition-colors">Community</a>
+                    <a href="#" class="text-white hover:text-purple-400 transition-colors">Create</a>
+                </div>
+
+                <!-- Connect Wallet Button -->
+                <div class="flex items-center space-x-4">
+                    <button class="hidden md:flex px-6 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-white transition-all hover:border-purple-500/50 backdrop-blur-xl">
+                        Connect Wallet
+                    </button>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden text-white hover:text-purple-400 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu (Hidden by default) -->
+            <div class="md:hidden hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="#" class="block px-3 py-2 text-white hover:bg-white/5 rounded-lg transition-colors">Marketplace</a>
+                    <a href="#" class="block px-3 py-2 text-white hover:bg-white/5 rounded-lg transition-colors">Collections</a>
+                    <a href="#" class="block px-3 py-2 text-white hover:bg-white/5 rounded-lg transition-colors">Community</a>
+                    <a href="#" class="block px-3 py-2 text-white hover:bg-white/5 rounded-lg transition-colors">Create</a>
+                    <button class="w-full mt-2 px-6 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-white transition-all hover:border-purple-500/50">
+                        Connect Wallet
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen relative overflow-hidden bg-gradient-to-b from-black via-purple-900/20 to-black">
+        <!-- Grid Pattern -->
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black_70%)]"></div>
+        
+        <!-- Dots Pattern -->
+        <div class="absolute inset-0 opacity-30">
+            <div class="absolute h-full w-full [background:radial-gradient(circle_at_center,rgba(255,255,255,0.1)_2px,transparent_1px)] [background-size:24px_24px]"></div>
+        </div>
+
+        <!-- Animated Background Effects -->
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(120,0,255,0.15),transparent_50%)]"></div>
+        <div class="absolute inset-0 opacity-30">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+            <div class="absolute top-0 right-10 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+            <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
+        </div>
+
+        <!-- Cyber Lines -->
+        <div class="absolute inset-0 overflow-hidden opacity-20">
+            <div class="absolute h-[1px] w-full top-1/4 left-0 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
+            <div class="absolute h-[1px] w-full top-2/4 left-0 bg-gradient-to-r from-transparent via-cyan-500 to-transparent"></div>
+            <div class="absolute h-[1px] w-full top-3/4 left-0 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
+            
+            <div class="absolute h-full w-[1px] left-1/4 top-0 bg-gradient-to-b from-transparent via-purple-500 to-transparent"></div>
+            <div class="absolute h-full w-[1px] left-2/4 top-0 bg-gradient-to-b from-transparent via-cyan-500 to-transparent"></div>
+            <div class="absolute h-full w-[1px] left-3/4 top-0 bg-gradient-to-b from-transparent via-purple-500 to-transparent"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="container mx-auto px-4 pt-32 pb-20 relative z-10">
+            <div class="flex flex-col items-center text-center max-w-4xl mx-auto">
+                <!-- Badge -->
+                <div class="bg-gradient-to-r from-purple-500/10 to-cyan-500/10 backdrop-blur-xl px-6 py-2 rounded-full border border-purple-500/20 mb-8">
+                    <span class="text-sm font-medium bg-gradient-to-r from-purple-400 to-cyan-400 text-transparent bg-clip-text">
+                        🚀 The Future of Digital Art
+                    </span>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Discover</span>
+                    <span class="text-white"> Rare Digital</span>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400"> Art & NFTs</span>
+                </h1>
+                
+                <p class="text-gray-300 text-lg md:text-xl mb-8 max-w-2xl leading-relaxed">
+                    Jelajahi marketplace NFT terbesar dengan koleksi karya seni digital yang unik dan eksklusif. 
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Beli, jual, dan koleksi NFT legendaris.</span>
+                </p>
+                
+                <div class="flex gap-4 flex-wrap justify-center">
+                    <button class="group px-8 py-3 bg-gradient-to-r from-purple-600 to-cyan-500 rounded-full text-white font-semibold relative overflow-hidden transition-all duration-300 hover:scale-105">
+                        <span class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                        <span class="relative flex items-center gap-2">
+                            Explore Collection <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </span>
+                    </button>
+                    <button class="px-8 py-3 border border-purple-500 rounded-full text-white font-semibold hover:bg-purple-500/10 transition-all duration-300 hover:scale-105 hover:border-cyan-500">
+                        Create NFT
+                    </button>
+                </div>
+                
+                <!-- Stats with animation -->
+                <div class="flex gap-8 md:gap-16 mt-16">
+                    <div class="text-center p-4 backdrop-blur-xl bg-white/5 rounded-xl hover:bg-white/10 transition-all">
+                        <h3 class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-2">40K+</h3>
+                        <p class="text-gray-400">Artworks</p>
+                    </div>
+                    <div class="text-center p-4 backdrop-blur-xl bg-white/5 rounded-xl hover:bg-white/10 transition-all">
+                        <h3 class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 mb-2">12K+</h3>
+                        <p class="text-gray-400">Creators</p>
+                    </div>
+                    <div class="text-center p-4 backdrop-blur-xl bg-white/5 rounded-xl hover:bg-white/10 transition-all">
+                        <h3 class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-2">20K+</h3>
+                        <p class="text-gray-400">Collections</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Showcase -->
+    <section class="py-12 relative overflow-hidden">
+        <!-- Background Effects -->
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-gradient-to-r from-purple-500/5 via-transparent to-cyan-500/5"></div>
+            <div class="absolute h-[1px] w-full top-0 bg-gradient-to-r from-transparent via-purple-500/20 to-transparent"></div>
+            <div class="absolute h-[1px] w-full bottom-0 bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent"></div>
+        </div>
+
+        <!-- Marquee Container -->
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex items-center justify-between gap-12 flex-wrap">
+                <!-- Brand Items -->
+                <div class="flex-shrink-0 group cursor-pointer">
+                    <img src="https://cdn.worldvectorlogo.com/logos/opensea.svg" 
+                         alt="OpenSea" 
+                         class="w-16 h-16 md:w-20 md:h-20 object-contain opacity-50 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110">
+                </div>
+
+                <div class="flex-shrink-0 group cursor-pointer">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Binance_Logo.svg/768px-Binance_Logo.svg.png" 
+                         alt="Binance" 
+                         class="w-16 h-16 md:w-20 md:h-20 object-contain opacity-50 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110">
+                </div>
+
+                <div class="flex-shrink-0 group cursor-pointer">
+                    <img src="https://cryptologos.cc/logos/rarible-rari-logo.png" 
+                         alt="Rarible" 
+                         class="w-16 h-16 md:w-20 md:h-20 object-contain opacity-50 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110">
+                </div>
+
+                <div class="flex-shrink-0 group cursor-pointer">
+                    <img src="https://cryptologos.cc/logos/polygon-matic-logo.png" 
+                         alt="Polygon" 
+                         class="w-16 h-16 md:w-20 md:h-20 object-contain opacity-50 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110">
+                </div>
+
+                <div class="flex-shrink-0 group cursor-pointer">
+                    <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" 
+                         alt="Ethereum" 
+                         class="w-16 h-16 md:w-20 md:h-20 object-contain opacity-50 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110">
+                </div>
+
+                <div class="flex-shrink-0 group cursor-pointer">
+                    <img src="https://cryptologos.cc/logos/solana-sol-logo.png" 
+                         alt="Solana" 
+                         class="w-16 h-16 md:w-20 md:h-20 object-contain opacity-50 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NFT Collections -->
+    <section class="py-20 relative overflow-hidden">
+        <!-- Grid Pattern -->
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black_70%)]"></div>
+
+        <!-- Content Container -->
+        <div class="container mx-auto px-4 relative z-10">
+            <!-- Section Header -->
+            <div class="flex flex-col items-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Trending Collections</span>
+                </h2>
+                <p class="text-gray-400 text-center max-w-2xl">Discover the most sought-after digital artworks and collections in the NFT space</p>
+            </div>
+
+            <!-- NFT Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- NFT Card 1 -->
+                <div class="group relative bg-gradient-to-b from-purple-500/10 to-cyan-500/10 rounded-2xl p-[1px] hover:p-[2px] transition-all duration-300">
+                    <div class="relative bg-black rounded-2xl overflow-hidden backdrop-blur-xl">
+                        <!-- Card Content -->
+                        <div class="relative overflow-hidden">
+                            <!-- Main Image -->
+                            <img src="https://api.pudgypenguins.io/lil/image/1299" alt="NFT Title" 
+                                 class="w-full h-full object-center object-cover rounded-t-2xl group-hover:scale-105 transition-transform duration-300">
+                            
+                            <!-- Overlay Gradient -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+                            <!-- Live Badge -->
+                            <div class="absolute top-4 left-4">
+                                <div class="flex items-center gap-2 bg-black/50 backdrop-blur-xl px-3 py-1 rounded-full">
+                                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                                    <span class="text-white text-sm">Live</span>
+                                </div>
+                            </div>
+
+                            <!-- Price Badge -->
+                            <div class="absolute top-4 right-4">
+                                <div class="bg-black/50 backdrop-blur-xl px-3 py-1 rounded-full">
+                                    <div class="flex items-center gap-1">
+                                        <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" class="w-4 h-4">
+                                        <span class="text-white text-sm">2.5 ETH</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card Details -->
+                        <div class="p-6">
+                            <!-- Creator Info -->
+                            <div class="flex items-center gap-4 mb-4">
+                                <img src="https://assets.raribleuserdata.com/prod/v1/image/t_avatar_big/aHR0cHM6Ly9pcGZzLnJhcmlibGV1c2VyZGF0YS5jb20vaXBmcy9iYWZ5YmVpaG5xeDZ4aGN1eGI3bXQ1a3F6b3F5a3FvNHNvZGVhN3AzM2VkeXhuZXVza2VjZjZ3M3EyNC8x" class="w-10 h-10 rounded-full border-2 border-purple-500">
+                                <div>
+                                    <p class="text-gray-400 text-sm">Creator</p>
+                                    <h4 class="text-white font-semibold">@lilpudgys</h4>
+                                </div>
+                                <div class="ml-auto">
+                                    <div class="bg-purple-500/10 px-3 py-1 rounded-full">
+                                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 text-sm font-medium">
+                                            #1 Trending
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- NFT Info -->
+                            <h3 class="text-white text-xl font-bold mb-2">Cosmic Perspective #127</h3>
+                            <p class="text-gray-400 text-sm mb-4">A mesmerizing piece that captures the essence of digital art in the modern era.</p>
+
+                            <!-- Stats -->
+                            <div class="grid grid-cols-3 gap-4 p-4 bg-white/5 rounded-xl backdrop-blur-sm">
+                                <div class="text-center">
+                                    <p class="text-gray-400 text-xs">Floor Price</p>
+                                    <p class="text-white font-semibold">2.5 ETH</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="text-gray-400 text-xs">Volume</p>
+                                    <p class="text-white font-semibold">1.2K ETH</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="text-gray-400 text-xs">Items</p>
+                                    <p class="text-white font-semibold">1,234</p>
+                                </div>
+                            </div>
+
+                            <!-- Action Button -->
+                            <button class="w-full mt-6 px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-500 rounded-xl text-white font-semibold hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 flex items-center justify-center gap-2">
+                                <span>View Collection</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NFT Card 2 -->
+                <div class="group relative bg-gradient-to-b from-purple-500/10 to-cyan-500/10 rounded-2xl p-[1px] hover:p-[2px] transition-all duration-300">
+                    <div class="relative bg-black rounded-2xl overflow-hidden backdrop-blur-xl">
+                        <div class="relative overflow-hidden">
+                            <img src="https://api.pudgypenguins.io/lil/image/888" alt="NFT Title" 
+                                 class="w-full h-full object-center object-cover rounded-t-2xl group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <div class="absolute top-4 left-4">
+                                <div class="flex items-center gap-2 bg-black/50 backdrop-blur-xl px-3 py-1 rounded-full">
+                                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                                    <span class="text-white text-sm">Live</span>
+                                </div>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <div class="bg-black/50 backdrop-blur-xl px-3 py-1 rounded-full">
+                                    <div class="flex items-center gap-1">
+                                        <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" class="w-4 h-4">
+                                        <span class="text-white text-sm">3.2 ETH</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-center gap-4 mb-4">
+                                <img src="https://assets.raribleuserdata.com/prod/v1/image/t_avatar_big/aHR0cHM6Ly9pcGZzLnJhcmlibGV1c2VyZGF0YS5jb20vaXBmcy9iYWZ5YmVpaG5xeDZ4aGN1eGI3bXQ1a3F6b3F5a3FvNHNvZGVhN3AzM2VkeXhuZXVza2VjZjZ3M3EyNC8x" class="w-10 h-10 rounded-full border-2 border-purple-500">
+                                <div>
+                                    <p class="text-gray-400 text-sm">Creator</p>
+                                    <h4 class="text-white font-semibold">@cryptoart</h4>
+                                </div>
+                                <div class="ml-auto">
+                                    <div class="bg-purple-500/10 px-3 py-1 rounded-full">
+                                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 text-sm font-medium">
+                                            Hot Deal 🔥
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3 class="text-white text-xl font-bold mb-2">Neon Dreams #088</h3>
+                            <p class="text-gray-400 text-sm mb-4">Experience the fusion of retro aesthetics and future technology.</p>
+
+                            <div class="grid grid-cols-3 gap-4 p-4 bg-white/5 rounded-xl backdrop-blur-sm">
+                                <div class="text-center">
+                                    <p class="text-gray-400 text-xs">Floor Price</p>
+                                    <p class="text-white font-semibold">3.2 ETH</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="text-gray-400 text-xs">Volume</p>
+                                    <p class="text-white font-semibold">2.1K ETH</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="text-gray-400 text-xs">Items</p>
+                                    <p class="text-white font-semibold">2,156</p>
+                                </div>
+                            </div>
+
+                            <button class="w-full mt-6 px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-500 rounded-xl text-white font-semibold hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 flex items-center justify-center gap-2">
+                                <span>View Collection</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- NFT Card 2 -->
+                <div class="group relative bg-gradient-to-b from-purple-500/10 to-cyan-500/10 rounded-2xl p-[1px] hover:p-[2px] transition-all duration-300">
+                    <div class="relative bg-black rounded-2xl overflow-hidden backdrop-blur-xl">
+                        <div class="relative overflow-hidden">
+                            <img src="https://api.pudgypenguins.io/lil/image/888" alt="NFT Title" 
+                                 class="w-full h-full object-center object-cover rounded-t-2xl group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <div class="absolute top-4 left-4">
+                                <div class="flex items-center gap-2 bg-black/50 backdrop-blur-xl px-3 py-1 rounded-full">
+                                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                                    <span class="text-white text-sm">Live</span>
+                                </div>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <div class="bg-black/50 backdrop-blur-xl px-3 py-1 rounded-full">
+                                    <div class="flex items-center gap-1">
+                                        <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" class="w-4 h-4">
+                                        <span class="text-white text-sm">3.2 ETH</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-center gap-4 mb-4">
+                                <img src="https://assets.raribleuserdata.com/prod/v1/image/t_avatar_big/aHR0cHM6Ly9pcGZzLnJhcmlibGV1c2VyZGF0YS5jb20vaXBmcy9iYWZ5YmVpaG5xeDZ4aGN1eGI3bXQ1a3F6b3F5a3FvNHNvZGVhN3AzM2VkeXhuZXVza2VjZjZ3M3EyNC8x" class="w-10 h-10 rounded-full border-2 border-purple-500">
+                                <div>
+                                    <p class="text-gray-400 text-sm">Creator</p>
+                                    <h4 class="text-white font-semibold">@cryptoart</h4>
+                                </div>
+                                <div class="ml-auto">
+                                    <div class="bg-purple-500/10 px-3 py-1 rounded-full">
+                                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 text-sm font-medium">
+                                            Hot Deal 🔥
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3 class="text-white text-xl font-bold mb-2">Neon Dreams #088</h3>
+                            <p class="text-gray-400 text-sm mb-4">Experience the fusion of retro aesthetics and future technology.</p>
+
+                            <div class="grid grid-cols-3 gap-4 p-4 bg-white/5 rounded-xl backdrop-blur-sm">
+                                <div class="text-center">
+                                    <p class="text-gray-400 text-xs">Floor Price</p>
+                                    <p class="text-white font-semibold">3.2 ETH</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="text-gray-400 text-xs">Volume</p>
+                                    <p class="text-white font-semibold">2.1K ETH</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="text-gray-400 text-xs">Items</p>
+                                    <p class="text-white font-semibold">2,156</p>
+                                </div>
+                            </div>
+
+                            <button class="w-full mt-6 px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-500 rounded-xl text-white font-semibold hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 flex items-center justify-center gap-2">
+                                <span>View Collection</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top NFT Creators Section -->
+    <section class="py-24 relative overflow-hidden">
+        <!-- Background Effects -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black via-purple-900/20 to-black"></div>
+        
+        <!-- Grid Pattern -->
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black_70%)]"></div>
+
+        <!-- Content Container -->
+        <div class="container mx-auto px-4 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="text-white">Top </span>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">NFT Creators</span>
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Temukan seniman-seniman berbakat yang telah menciptakan karya NFT paling menakjubkan</p>
+            </div>
+
+            <!-- Creators Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Creator Card 1 -->
+                <div class="group relative">
+                    <div class="absolute inset-0.5 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-300"></div>
+                    <div class="relative bg-black/40 backdrop-blur-xl rounded-2xl p-6 hover:bg-black/60 transition duration-300">
+                        <div class="flex flex-col items-center">
+                            <!-- Rank Badge -->
+                            <div class="absolute -top-4 left-6 bg-gradient-to-r from-purple-600 to-cyan-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                #1 Creator
+                            </div>
+                            
+                            <!-- Avatar -->
+                            <div class="relative mb-4">
+                                <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-purple-500/50">
+                                    <img src="https://api.pudgypenguins.io/lil/image/9999" alt="Creator" class="w-full h-full object-cover">
+                                </div>
+                                <div class="absolute -bottom-2 -right-2 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full p-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Creator Info -->
+                            <h3 class="text-white font-bold text-xl mb-1">CryptoMaster</h3>
+                            <p class="text-gray-400 text-sm mb-4">@cryptomaster</p>
+
+                            <!-- Stats -->
+                            <div class="grid grid-cols-2 gap-4 w-full">
+                                <div class="bg-white/5 rounded-xl p-3 text-center">
+                                    <p class="text-gray-400 text-xs mb-1">Volume</p>
+                                    <p class="text-white font-semibold">12.8K ETH</p>
+                                </div>
+                                <div class="bg-white/5 rounded-xl p-3 text-center">
+                                    <p class="text-gray-400 text-xs mb-1">Items</p>
+                                    <p class="text-white font-semibold">156</p>
+                                </div>
+                            </div>
+
+                            <!-- Follow Button -->
+                            <button class="w-full mt-6 px-6 py-2 bg-gradient-to-r from-purple-600 to-cyan-500 rounded-xl text-white font-semibold hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300">
+                                Follow
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Creator Card 2 -->
+                <div class="group relative">
+                    <div class="absolute inset-0.5 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-300"></div>
+                    <div class="relative bg-black/40 backdrop-blur-xl rounded-2xl p-6 hover:bg-black/60 transition duration-300">
+                        <div class="flex flex-col items-center">
+                            <div class="absolute -top-4 left-6 bg-gradient-to-r from-purple-600 to-cyan-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                #2 Creator
+                            </div>
+                            <div class="relative mb-4">
+                                <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-purple-500/50">
+                                    <img src="https://api.pudgypenguins.io/lil/image/8888" alt="Creator" class="w-full h-full object-cover">
+                                </div>
+                                <div class="absolute -bottom-2 -right-2 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full p-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="text-white font-bold text-xl mb-1">PixelArtist</h3>
+                            <p class="text-gray-400 text-sm mb-4">@pixelartist</p>
+                            <div class="grid grid-cols-2 gap-4 w-full">
+                                <div class="bg-white/5 rounded-xl p-3 text-center">
+                                    <p class="text-gray-400 text-xs mb-1">Volume</p>
+                                    <p class="text-white font-semibold">9.5K ETH</p>
+                                </div>
+                                <div class="bg-white/5 rounded-xl p-3 text-center">
+                                    <p class="text-gray-400 text-xs mb-1">Items</p>
+                                    <p class="text-white font-semibold">142</p>
+                                </div>
+                            </div>
+                            <button class="w-full mt-6 px-6 py-2 bg-gradient-to-r from-purple-600 to-cyan-500 rounded-xl text-white font-semibold hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300">
+                                Follow
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Creator Card 3 -->
+                <div class="group relative">
+                    <div class="absolute inset-0.5 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-300"></div>
+                    <div class="relative bg-black/40 backdrop-blur-xl rounded-2xl p-6 hover:bg-black/60 transition duration-300">
+                        <div class="flex flex-col items-center">
+                            <div class="absolute -top-4 left-6 bg-gradient-to-r from-purple-600 to-cyan-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                #3 Creator
+                            </div>
+                            <div class="relative mb-4">
+                                <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-purple-500/50">
+                                    <img src="https://api.pudgypenguins.io/lil/image/7777" alt="Creator" class="w-full h-full object-cover">
+                                </div>
+                                <div class="absolute -bottom-2 -right-2 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full p-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="text-white font-bold text-xl mb-1">NFTLegend</h3>
+                            <p class="text-gray-400 text-sm mb-4">@nftlegend</p>
+                            <div class="grid grid-cols-2 gap-4 w-full">
+                                <div class="bg-white/5 rounded-xl p-3 text-center">
+                                    <p class="text-gray-400 text-xs mb-1">Volume</p>
+                                    <p class="text-white font-semibold">8.2K ETH</p>
+                                </div>
+                                <div class="bg-white/5 rounded-xl p-3 text-center">
+                                    <p class="text-gray-400 text-xs mb-1">Items</p>
+                                    <p class="text-white font-semibold">128</p>
+                                </div>
+                            </div>
+                            <button class="w-full mt-6 px-6 py-2 bg-gradient-to-r from-purple-600 to-cyan-500 rounded-xl text-white font-semibold hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300">
+                                Follow
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Creator Card 4 -->
+                <div class="group relative">
+                    <div class="absolute inset-0.5 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-300"></div>
+                    <div class="relative bg-black/40 backdrop-blur-xl rounded-2xl p-6 hover:bg-black/60 transition duration-300">
+                        <div class="flex flex-col items-center">
+                            <div class="absolute -top-4 left-6 bg-gradient-to-r from-purple-600 to-cyan-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                #4 Creator
+                            </div>
+                            <div class="relative mb-4">
+                                <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-purple-500/50">
+                                    <img src="https://api.pudgypenguins.io/lil/image/6666" alt="Creator" class="w-full h-full object-cover">
+                                </div>
+                                <div class="absolute -bottom-2 -right-2 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full p-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="text-white font-bold text-xl mb-1">ArtMaster</h3>
+                            <p class="text-gray-400 text-sm mb-4">@artmaster</p>
+                            <div class="grid grid-cols-2 gap-4 w-full">
+                                <div class="bg-white/5 rounded-xl p-3 text-center">
+                                    <p class="text-gray-400 text-xs mb-1">Volume</p>
+                                    <p class="text-white font-semibold">7.8K ETH</p>
+                                </div>
+                                <div class="bg-white/5 rounded-xl p-3 text-center">
+                                    <p class="text-gray-400 text-xs mb-1">Items</p>
+                                    <p class="text-white font-semibold">115</p>
+                                </div>
+                            </div>
+                            <button class="w-full mt-6 px-6 py-2 bg-gradient-to-r from-purple-600 to-cyan-500 rounded-xl text-white font-semibold hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300">
+                                Follow
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NFT Collections -->
+    <section class="py-20 relative overflow-hidden">
+        <!-- Grid Pattern -->
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black_70%)]"></div>
+
+        <!-- Content Container -->
+        <div class="container mx-auto px-4 relative z-10">
+            <!-- Section Header -->
+            <div class="flex flex-col items-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Trending Collections</span>
+                </h2>
+                <p class="text-gray-400 text-center max-w-2xl">Discover the most sought-after digital artworks and collections in the NFT space</p>
+            </div>
+
+            <!-- Collections Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+                <!-- Kolom 1 (Rank 1-3) -->
+                <div class="space-y-4">
+                    <!-- Collection Item 1 -->
+                    <div class="group bg-white/5 backdrop-blur-sm rounded-xl p-4 hover:bg-white/10 transition-all duration-300">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-bold text-gray-500">1</span>
+                            <div class="h-16 w-16 rounded-xl overflow-hidden">
+                                <img src="https://api.pudgypenguins.io/lil/image/1299" alt="Bored Ape" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-white font-semibold">Bored Ape YC</h3>
+                                <p class="text-gray-400 text-sm">Floor: <span class="text-white">85.5 ETH</span></p>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-green-400 font-semibold">+12.45%</span>
+                                <p class="text-gray-400 text-sm">5,583 ETH</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Collection Item 2 -->
+                    <div class="group bg-white/5 backdrop-blur-sm rounded-xl p-4 hover:bg-white/10 transition-all duration-300">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-bold text-gray-500">2</span>
+                            <div class="h-16 w-16 rounded-xl overflow-hidden">
+                                <img src="https://api.pudgypenguins.io/lil/image/888" alt="CryptoPunks" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-white font-semibold">CryptoPunks</h3>
+                                <p class="text-gray-400 text-sm">Floor: <span class="text-white">64.95 ETH</span></p>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-red-400 font-semibold">-2.82%</span>
+                                <p class="text-gray-400 text-sm">4,256 ETH</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Collection Item 3 -->
+                    <div class="group bg-white/5 backdrop-blur-sm rounded-xl p-4 hover:bg-white/10 transition-all duration-300">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-bold text-gray-500">3</span>
+                            <div class="h-16 w-16 rounded-xl overflow-hidden">
+                                <img src="https://api.pudgypenguins.io/lil/image/777" alt="Azuki" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-white font-semibold">Azuki</h3>
+                                <p class="text-gray-400 text-sm">Floor: <span class="text-white">12.8 ETH</span></p>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-green-400 font-semibold">+23.56%</span>
+                                <p class="text-gray-400 text-sm">2,890 ETH</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kolom 2 (Rank 4-6) -->
+                <div class="space-y-4">
+                    <!-- Collection Item 4 -->
+                    <div class="group bg-white/5 backdrop-blur-sm rounded-xl p-4 hover:bg-white/10 transition-all duration-300">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-bold text-gray-500">4</span>
+                            <div class="h-16 w-16 rounded-xl overflow-hidden">
+                                <img src="https://api.pudgypenguins.io/lil/image/888" alt="Verb" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-white font-semibold">Verb: Chapter</h3>
+                                <p class="text-gray-400 text-sm">Floor Price: <span class="text-white">2.12 ETH</span></p>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-green-400 font-semibold">+75.79%</span>
+                                <p class="text-gray-400 text-sm">3.32 ETH</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Collection Item 5 -->
+                    <div class="group bg-white/5 backdrop-blur-sm rounded-xl p-4 hover:bg-white/10 transition-all duration-300">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-bold text-gray-500">5</span>
+                            <div class="h-16 w-16 rounded-xl overflow-hidden">
+                                <img src="https://api.pudgypenguins.io/lil/image/444" alt="Verb" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-white font-semibold">Verb: Chapter</h3>
+                                <p class="text-gray-400 text-sm">Floor Price: <span class="text-white">2.12 ETH</span></p>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-green-400 font-semibold">+75.79%</span>
+                                <p class="text-gray-400 text-sm">3.32 ETH</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Collection Item 6 -->
+                    <div class="group bg-white/5 backdrop-blur-sm rounded-xl p-4 hover:bg-white/10 transition-all duration-300">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-bold text-gray-500">6</span>
+                            <div class="h-16 w-16 rounded-xl overflow-hidden">
+                                <img src="https://api.pudgypenguins.io/lil/image/333" alt="Azuki" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-white font-semibold">Azuki</h3>
+                                <p class="text-gray-400 text-sm">Floor Price: <span class="text-white">4.12 ETH</span></p>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-red-400 font-semibold">-9.12%</span>
+                                <p class="text-gray-400 text-sm">2.56 ETH</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kolom 3 (Rank 7-9) -->
+                <div class="space-y-4">
+                    <!-- Collection Item 7 -->
+                    <div class="group bg-white/5 backdrop-blur-sm rounded-xl p-4 hover:bg-white/10 transition-all duration-300">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-bold text-gray-500">7</span>
+                            <div class="h-16 w-16 rounded-xl overflow-hidden">
+                                <img src="https://api.pudgypenguins.io/lil/image/222" alt="Azuki" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-white font-semibold">Azuki</h3>
+                                <p class="text-gray-400 text-sm">Floor Price: <span class="text-white">4.12 ETH</span></p>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-red-400 font-semibold">-9.12%</span>
+                                <p class="text-gray-400 text-sm">2.56 ETH</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Collection Item 8 -->
+                    <div class="group bg-white/5 backdrop-blur-sm rounded-xl p-4 hover:bg-white/10 transition-all duration-300">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-bold text-gray-500">8</span>
+                            <div class="h-16 w-16 rounded-xl overflow-hidden">
+                                <img src="https://api.pudgypenguins.io/lil/image/222" alt="Azuki" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-white font-semibold">Azuki</h3>
+                                <p class="text-gray-400 text-sm">Floor Price: <span class="text-white">4.12 ETH</span></p>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-red-400 font-semibold">-9.12%</span>
+                                <p class="text-gray-400 text-sm">2.56 ETH</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Collection Item 9 -->
+                    <div class="group bg-white/5 backdrop-blur-sm rounded-xl p-4 hover:bg-white/10 transition-all duration-300">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-bold text-gray-500">9</span>
+                            <div class="h-16 w-16 rounded-xl overflow-hidden">
+                                <img src="https://api.pudgypenguins.io/lil/image/222" alt="Azuki" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-white font-semibold">Azuki</h3>
+                                <p class="text-gray-400 text-sm">Floor Price: <span class="text-white">4.12 ETH</span></p>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-red-400 font-semibold">-9.12%</span>
+                                <p class="text-gray-400 text-sm">2.56 ETH</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Create NFT CTA Section -->
+    <section class="py-24 relative overflow-hidden">
+        <!-- Background Effects -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black via-purple-900/20 to-black"></div>
+        
+        <!-- Grid Pattern -->
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black_70%)]"></div>
+
+        <!-- Animated Blobs -->
+        <div class="absolute inset-0 opacity-30">
+            <div class="absolute top-1/2 left-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+            <div class="absolute top-1/2 right-1/4 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+        </div>
+
+        <!-- Content Container -->
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <!-- Left Content -->
+                <div class="flex-1 text-center lg:text-left">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Create & Sell</span>
+                        <span class="text-white"> Your NFTs</span>
+                    </h2>
+                    <p class="text-gray-300 text-lg mb-8 max-w-2xl mx-auto lg:mx-0">
+                        Turn your creativity into digital assets. Join thousands of artists and collectors in the world's most vibrant NFT marketplace.
+                    </p>
+                    
+                    <!-- Features List -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-center gap-4 bg-white/5 backdrop-blur-xl p-4 rounded-xl">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-r from-purple-500 to-cyan-500 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold">Quick Setup</h3>
+                                <p class="text-gray-400 text-sm">Start creating in minutes</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4 bg-white/5 backdrop-blur-xl p-4 rounded-xl">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-r from-purple-500 to-cyan-500 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold">Secure Platform</h3>
+                                <p class="text-gray-400 text-sm">Your assets are protected</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <button class="group px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-500 rounded-xl text-white font-semibold text-lg relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20">
+                        <span class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                        <span class="relative flex items-center justify-center gap-2">
+                            Start Creating Now
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+
+                <!-- Right Content - Preview Card -->
+                <div class="flex-1">
+                    <div class="relative">
+                        <!-- Decorative Elements -->
+                        <div class="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full opacity-20 blur-2xl"></div>
+                        <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full opacity-20 blur-2xl"></div>
+                        
+                        <!-- Preview Card -->
+                        <div class="relative bg-gradient-to-b from-purple-500/10 to-cyan-500/10 rounded-2xl p-[1px]">
+                            <div class="bg-black/60 backdrop-blur-xl rounded-2xl p-6">
+                                <div class="flex items-center gap-4 mb-6">
+                                    <div class="w-12 h-12 rounded-xl bg-gradient-to-r from-purple-500 to-cyan-500 flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Create Your First NFT</h4>
+                                        <p class="text-gray-400 text-sm">Upload your artwork in seconds</p>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-4">
+                                    <div class="h-2 w-3/4 bg-white/10 rounded-full"></div>
+                                    <div class="h-2 w-1/2 bg-white/10 rounded-full"></div>
+                                    <div class="h-2 w-5/6 bg-white/10 rounded-full"></div>
+                                </div>
+
+                                <div class="mt-6 flex gap-4">
+                                    <div class="flex-1 h-10 bg-white/10 rounded-xl"></div>
+                                    <div class="w-20 h-10 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-xl"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative overflow-hidden border-t border-white/5 bg-black">
+        <!-- Background Effects -->
+        <div class="absolute inset-0 bg-black"></div>
+        
+        <!-- Grid Pattern -->
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20"></div>
+
+        <div class="container mx-auto px-4 py-16 relative z-10">
+            <!-- Footer Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-16">
+                <!-- Brand Column -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 rounded-lg bg-gradient-to-r from-purple-600 to-cyan-500 flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">N</span>
+                        </div>
+                        <span class="text-white font-bold text-xl">NFTverse</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">Platform NFT terkemuka yang menghubungkan seniman digital dengan kolektor dari seluruh dunia. Temukan, koleksi, dan jual karya seni digital yang unik.</p>
+                    <div class="flex space-x-4">
+                        <!-- Twitter Icon -->
+                        <a href="#" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors">
+                            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                        <!-- Discord Icon -->
+                        <a href="#" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors">
+                            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.317 4.492c-1.53-.69-3.17-1.2-4.885-1.49a.075.075 0 0 0-.079.036c-.21.369-.444.85-.608 1.23a18.566 18.566 0 0 0-5.487 0 12.36 12.36 0 0 0-.617-1.23A.077.077 0 0 0 8.562 3c-1.714.29-3.354.8-4.885 1.491a.07.07 0 0 0-.032.027C.533 9.093-.32 13.555.099 17.961a.08.08 0 0 0 .031.055 20.03 20.03 0 0 0 5.993 2.98.078.078 0 0 0 .084-.026 13.83 13.83 0 0 0 1.226-1.963.074.074 0 0 0-.041-.104 13.175 13.175 0 0 1-1.872-.878.075.075 0 0 1-.008-.125c.126-.093.252-.19.372-.287a.075.075 0 0 1 .078-.01c3.927 1.764 8.18 1.764 12.061 0a.075.075 0 0 1 .079.009c.12.098.245.195.372.288a.075.075 0 0 1-.006.125c-.598.344-1.22.635-1.873.877a.075.075 0 0 0-.041.105c.36.687.772 1.341 1.225 1.962a.077.077 0 0 0 .084.028 19.963 19.963 0 0 0 6.002-2.981.076.076 0 0 0 .032-.054c.5-5.094-.838-9.52-3.549-13.442a.06.06 0 0 0-.031-.028zM8.02 15.278c-1.182 0-2.157-1.069-2.157-2.38 0-1.312.956-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.956 2.38-2.157 2.38zm7.975 0c-1.183 0-2.157-1.069-2.157-2.38 0-1.312.955-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.946 2.38-2.157 2.38z"/>
+                            </svg>
+                        </a>
+                        <!-- Github Icon -->
+                        <a href="#" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors">
+                            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <!-- Instagram Icon -->
+                        <a href="#" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors">
+                            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-white font-semibold text-lg mb-4">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-purple-400 transition-colors">Marketplace</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-400 transition-colors">Collections</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-400 transition-colors">Community</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-400 transition-colors">Create NFT</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div>
+                    <h3 class="text-white font-semibold text-lg mb-4">Resources</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-purple-400 transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-400 transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-400 transition-colors">Newsletter</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-400 transition-colors">Partners</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-white font-semibold text-lg mb-4">Stay Updated</h3>
+                    <p class="text-gray-400 mb-4">Subscribe untuk mendapatkan update terbaru tentang NFT</p>
+                    <form class="space-y-3">
+                        <div class="relative">
+                            <input type="email" placeholder="Email address" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-purple-500 text-white placeholder-gray-500">
+                        </div>
+                        <button class="w-full px-4 py-3 bg-gradient-to-r from-purple-600 to-cyan-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="mt-16 pt-8 border-t border-white/5">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm">© 2024 NFTverse. All rights reserved.</p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-400 hover:text-purple-400 text-sm transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-purple-400 text-sm transition-colors">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Connect Wallet -->
+    <div id="walletModal" class="fixed inset-0 z-50 hidden">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
+        
+        <!-- Modal Content -->
+        <div class="relative min-h-screen flex items-center justify-center p-4">
+            <div class="relative bg-black/80 border border-white/10 rounded-2xl w-full max-w-md p-6 backdrop-blur-xl">
+                <!-- Header -->
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-xl font-bold text-white">Hubungkan Wallet</h3>
+                    <button onclick="closeWalletModal()" class="text-gray-400 hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Wallet Options -->
+                <div class="space-y-4">
+                    <!-- MetaMask -->
+                    <button class="w-full flex items-center gap-4 p-4 bg-white/5 hover:bg-white/10 rounded-xl transition-colors group">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/MetaMask_Fox.svg/2048px-MetaMask_Fox.svg.png" 
+                             alt="MetaMask" 
+                             class="w-8 h-8">
+                        <div class="flex-1 text-left">
+                            <h4 class="text-white font-semibold">MetaMask</h4>
+                            <p class="text-gray-400 text-sm">Hubungkan dengan MetaMask Wallet</p>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 group-hover:text-white transition-colors" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+
+                    <!-- Coinbase -->
+                    <button class="w-full flex items-center gap-4 p-4 bg-white/5 hover:bg-white/10 rounded-xl transition-colors group">
+                        <img src="https://altcoinsbox.com/wp-content/uploads/2022/12/coinbase-logo.png" 
+                             alt="Coinbase" 
+                             class="w-8 h-8">
+                        <div class="flex-1 text-left">
+                            <h4 class="text-white font-semibold">Coinbase Wallet</h4>
+                            <p class="text-gray-400 text-sm">Hubungkan dengan Coinbase Wallet</p>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 group-hover:text-white transition-colors" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+
+                    <!-- WalletConnect -->
+                    <button class="w-full flex items-center gap-4 p-4 bg-white/5 hover:bg-white/10 rounded-xl transition-colors group">
+                        <img src="https://raw.githubusercontent.com/WalletConnect/walletconnect-assets/master/Logo/Blue%20(Default)/Logo.svg" 
+                             alt="WalletConnect" 
+                             class="w-8 h-8">
+                        <div class="flex-1 text-left">
+                            <h4 class="text-white font-semibold">WalletConnect</h4>
+                            <p class="text-gray-400 text-sm">Hubungkan dengan WalletConnect</p>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 group-hover:text-white transition-colors" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Footer -->
+                <p class="mt-6 text-center text-gray-400 text-sm">
+                    Baru di NFT? <a href="#" class="text-purple-400 hover:text-purple-300 transition-colors">Pelajari tentang wallet</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuButton = document.querySelector('button.md\\:hidden');
+        const mobileMenu = document.querySelector('div.md\\:hidden');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Lazy Loading Implementation
+        document.addEventListener("DOMContentLoaded", function() {
+            const lazyImages = document.querySelectorAll("img[src]");
+            
+            const imageObserverConfig = {
+                rootMargin: '50px 0px',
+                threshold: 0.01
+            };
+
+            const handleIntersection = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        const originalSrc = img.src;
+
+                        // Buat temporary image untuk pre-loading
+                        const tempImage = new Image();
+                        
+                        tempImage.onload = () => {
+                            img.classList.add('opacity-100');
+                            observer.unobserve(img);
+                        };
+
+                        tempImage.onerror = () => {
+                            img.src = 'https://via.placeholder.com/400x400?text=Image+Error';
+                            img.classList.add('opacity-100');
+                            observer.unobserve(img);
+                        };
+
+                        // Load gambar
+                        tempImage.src = originalSrc;
+                    }
+                });
+            };
+
+            // Buat Intersection Observer
+            const imageObserver = new IntersectionObserver(handleIntersection, imageObserverConfig);
+
+            // Tambahkan style untuk transisi fade
+            const style = document.createElement('style');
+            style.textContent = `
+                img {
+                    opacity: 0;
+                    transition: opacity 0.5s ease-in-out;
+                }
+                img.opacity-100 {
+                    opacity: 1;
+                }
+            `;
+            document.head.appendChild(style);
+
+            // Observe semua gambar
+            lazyImages.forEach(img => {
+                imageObserver.observe(img);
+            });
+        });
+
+        // Wallet Modal Functionality
+        const walletModal = document.getElementById('walletModal');
+        const connectWalletButtons = document.querySelectorAll('button:not(.md\\:hidden)');
+
+        // Buka modal ketika tombol Connect Wallet diklik
+        connectWalletButtons.forEach(button => {
+            if (button.textContent.trim() === 'Connect Wallet') {
+                button.addEventListener('click', () => {
+                    walletModal.classList.remove('hidden');
+                    // Mencegah scrolling pada background
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+        });
+
+        // Fungsi untuk menutup modal
+        function closeWalletModal() {
+            walletModal.classList.add('hidden');
+            // Mengaktifkan kembali scrolling
+            document.body.style.overflow = 'auto';
+        }
+
+        // Tutup modal ketika mengklik di luar modal
+        walletModal.addEventListener('click', (e) => {
+            if (e.target === walletModal) {
+                closeWalletModal();
+            }
+        });
+
+        // Tutup modal dengan tombol ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !walletModal.classList.contains('hidden')) {
+                closeWalletModal();
+            }
+        });
+    </script>
+</body>
+</html>
