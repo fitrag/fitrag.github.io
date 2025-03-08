@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VillHouse - Find Your Dream Property</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2A3342',
+                        secondary: '#4F6C8D',
+                        accent: '#E8AA33',
+                        light: '#F8F9FA',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            .property-card:hover .property-details {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .property-details {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: all 0.3s ease;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="font-sans bg-light">
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-md shadow-lg fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="#" class="flex items-center space-x-2 group">
+                    <div
+                        class="bg-gradient-to-r from-accent to-accent/80 rounded-lg w-10 h-10 flex items-center justify-center transform group-hover:rotate-12 transition-all duration-300 shadow-md">
+                        <i class="fas fa-home text-white text-lg"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-primary">Vill<span class="text-accent relative">House
+                            <span class="absolute -bottom-1 left-0 w-full h-1 bg-accent/30 rounded-full"></span>
+                        </span></span>
+                </a>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex space-x-8">
+                <a href="index.html" class="text-primary hover:text-accent font-medium relative group">
+                    <span>Home</span>
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="#properties" class="text-primary hover:text-accent font-medium relative group">
+                    <span>Properties</span>
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="#features" class="text-primary hover:text-accent font-medium relative group">
+                    <span>Features</span>
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="#testimonials" class="text-primary hover:text-accent font-medium relative group">
+                    <span>Testimonials</span>
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="contact.html" class="text-primary hover:text-accent font-medium relative group">
+                    <span>Contact</span>
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+                </a>
+            </div>
+
+            <!-- Desktop CTA Button -->
+            <div class="hidden lg:block">
+                <button
+                    class="bg-gradient-to-r from-accent to-accent/80 text-white px-6 py-2.5 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 shadow-md flex items-center space-x-2">
+                    <span>Get Started</span>
+                    <i class="fas fa-arrow-right ml-1 group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </div>
+
+            <!-- Tablet Menu -->
+            <div class="hidden md:flex lg:hidden space-x-8">
+                <a href="index.html" class="text-primary hover:text-accent transition-colors duration-300 relative">
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-home text-lg mb-1"></i>
+                        <span class="text-xs">Home</span>
+                    </div>
+                </a>
+                <a href="#properties" class="text-primary hover:text-accent transition-colors duration-300">
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-building text-lg mb-1"></i>
+                        <span class="text-xs">Properties</span>
+                    </div>
+                </a>
+                <a href="#features" class="text-primary hover:text-accent transition-colors duration-300">
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-star text-lg mb-1"></i>
+                        <span class="text-xs">Features</span>
+                    </div>
+                </a>
+                <a href="#testimonials" class="text-primary hover:text-accent transition-colors duration-300">
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-comment text-lg mb-1"></i>
+                        <span class="text-xs">Reviews</span>
+                    </div>
+                </a>
+                <a href="contact.html" class="text-primary hover:text-accent transition-colors duration-300">
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-envelope text-lg mb-1"></i>
+                        <span class="text-xs">Contact</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="menu-toggle"
+                    class="text-primary focus:outline-none bg-light/80 p-2 rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-sm">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu-dropdown"
+            class="hidden bg-white shadow-lg rounded-b-2xl overflow-hidden transition-all duration-300 max-h-0">
+            <div class="container mx-auto px-6 py-4 space-y-4">
+                <a href="index.html"
+                    class="block py-2 text-primary hover:text-accent transition-colors duration-300 border-b border-gray-100 flex items-center">
+                    <i class="fas fa-home mr-3 text-accent"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#properties"
+                    class="block py-2 text-primary hover:text-accent transition-colors duration-300 border-b border-gray-100 flex items-center">
+                    <i class="fas fa-building mr-3 text-accent"></i>
+                    <span>Properties</span>
+                </a>
+                <a href="#features"
+                    class="block py-2 text-primary hover:text-accent transition-colors duration-300 border-b border-gray-100 flex items-center">
+                    <i class="fas fa-star mr-3 text-accent"></i>
+                    <span>Features</span>
+                </a>
+                <a href="#testimonials"
+                    class="block py-2 text-primary hover:text-accent transition-colors duration-300 border-b border-gray-100 flex items-center">
+                    <i class="fas fa-comment mr-3 text-accent"></i>
+                    <span>Testimonials</span>
+                </a>
+                <a href="contact.html"
+                    class="block py-2 text-primary hover:text-accent transition-colors duration-300 flex items-center">
+                    <i class="fas fa-envelope mr-3 text-accent"></i>
+                    <span>Contact</span>
+                </a>
+                <button
+                    class="w-full bg-gradient-to-r from-accent to-accent/80 text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 shadow-md mt-4 flex items-center justify-center space-x-2">
+                    <span>Get Started</span>
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    </nav>
+    </nav>
+    <!-- Enhanced Breadcrumb with Jumbotron Style -->
+    <div class="bg-gradient-to-r from-primary to-primary/90 pt-32 pb-16 relative overflow-hidden">
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl -mr-48 -mt-48 opacity-20"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -ml-24 -mb-24 opacity-10"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-4 text-shadow">
+                The Future of Real Estate: Smart Homes and Sustainable Living
+            </h1>
+
+            <div class="flex flex-wrap items-center gap-3 mb-6">
+                <span class="bg-accent/20 text-accent px-3 py-1 rounded-full text-sm font-medium">Real Estate</span>
+                <span class="bg-white/10 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                    <i class="far fa-calendar-alt mr-2"></i> June 15, 2023
+                </span>
+                <span class="bg-white/10 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                    <i class="far fa-user mr-2"></i> By John Smith
+                </span>
+                <span class="bg-white/10 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                    <i class="far fa-clock mr-2"></i> 5 min read
+                </span>
+            </div>
+
+            <!-- Breadcrumb Navigation -->
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol
+                    class="inline-flex items-center space-x-1 md:space-x-3 bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
+                    <li class="inline-flex items-center">
+                        <a href="index.html"
+                            class="inline-flex items-center text-sm text-white hover:text-accent transition-colors duration-300">
+                            <i class="fas fa-home mr-2 text-accent"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <i class="fas fa-chevron-right text-white/60 text-xs mx-2"></i>
+                            <a href="#"
+                                class="text-sm text-white hover:text-accent transition-colors duration-300">Articles</a>
+                        </div>
+                    </li>
+                    <li aria-current="page">
+                        <div class="flex items-center">
+                            <i class="fas fa-chevron-right text-white/60 text-xs mx-2"></i>
+                            <span class="text-sm font-medium text-accent">The Future of Real Estate</span>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content Section -->
+    <main class="container mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <!-- Article Content - 2/3 width on desktop -->
+            <div class="lg:col-span-2">
+                <!-- Featured Image with caption -->
+                <div class="mb-10 rounded-2xl overflow-hidden shadow-xl relative group">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        alt="Modern Smart Home"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                        <p class="text-white text-sm">Modern smart home with sustainable features and energy-efficient
+                            design</p>
+                    </div>
+                </div>
+
+                <!-- Article Text Content -->
+                <div class="prose prose-lg max-w-none">
+                    <p class="text-xl leading-relaxed text-gray-700 mb-6">
+                        The real estate industry is undergoing a significant transformation with the rise of smart home
+                        technology and sustainable living solutions. Today's homebuyers are increasingly looking for
+                        properties that offer both convenience and environmental responsibility.
+                    </p>
+
+                    <h2 class="text-2xl font-bold text-primary mt-10 mb-6 relative inline-block">
+                        The Rise of Smart Home Technology
+                        <span class="absolute -bottom-2 left-0 w-16 h-1 bg-accent rounded-full"></span>
+                    </h2>
+
+                    <p class="mb-6 text-gray-700">
+                        Smart homes are no longer just a luxury for the tech-savvy elite. They're becoming mainstream as
+                        homeowners recognize the benefits of integrated technology systems that can be controlled
+                        remotely. From smart thermostats that learn your preferences to automated lighting systems that
+                        reduce energy consumption, these technologies are changing how we interact with our living
+                        spaces.
+                    </p>
+
+                    <!-- Quote Block -->
+                    <blockquote class="bg-light p-6 border-l-4 border-accent rounded-r-lg my-8 shadow-md">
+                        <p class="text-lg italic text-gray-700 mb-4">
+                            "The integration of smart technology into homes isn't just about convenience—it's about
+                            creating living spaces that adapt to our needs while minimizing environmental impact."
+                        </p>
+                        <footer class="text-sm text-gray-500">
+                            — Sarah Johnson, Sustainable Architecture Expert
+                        </footer>
+                    </blockquote>
+
+                    <h2 class="text-2xl font-bold text-primary mt-10 mb-6 relative inline-block">
+                        Sustainable Living Features
+                        <span class="absolute -bottom-2 left-0 w-16 h-1 bg-accent rounded-full"></span>
+                    </h2>
+
+                    <p class="mb-6 text-gray-700">
+                        Alongside smart technology, sustainable features are becoming key selling points for modern
+                        homes. Solar panels, rainwater harvesting systems, and energy-efficient appliances are no longer
+                        considered optional extras but essential components of forward-thinking home design.
+                    </p>
+
+                    <!-- Feature List -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 my-8 border border-gray-100">
+                        <h3 class="text-xl font-semibold text-primary mb-4">Top Sustainable Features in Modern Homes
+                        </h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="bg-accent/10 p-1 rounded-full mr-3 flex-shrink-0">
+                                    <i class="fas fa-check text-accent"></i>
+                                </span>
+                                <span><strong>Solar Energy Systems:</strong> Reducing dependency on grid electricity and
+                                    lowering utility bills.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-accent/10 p-1 rounded-full mr-3 flex-shrink-0">
+                                    <i class="fas fa-check text-accent"></i>
+                                </span>
+                                <span><strong>Smart Water Management:</strong> Systems that monitor and optimize water
+                                    usage throughout the home.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-accent/10 p-1 rounded-full mr-3 flex-shrink-0">
+                                    <i class="fas fa-check text-accent"></i>
+                                </span>
+                                <span><strong>Energy-Efficient Windows:</strong> Double or triple-glazed windows that
+                                    minimize heat transfer.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-accent/10 p-1 rounded-full mr-3 flex-shrink-0">
+                                    <i class="fas fa-check text-accent"></i>
+                                </span>
+                                <span><strong>Sustainable Building Materials:</strong> Recycled or responsibly sourced
+                                    materials that reduce environmental impact.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <p class="mb-6 text-gray-700">
+                        The combination of smart technology and sustainable features is creating homes that are not only
+                        more comfortable and convenient but also more environmentally responsible and cost-effective in
+                        the long run.
+                    </p>
+
+                    <h2 class="text-2xl font-bold text-primary mt-10 mb-6 relative inline-block">
+                        The Market Impact
+                        <span class="absolute -bottom-2 left-0 w-16 h-1 bg-accent rounded-full"></span>
+                    </h2>
+
+                    <p class="mb-6 text-gray-700">
+                        Properties with smart and sustainable features are seeing increased demand and higher resale
+                        values. According to recent market research, homes with smart technology and energy-efficient
+                        features can command a premium of up to 10% compared to similar properties without these
+                        amenities.
+                    </p>
+
+                    <!-- Image with caption -->
+                    <figure class="my-10">
+                        <img src="https://images.unsplash.com/photo-1558036117-15d82a90b9b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="Smart home control panel" class="w-full h-auto rounded-xl shadow-lg">
+                        <figcaption class="text-sm text-gray-500 mt-2 text-center">A modern smart home control system
+                            that integrates various home functions</figcaption>
+                    </figure>
+
+                    <p class="mb-6 text-gray-700">
+                        As we look to the future, the integration of smart technology and sustainable features in homes
+                        is likely to become the standard rather than the exception. Homebuyers and renters alike are
+                        increasingly prioritizing these features in their property searches.
+                    </p>
+
+                    <h2 class="text-2xl font-bold text-primary mt-10 mb-6 relative inline-block">
+                        Conclusion
+                        <span class="absolute -bottom-2 left-0 w-16 h-1 bg-accent rounded-full"></span>
+                    </h2>
+
+                    <p class="mb-6 text-gray-700">
+                        The future of real estate is clearly moving toward smarter, more sustainable homes. For property
+                        developers, investors, and homeowners, embracing these trends isn't just about staying
+                        current—it's about preparing for a future where technology and sustainability are integral parts
+                        of our living spaces.
+                    </p>
+                </div>
+
+                <!-- Author Info -->
+                <div class="mt-12 pt-8 border-t border-gray-200">
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Smith"
+                            class="w-16 h-16 rounded-full mr-4 border-2 border-accent">
+                        <div>
+                            <h3 class="text-lg font-bold text-primary">John Smith</h3>
+                            <p class="text-gray-600">Real Estate Analyst & Technology Specialist</p>
+                            <div class="flex mt-2 space-x-3">
+                                <a href="#" class="text-blue-500 hover:text-blue-700">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="text-blue-700 hover:text-blue-900">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="text-red-500 hover:text-red-700">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article Tags -->
+                <div class="mt-8 flex flex-wrap gap-2">
+                    <span class="text-sm text-gray-600 mr-2">Tags:</span>
+                    <a href="#"
+                        class="px-3 py-1 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm rounded-full transition-colors duration-300">Smart
+                        Homes</a>
+                    <a href="#"
+                        class="px-3 py-1 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm rounded-full transition-colors duration-300">Sustainable
+                        Living</a>
+                    <a href="#"
+                        class="px-3 py-1 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm rounded-full transition-colors duration-300">Real
+                        Estate Trends</a>
+                    <a href="#"
+                        class="px-3 py-1 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm rounded-full transition-colors duration-300">Technology</a>
+                    <a href="#"
+                        class="px-3 py-1 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm rounded-full transition-colors duration-300">Energy
+                        Efficiency</a>
+                </div>
+
+                <!-- Social Share -->
+                <div class="mt-10 p-6 bg-light rounded-xl shadow-sm">
+                    <h3 class="text-lg font-semibold text-primary mb-4">Share this article</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="#"
+                            class="flex items-center justify-center px-4 py-2 bg-[#3b5998] text-white rounded-lg hover:opacity-90 transition-opacity">
+                            <i class="fab fa-facebook-f mr-2"></i> Facebook
+                        </a>
+                        <a href="#"
+                            class="flex items-center justify-center px-4 py-2 bg-[#1da1f2] text-white rounded-lg hover:opacity-90 transition-opacity">
+                            <i class="fab fa-twitter mr-2"></i> Twitter
+                        </a>
+                        <a href="#"
+                            class="flex items-center justify-center px-4 py-2 bg-[#0077b5] text-white rounded-lg hover:opacity-90 transition-opacity">
+                            <i class="fab fa-linkedin-in mr-2"></i> LinkedIn
+                        </a>
+                        <a href="#"
+                            class="flex items-center justify-center px-4 py-2 bg-[#25D366] text-white rounded-lg hover:opacity-90 transition-opacity">
+                            <i class="fab fa-whatsapp mr-2"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Comments Section -->
+                <div class="mt-16">
+                    <h3 class="text-2xl font-bold text-primary mb-8 relative inline-block">
+                        Comments (5)
+                        <span class="absolute -bottom-2 left-0 w-16 h-1 bg-accent rounded-full"></span>
+                    </h3>
+
+                    <!-- Comment Form -->
+                    <div class="bg-white p-6 rounded-xl shadow-md mb-10 border border-gray-100">
+                        <h4 class="text-lg font-semibold text-primary mb-4">Leave a comment</h4>
+                        <form>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                    <input type="text" id="name"
+                                        class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition-all duration-300">
+                                </div>
+                                <div>
+                                    <label for="email"
+                                        class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                    <input type="email" id="email"
+                                        class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition-all duration-300">
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="comment"
+                                    class="block text-sm font-medium text-gray-700 mb-1">Comment</label>
+                                <textarea id="comment" rows="4"
+                                    class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition-all duration-300"></textarea>
+                            </div>
+                            <button type="submit"
+                                class="bg-gradient-to-r from-accent to-accent/80 text-white px-6 py-3 rounded-lg hover:shadow-lg transition-all duration-300 flex items-center">
+                                <i class="fas fa-paper-plane mr-2"></i> Post Comment
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Comments List -->
+                    <div class="space-y-8">
+                        <!-- Comment 1 -->
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                            <div class="flex items-start space-x-4">
+                                <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="User"
+                                    class="w-12 h-12 rounded-full">
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between mb-1">
+                                        <h5 class="font-semibold text-primary">Emily Johnson</h5>
+                                        <span class="text-xs text-gray-500">2 days ago</span>
+                                    </div>
+                                    <p class="text-gray-700 mb-3">This article perfectly captures the growing trend of
+                                        smart home technology. I recently installed a smart thermostat and lighting
+                                        system in my home, and the difference in energy efficiency is remarkable!</p>
+                                    <div class="flex items-center space-x-4">
+                                        <button
+                                            class="text-gray-500 hover:text-accent transition-colors duration-300 flex items-center">
+                                            <i class="far fa-thumbs-up mr-1"></i> 12
+                                        </button>
+                                        <button
+                                            class="text-gray-500 hover:text-accent transition-colors duration-300 flex items-center">
+                                            <i class="far fa-comment mr-1"></i> Reply
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comment 2 with Reply -->
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                            <div class="flex items-start space-x-4">
+                                <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="User"
+                                    class="w-12 h-12 rounded-full">
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between mb-1">
+                                        <h5 class="font-semibold text-primary">Michael Chen</h5>
+                                        <span class="text-xs text-gray-500">3 days ago</span>
+                                    </div>
+                                    <p class="text-gray-700 mb-3">While I appreciate the benefits of smart home
+                                        technology, I'm concerned about privacy issues. How secure are these systems
+                                        against potential hacking?</p>
+                                    <div class="flex items-center space-x-4 mb-4">
+                                        <button
+                                            class="text-gray-500 hover:text-accent transition-colors duration-300 flex items-center">
+                                            <i class="far fa-thumbs-up mr-1"></i> 8
+                                        </button>
+                                        <button
+                                            class="text-gray-500 hover:text-accent transition-colors duration-300 flex items-center">
+                                            <i class="far fa-comment mr-1"></i> Reply
+                                        </button>
+                                    </div>
+
+                                    <!-- Reply -->
+                                    <div class="ml-8 p-4 bg-gray-50 rounded-lg">
+                                        <div class="flex items-start space-x-3">
+                                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Author"
+                                                class="w-10 h-10 rounded-full">
+                                            <div>
+                                                <div class="flex items-center mb-1">
+                                                    <h6 class="font-semibold text-primary text-sm">John Smith <span
+                                                            class="bg-accent/20 text-accent text-xs px-2 py-0.5 rounded-full ml-2">Author</span>
+                                                    </h6>
+                                                    <span class="text-xs text-gray-500 ml-2">2 days ago</span>
+                                                </div>
+                                                <p class="text-gray-700 text-sm">Great question, Michael! Security is
+                                                    indeed a crucial concern. Most reputable smart home systems use
+                                                    end-to-end encryption and regular security updates. I recommend
+                                                    choosing devices from established brands that prioritize security
+                                                    and keeping all firmware updated.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comment 3 -->
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                            <div class="flex items-start space-x-4">
+                                <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="User"
+                                    class="w-12 h-12 rounded-full">
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between mb-1">
+                                        <h5 class="font-semibold text-primary">Sarah Williams</h5>
+                                        <span class="text-xs text-gray-500">5 days ago</span>
+                                    </div>
+                                    <p class="text-gray-700 mb-3">I'm a real estate agent, and I can confirm that
+                                        properties with smart home features are selling faster and at higher prices.
+                                        Buyers are increasingly looking for homes that are both technologically advanced
+                                        and environmentally friendly.</p>
+                                    <div class="flex items-center space-x-4">
+                                        <button
+                                            class="text-gray-500 hover:text-accent transition-colors duration-300 flex items-center">
+                                            <i class="far fa-thumbs-up mr-1"></i> 15
+                                        </button>
+                                        <button
+                                            class="text-gray-500 hover:text-accent transition-colors duration-300 flex items-center">
+                                            <i class="far fa-comment mr-1"></i> Reply
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar - 1/3 width on desktop -->
+            <div class="lg:col-span-1">
+                <!-- Author Widget -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8 border border-gray-100">
+                    <div class="bg-primary p-4 text-white">
+                        <h3 class="font-bold text-lg">About the Author</h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-col items-center text-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Smith"
+                                class="w-24 h-24 rounded-full border-4 border-accent mb-3">
+                            <h4 class="font-bold text-primary text-lg">John Smith</h4>
+                            <p class="text-gray-600 text-sm">Real Estate Analyst & Technology Specialist</p>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-4">John has over 15 years of experience in real estate and
+                            specializes in emerging property technologies and sustainable housing solutions.</p>
+                        <div class="flex justify-center space-x-3">
+                            <a href="#"
+                                class="bg-[#1da1f2] text-white h-8 w-8 rounded-full flex items-center justify-center hover:opacity-90 transition-opacity">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#"
+                                class="bg-[#0077b5] text-white h-8 w-8 rounded-full flex items-center justify-center hover:opacity-90 transition-opacity">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#"
+                                class="bg-[#ea4c89] text-white h-8 w-8 rounded-full flex items-center justify-center hover:opacity-90 transition-opacity">
+                                <i class="fab fa-dribbble"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search Widget -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8 border border-gray-100">
+                    <div class="bg-primary p-4 text-white">
+                        <h3 class="font-bold text-lg">Search Articles</h3>
+                    </div>
+                    <div class="p-6">
+                        <form class="relative">
+                            <input type="text" placeholder="Search..."
+                                class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition-all duration-300 pr-10">
+                            <button type="submit"
+                                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-accent transition-colors duration-300">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Categories Widget -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8 border border-gray-100">
+                    <div class="bg-primary p-4 text-white">
+                        <h3 class="font-bold text-lg">Categories</h3>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3">
+                            <li>
+                                <a href="#"
+                                    class="flex items-center justify-between text-gray-700 hover:text-accent transition-colors duration-300 group">
+                                    <span class="flex items-center">
+                                        <i class="fas fa-home mr-3 text-accent"></i>
+                                        <span class="group-hover:translate-x-1 transition-transform duration-300">Real
+                                            Estate</span>
+                                    </span>
+                                    <span class="bg-gray-100 text-gray-700 px-2 py-0.5 rounded-full text-xs">24</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center justify-between text-gray-700 hover:text-accent transition-colors duration-300 group">
+                                    <span class="flex items-center">
+                                        <i class="fas fa-laptop-house mr-3 text-accent"></i>
+                                        <span class="group-hover:translate-x-1 transition-transform duration-300">Smart
+                                            Homes</span>
+                                    </span>
+                                    <span class="bg-gray-100 text-gray-700 px-2 py-0.5 rounded-full text-xs">18</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center justify-between text-gray-700 hover:text-accent transition-colors duration-300 group">
+                                    <span class="flex items-center">
+                                        <i class="fas fa-leaf mr-3 text-accent"></i>
+                                        <span
+                                            class="group-hover:translate-x-1 transition-transform duration-300">Sustainable
+                                            Living</span>
+                                    </span>
+                                    <span class="bg-gray-100 text-gray-700 px-2 py-0.5 rounded-full text-xs">15</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center justify-between text-gray-700 hover:text-accent transition-colors duration-300 group">
+                                    <span class="flex items-center">
+                                        <i class="fas fa-chart-line mr-3 text-accent"></i>
+                                        <span class="group-hover:translate-x-1 transition-transform duration-300">Market
+                                            Trends</span>
+                                    </span>
+                                        <span
+                                            class="bg-gray-100 text-gray-700 px-2 py-0.5 rounded-full text-xs">18</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center justify-between text-gray-700 hover:text-accent transition-colors duration-300 group">
+                                    <span class="flex items-center">
+                                        <i class="fas fa-leaf mr-3 text-accent"></i>
+                                        <span
+                                            class="group-hover:translate-x-1 transition-transform duration-300">Sustainable
+                                            Living</span>
+                                    </span>
+                                    <span class="bg-gray-100 text-gray-700 px-2 py-0.5 rounded-full text-xs">15</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center justify-between text-gray-700 hover:text-accent transition-colors duration-300 group">
+                                    <span class="flex items-center">
+                                        <i class="fas fa-chart-line mr-3 text-accent"></i>
+                                        <span class="group-hover:translate-x-1 transition-transform duration-300">Market
+                                            Trends</span>
+                                    </span>
+                                    <span class="bg-gray-100 text-gray-700 px-2 py-0.5 rounded-full text-xs">12</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center justify-between text-gray-700 hover:text-accent transition-colors duration-300 group">
+                                    <span class="flex items-center">
+                                        <i class="fas fa-city mr-3 text-accent"></i>
+                                        <span class="group-hover:translate-x-1 transition-transform duration-300">Urban
+                                            Development</span>
+                                    </span>
+                                    <span class="bg-gray-100 text-gray-700 px-2 py-0.5 rounded-full text-xs">9</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Popular Articles Widget -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8 border border-gray-100">
+                    <div class="bg-primary p-4 text-white">
+                        <h3 class="font-bold text-lg">Popular Articles</h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-6">
+                            <!-- Popular Article 1 -->
+                            <div class="flex items-start space-x-4 group">
+                                <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1073&q=80"
+                                        alt="Luxury Home"
+                                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                                </div>
+                                <div>
+                                    <h4
+                                        class="font-semibold text-primary group-hover:text-accent transition-colors duration-300">
+                                        <a href="#">5 Luxury Home Features That Increase Property Value</a>
+                                    </h4>
+                                    <p class="text-xs text-gray-500 mt-1">June 10, 2023</p>
+                                    <div class="flex items-center mt-2">
+                                        <span class="text-xs text-gray-500 flex items-center">
+                                            <i class="far fa-eye mr-1"></i> 2.4K
+                                        </span>
+                                        <span class="text-xs text-gray-500 flex items-center ml-3">
+                                            <i class="far fa-comment mr-1"></i> 18
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Popular Article 2 -->
+                            <div class="flex items-start space-x-4 group">
+                                <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1073&q=80"
+                                        alt="Real Estate Investment"
+                                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                                </div>
+                                <div>
+                                    <h4
+                                        class="font-semibold text-primary group-hover:text-accent transition-colors duration-300">
+                                        <a href="#">How to Start Investing in Real Estate: A Beginner's Guide</a>
+                                    </h4>
+                                    <p class="text-xs text-gray-500 mt-1">May 28, 2023</p>
+                                    <div class="flex items-center mt-2">
+                                        <span class="text-xs text-gray-500 flex items-center">
+                                            <i class="far fa-eye mr-1"></i> 3.1K
+                                        </span>
+                                        <span class="text-xs text-gray-500 flex items-center ml-3">
+                                            <i class="far fa-comment mr-1"></i> 24
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Popular Article 3 -->
+                            <div class="flex items-start space-x-4 group">
+                                <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1626178793926-22b28830aa30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                                        alt="Solar Panels"
+                                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                                </div>
+                                <div>
+                                    <h4
+                                        class="font-semibold text-primary group-hover:text-accent transition-colors duration-300">
+                                        <a href="#">The ROI of Solar Panels: Are They Worth the Investment?</a>
+                                    </h4>
+                                    <p class="text-xs text-gray-500 mt-1">May 15, 2023</p>
+                                    <div class="flex items-center mt-2">
+                                        <span class="text-xs text-gray-500 flex items-center">
+                                            <i class="far fa-eye mr-1"></i> 1.8K
+                                        </span>
+                                        <span class="text-xs text-gray-500 flex items-center ml-3">
+                                            <i class="far fa-comment mr-1"></i> 12
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter Widget -->
+                <div
+                    class="bg-gradient-to-br from-primary to-primary/90 rounded-xl shadow-md overflow-hidden mb-8 relative">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-3xl -mr-16 -mt-16 opacity-50">
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full blur-3xl -ml-16 -mb-16 opacity-30">
+                    </div>
+
+                    <div class="p-6 relative z-10">
+                        <h3 class="font-bold text-xl text-white mb-2">Subscribe to Our Newsletter</h3>
+                        <p class="text-white/80 text-sm mb-4">Get the latest real estate news and insights delivered to
+                            your inbox.</p>
+
+                        <form class="space-y-3">
+                            <div>
+                                <input type="email" placeholder="Your email address"
+                                    class="w-full px-4 py-3 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition-all duration-300 bg-white/10 border border-white/20 text-white placeholder-white/60">
+                            </div>
+                            <button type="submit"
+                                class="w-full bg-accent hover:bg-accent/90 text-white px-4 py-3 rounded-lg transition-colors duration-300 flex items-center justify-center">
+                                <i class="fas fa-paper-plane mr-2"></i> Subscribe Now
+                            </button>
+                        </form>
+
+                        <p class="text-white/60 text-xs mt-4">We respect your privacy. Unsubscribe at any time.</p>
+                    </div>
+                </div>
+
+                <!-- Tags Cloud Widget -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8 border border-gray-100">
+                    <div class="bg-primary p-4 text-white">
+                        <h3 class="font-bold text-lg">Popular Tags</h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2">
+                            <a href="#"
+                                class="px-3 py-1 bg-gray-100 hover:bg-accent hover:text-white text-gray-700 text-sm rounded-full transition-colors duration-300">#RealEstate</a>
+                            <a href="#"
+                                class="px-3 py-1 bg-gray-100 hover:bg-accent hover:text-white text-gray-700 text-sm rounded-full transition-colors duration-300">#SmartHomes</a>
+                            <a href="#"
+                                class="px-3 py-1 bg-gray-100 hover:bg-accent hover:text-white text-gray-700 text-sm rounded-full transition-colors duration-300">#Sustainability</a>
+                            <a href="#"
+                                class="px-3 py-1 bg-gray-100 hover:bg-accent hover:text-white text-gray-700 text-sm rounded-full transition-colors duration-300">#PropertyInvestment</a>
+                            <a href="#"
+                                class="px-3 py-1 bg-gray-100 hover:bg-accent hover:text-white text-gray-700 text-sm rounded-full transition-colors duration-300">#HomeAutomation</a>
+                            <a href="#"
+                                class="px-3 py-1 bg-gray-100 hover:bg-accent hover:text-white text-gray-700 text-sm rounded-full transition-colors duration-300">#EnergyEfficiency</a>
+                            <a href="#"
+                                class="px-3 py-1 bg-gray-100 hover:bg-accent hover:text-white text-gray-700 text-sm rounded-full transition-colors duration-300">#LuxuryHomes</a>
+                            <a href="#"
+                                class="px-3 py-1 bg-gray-100 hover:bg-accent hover:text-white text-gray-700 text-sm rounded-full transition-colors duration-300">#MarketTrends</a>
+                            <a href="#"
+                                class="px-3 py-1 bg-gray-100 hover:bg-accent hover:text-white text-gray-700 text-sm rounded-full transition-colors duration-300">#HomeDesign</a>
+                            <a href="#"
+                                class="px-3 py-1 bg-gray-100 hover:bg-accent hover:text-white text-gray-700 text-sm rounded-full transition-colors duration-300">#GreenLiving</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action Widget -->
+                <div class="bg-light rounded-xl shadow-md overflow-hidden border border-gray-100 relative">
+                    <div class="absolute top-0 right-0 opacity-10">
+                        <i class="fas fa-home text-9xl text-accent/20 -mt-5 -mr-5"></i>
+                    </div>
+                    <div class="p-6 relative z-10">
+                        <h3 class="font-bold text-xl text-primary mb-3">Ready to Find Your Dream Home?</h3>
+                        <p class="text-gray-600 text-sm mb-4">Browse our exclusive listings and discover properties that
+                            match your lifestyle and preferences.</p>
+                        <a href="#"
+                            class="block bg-gradient-to-r from-accent to-accent/80 text-white px-6 py-3 rounded-lg hover:shadow-lg transition-all duration-300 text-center">
+                            <i class="fas fa-search mr-2"></i> Explore Properties
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Main Content Section -->
+    <main class="container mx-auto px-6 py-12">
+        <!-- Your article content will go here -->
+    </main>
+
+    <!-- Footer -->
+    <footer
+        class="bg-gradient-to-b from-primary via-primary/95 to-primary/90 text-white pt-20 pb-8 relative overflow-hidden">
+        <!-- Enhanced Decorative Elements -->
+        <div
+            class="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl -mr-48 -mt-48 opacity-20 animate-pulse">
+        </div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -ml-48 -mb-48 opacity-15">
+        </div>
+        <div class="absolute top-1/2 left-1/4 w-64 h-64 bg-accent/5 rounded-full blur-3xl opacity-10"></div>
+
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <!-- Footer Top Section with Logo and Newsletter -->
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 mb-16 pb-16 border-b border-white/10">
+                <!-- Logo and Description with Enhanced Styling -->
+                <div class="lg:col-span-2">
+                    <div class="mb-8 transform hover:scale-105 transition-transform duration-300 inline-block">
+                        <a href="#" class="inline-block relative group">
+                            <span class="text-3xl font-bold text-white">Vill<span
+                                    class="text-accent group-hover:text-white transition-colors duration-300">House</span></span>
+                            <span
+                                class="absolute -bottom-2 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+                        </a>
+                    </div>
+                    <p
+                        class="text-gray-300 mb-8 text-sm sm:text-base leading-relaxed backdrop-blur-sm bg-primary/30 p-4 rounded-lg border border-white/5 shadow-xl">
+                        Your trusted partner in finding the perfect property. We make real estate simple, efficient, and
+                        enjoyable. With over 10 years of experience, we've helped thousands of clients find their dream
+                        homes.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#"
+                            class="bg-white/10 hover:bg-accent hover:scale-110 h-12 w-12 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg shadow-black/5 group">
+                            <i class="fab fa-facebook-f group-hover:animate-bounce"></i>
+                        </a>
+                        <a href="#"
+                            class="bg-white/10 hover:bg-accent hover:scale-110 h-12 w-12 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg shadow-black/5 group">
+                            <i class="fab fa-twitter group-hover:animate-bounce"></i>
+                        </a>
+                        <a href="#"
+                            class="bg-white/10 hover:bg-accent hover:scale-110 h-12 w-12 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg shadow-black/5 group">
+                            <i class="fab fa-instagram group-hover:animate-bounce"></i>
+                        </a>
+                        <a href="#"
+                            class="bg-white/10 hover:bg-accent hover:scale-110 h-12 w-12 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg shadow-black/5 group">
+                            <i class="fab fa-linkedin-in group-hover:animate-bounce"></i>
+                        </a>
+                        <a href="#"
+                            class="bg-white/10 hover:bg-accent hover:scale-110 h-12 w-12 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg shadow-black/5 group">
+                            <i class="fab fa-youtube group-hover:animate-bounce"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links with Enhanced Styling -->
+                <div class="lg:col-span-1">
+                    <h3 class="text-xl font-bold mb-8 relative inline-block">
+                        Quick Links
+                        <span class="absolute -bottom-2 left-0 w-16 h-1 bg-accent rounded-full"></span>
+                    </h3>
+                    <ul class="space-y-5">
+                        <li>
+                            <a href="#"
+                                class="text-gray-300 hover:text-accent transition-colors duration-300 flex items-center group">
+                                <span
+                                    class="bg-white/5 p-2 rounded-lg mr-3 group-hover:bg-accent/20 transition-colors duration-300">
+                                    <i class="fas fa-home text-accent"></i>
+                                </span>
+                                <span class="group-hover:translate-x-1 transition-transform duration-300">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#properties"
+                                class="text-gray-300 hover:text-accent transition-colors duration-300 flex items-center group">
+                                <span
+                                    class="bg-white/5 p-2 rounded-lg mr-3 group-hover:bg-accent/20 transition-colors duration-300">
+                                    <i class="fas fa-building text-accent"></i>
+                                </span>
+                                <span
+                                    class="group-hover:translate-x-1 transition-transform duration-300">Properties</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#features"
+                                class="text-gray-300 hover:text-accent transition-colors duration-300 flex items-center group">
+                                <span
+                                    class="bg-white/5 p-2 rounded-lg mr-3 group-hover:bg-accent/20 transition-colors duration-300">
+                                    <i class="fas fa-star text-accent"></i>
+                                </span>
+                                <span
+                                    class="group-hover:translate-x-1 transition-transform duration-300">Features</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#testimonials"
+                                class="text-gray-300 hover:text-accent transition-colors duration-300 flex items-center group">
+                                <span
+                                    class="bg-white/5 p-2 rounded-lg mr-3 group-hover:bg-accent/20 transition-colors duration-300">
+                                    <i class="fas fa-comment text-accent"></i>
+                                </span>
+                                <span
+                                    class="group-hover:translate-x-1 transition-transform duration-300">Testimonials</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact"
+                                class="text-gray-300 hover:text-accent transition-colors duration-300 flex items-center group">
+                                <span
+                                    class="bg-white/5 p-2 rounded-lg mr-3 group-hover:bg-accent/20 transition-colors duration-300">
+                                    <i class="fas fa-envelope text-accent"></i>
+                                </span>
+                                <span class="group-hover:translate-x-1 transition-transform duration-300">Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="lg:col-span-1">
+                    <h3 class="text-xl font-bold mb-8 relative inline-block">
+                        Contact Us
+                        <span class="absolute -bottom-2 left-0 w-16 h-1 bg-accent rounded-full"></span>
+                    </h3>
+                    <ul class="space-y-5">
+                        <li class="flex items-start group">
+                            <div
+                                class="bg-white/10 p-2 rounded-lg mr-3 flex-shrink-0 group-hover:bg-accent transition-colors duration-300">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <span class="text-gray-300 group-hover:text-white transition-colors duration-300">123
+                                Property Lane, Real Estate City, 10001</span>
+                        </li>
+                        <li class="flex items-center group">
+                            <div
+                                class="bg-white/10 p-2 rounded-lg mr-3 flex-shrink-0 group-hover:bg-accent transition-colors duration-300">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <span class="text-gray-300 group-hover:text-white transition-colors duration-300">+1 (555)
+                                123-4567</span>
+                        </li>
+                        <li class="flex items-center group">
+                            <div
+                                class="bg-white/10 p-2 rounded-lg mr-3 flex-shrink-0 group-hover:bg-accent transition-colors duration-300">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <span
+                                class="text-gray-300 group-hover:text-white transition-colors duration-300">info@villhouse.com</span>
+                        </li>
+                        <li class="flex items-center group">
+                            <div
+                                class="bg-white/10 p-2 rounded-lg mr-3 flex-shrink-0 group-hover:bg-accent transition-colors duration-300">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <span class="text-gray-300 group-hover:text-white transition-colors duration-300">Mon-Fri:
+                                9AM - 6PM</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Download App Section -->
+                <div class="lg:col-span-1">
+                    <h3 class="text-xl font-bold mb-8 relative inline-block">
+                        Mobile App
+                        <span class="absolute -bottom-2 left-0 w-16 h-1 bg-accent rounded-full"></span>
+                    </h3>
+                    <div
+                        class="bg-gradient-to-br from-white/10 to-white/5 p-5 rounded-xl border border-white/10 backdrop-blur-sm shadow-xl">
+                        <p class="text-white mb-4 text-sm">Download our mobile app for a seamless property browsing
+                            experience.</p>
+                        <div class="space-y-3">
+                            <a href="#"
+                                class="flex items-center bg-black hover:bg-gray-900 p-2 rounded-lg transition-all duration-300 group">
+                                <div class="mr-3 text-2xl">
+                                    <i class="fab fa-apple text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-gray-400">Download on the</div>
+                                    <div
+                                        class="text-sm font-semibold text-white group-hover:text-accent transition-colors duration-300">
+                                        App Store</div>
+                                </div>
+                            </a>
+                            <a href="#"
+                                class="flex items-center bg-black hover:bg-gray-900 p-2 rounded-lg transition-all duration-300 group">
+                                <div class="mr-3 text-2xl">
+                                    <i class="fab fa-google-play text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-gray-400">Get it on</div>
+                                    <div
+                                        class="text-sm font-semibold text-white group-hover:text-accent transition-colors duration-300">
+                                        Google Play</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="mt-4 flex justify-center">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://villhouse.com/app"
+                                alt="QR Code" class="w-20 h-20 rounded-lg border-2 border-white/20 p-1 bg-white">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom Section -->
+            <div class="flex flex-col md:flex-row justify-between items-center py-6 border-t border-white/10">
+                <div class="flex flex-col sm:flex-row items-center mb-4 md:mb-0">
+                    <p class="text-gray-400 text-sm">© 2023 <span class="text-accent">VillHouse</span>. All rights
+                        reserved.</p>
+                    <span class="hidden sm:inline-block mx-2 text-gray-500">|</span>
+                    <p class="text-gray-400 text-sm">Designed with <i
+                            class="fas fa-heart text-red-500 mx-1 animate-pulse"></i> by <a href="#"
+                            class="text-accent hover:underline">VillHouse Team</a></p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300 text-sm">Privacy
+                        Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300 text-sm">Terms of
+                        Service</a>
+                    <a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300 text-sm">Cookie
+                        Policy</a>
+                    <a href="#"
+                        class="text-gray-400 hover:text-accent transition-colors duration-300 text-sm">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-6 right-6 bg-accent text-white h-12 w-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="movCoursel.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

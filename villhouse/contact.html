@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VillHouse - Find Your Dream Property</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2A3342',
+                        secondary: '#4F6C8D',
+                        accent: '#E8AA33',
+                        light: '#F8F9FA',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            .property-card:hover .property-details {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .property-details {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: all 0.3s ease;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="font-sans bg-light">
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-md shadow-lg fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="#" class="flex items-center space-x-2 group">
+                    <div
+                        class="bg-gradient-to-r from-accent to-accent/80 rounded-lg w-10 h-10 flex items-center justify-center transform group-hover:rotate-12 transition-all duration-300 shadow-md">
+                        <i class="fas fa-home text-white text-lg"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-primary">Vill<span class="text-accent relative">House
+                            <span class="absolute -bottom-1 left-0 w-full h-1 bg-accent/30 rounded-full"></span>
+                        </span></span>
+                </a>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex space-x-8">
+                <a href="index.html" class="text-primary hover:text-accent font-medium relative group">
+                    <span>Home</span>
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="#properties" class="text-primary hover:text-accent font-medium relative group">
+                    <span>Properties</span>
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="#features" class="text-primary hover:text-accent font-medium relative group">
+                    <span>Features</span>
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="#testimonials" class="text-primary hover:text-accent font-medium relative group">
+                    <span>Testimonials</span>
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="contact.html" class="text-primary hover:text-accent font-medium relative group">
+                    <span>Contact</span>
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+                </a>
+            </div>
+
+            <!-- Desktop CTA Button -->
+            <div class="hidden lg:block">
+                <button
+                    class="bg-gradient-to-r from-accent to-accent/80 text-white px-6 py-2.5 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 shadow-md flex items-center space-x-2">
+                    <span>Get Started</span>
+                    <i class="fas fa-arrow-right ml-1 group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </div>
+
+            <!-- Tablet Menu -->
+            <div class="hidden md:flex lg:hidden space-x-8">
+                <a href="index.html" class="text-primary hover:text-accent transition-colors duration-300 relative">
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-home text-lg mb-1"></i>
+                        <span class="text-xs">Home</span>
+                    </div>
+                </a>
+                <a href="#properties" class="text-primary hover:text-accent transition-colors duration-300">
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-building text-lg mb-1"></i>
+                        <span class="text-xs">Properties</span>
+                    </div>
+                </a>
+                <a href="#features" class="text-primary hover:text-accent transition-colors duration-300">
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-star text-lg mb-1"></i>
+                        <span class="text-xs">Features</span>
+                    </div>
+                </a>
+                <a href="#testimonials" class="text-primary hover:text-accent transition-colors duration-300">
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-comment text-lg mb-1"></i>
+                        <span class="text-xs">Reviews</span>
+                    </div>
+                </a>
+                <a href="contact.html" class="text-primary hover:text-accent transition-colors duration-300">
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-envelope text-lg mb-1"></i>
+                        <span class="text-xs">Contact</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="menu-toggle"
+                    class="text-primary focus:outline-none bg-light/80 p-2 rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-sm">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu-dropdown"
+            class="hidden bg-white shadow-lg rounded-b-2xl overflow-hidden transition-all duration-300 max-h-0">
+            <div class="container mx-auto px-6 py-4 space-y-4">
+                <a href="index.html"
+                    class="block py-2 text-primary hover:text-accent transition-colors duration-300 border-b border-gray-100 flex items-center">
+                    <i class="fas fa-home mr-3 text-accent"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#properties"
+                    class="block py-2 text-primary hover:text-accent transition-colors duration-300 border-b border-gray-100 flex items-center">
+                    <i class="fas fa-building mr-3 text-accent"></i>
+                    <span>Properties</span>
+                </a>
+                <a href="#features"
+                    class="block py-2 text-primary hover:text-accent transition-colors duration-300 border-b border-gray-100 flex items-center">
+                    <i class="fas fa-star mr-3 text-accent"></i>
+                    <span>Features</span>
+                </a>
+                <a href="#testimonials"
+                    class="block py-2 text-primary hover:text-accent transition-colors duration-300 border-b border-gray-100 flex items-center">
+                    <i class="fas fa-comment mr-3 text-accent"></i>
+                    <span>Testimonials</span>
+                </a>
+                <a href="contact.html"
+                    class="block py-2 text-primary hover:text-accent transition-colors duration-300 flex items-center">
+                    <i class="fas fa-envelope mr-3 text-accent"></i>
+                    <span>Contact</span>
+                </a>
+                <button
+                    class="w-full bg-gradient-to-r from-accent to-accent/80 text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 shadow-md mt-4 flex items-center justify-center space-x-2">
+                    <span>Get Started</span>
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Jumbotron with Breadcrumbs -->
+    <section class="relative pt-28 md:pt-32 pb-16 md:pb-20 bg-gradient-to-r from-primary to-primary/90 overflow-hidden">
+        <!-- Decorative Elements - Adjusted for better mobile appearance -->
+        <div
+            class="absolute top-0 right-0 w-64 md:w-96 h-64 md:h-96 bg-accent/10 rounded-full blur-3xl -mr-32 md:-mr-48 -mt-32 md:-mt-48">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-64 md:w-96 h-64 md:h-96 bg-white/5 rounded-full blur-3xl -ml-32 md:-ml-48 -mb-32 md:-mb-48">
+        </div>
+
+        <!-- Floating Shapes - Hidden on small screens for better performance -->
+        <div
+            class="absolute top-1/4 right-1/4 w-8 md:w-12 h-8 md:h-12 bg-accent/20 rounded-lg rotate-45 animate-pulse hidden sm:block">
+        </div>
+        <div
+            class="absolute bottom-1/3 left-1/3 w-6 md:w-8 h-6 md:h-8 bg-white/10 rounded-full animate-bounce hidden sm:block">
+        </div>
+        <div
+            class="absolute top-2/3 right-1/3 w-10 md:w-16 h-10 md:h-16 bg-accent/10 rounded-lg -rotate-12 animate-pulse hidden sm:block">
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <!-- Breadcrumbs - Improved for mobile -->
+            <div class="flex items-center text-white/70 text-xs sm:text-sm mb-4 md:mb-6">
+                <a href="index.html" class="hover:text-accent transition-colors duration-300">Home</a>
+                <i class="fas fa-chevron-right text-[10px] sm:text-xs mx-2 sm:mx-3"></i>
+                <span class="text-white font-medium">Contact Us</span>
+            </div>
+
+            <!-- Jumbotron Content - Improved spacing and sizing for mobile -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div>
+                    <h1
+                        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight">
+                        Get in <span class="text-accent relative inline-block">Touch
+                            <svg class="absolute -bottom-1 sm:-bottom-2 left-0 w-full" height="6" viewBox="0 0 200 6"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 3C50 0.5 150 0.5 200 3" stroke="#E8AA33" stroke-width="5"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </span> With Our Team
+                    </h1>
+                    <p class="text-white/80 text-base sm:text-lg mb-6 md:mb-8 max-w-lg">
+                        Have questions about finding your dream property? Our expert team is ready to assist you every
+                        step of the way.
+                    </p>
+
+                    <!-- Quick Contact Info - Improved for small screens -->
+                    <div class="grid grid-cols-1 xs:grid-cols-2 gap-4 sm:gap-6 mb-6 md:mb-8">
+                        <div class="flex items-center bg-white/10 p-3 sm:p-4 rounded-lg backdrop-blur-sm">
+                            <div class="bg-accent/20 p-2 sm:p-3 rounded-full mr-3 sm:mr-4 flex-shrink-0">
+                                <i class="fas fa-phone text-accent text-sm sm:text-base"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <p class="text-white/60 text-xs sm:text-sm">Call Us</p>
+                                <p class="text-white font-medium text-sm sm:text-base truncate">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center bg-white/10 p-3 sm:p-4 rounded-lg backdrop-blur-sm">
+                            <div class="bg-accent/20 p-2 sm:p-3 rounded-full mr-3 sm:mr-4 flex-shrink-0">
+                                <i class="fas fa-envelope text-accent text-sm sm:text-base"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <p class="text-white/60 text-xs sm:text-sm">Email Us</p>
+                                <p class="text-white font-medium text-sm sm:text-base truncate">info@villhouse.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Links - Improved spacing for mobile -->
+                    <div>
+                        <p class="text-white/70 text-sm mb-2 sm:mb-3">Connect with us:</p>
+                        <div class="flex space-x-3 sm:space-x-4">
+                            <a href="#"
+                                class="bg-white/10 hover:bg-accent w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-all duration-300">
+                                <i class="fab fa-facebook-f text-white text-xs sm:text-sm"></i>
+                            </a>
+                            <a href="#"
+                                class="bg-white/10 hover:bg-accent w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-all duration-300">
+                                <i class="fab fa-twitter text-white text-xs sm:text-sm"></i>
+                            </a>
+                            <a href="#"
+                                class="bg-white/10 hover:bg-accent w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-all duration-300">
+                                <i class="fab fa-instagram text-white text-xs sm:text-sm"></i>
+                            </a>
+                            <a href="#"
+                                class="bg-white/10 hover:bg-accent w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-all duration-300">
+                                <i class="fab fa-linkedin-in text-white text-xs sm:text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decorative Image - Improved for tablet and mobile display -->
+                <div class="hidden sm:block relative mt-6 md:mt-0">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-primary via-transparent to-transparent z-10">
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=873&q=80"
+                        alt="Contact VillHouse"
+                        class="w-full h-[250px] md:h-[350px] lg:h-[400px] object-cover rounded-xl md:rounded-2xl shadow-xl md:shadow-2xl">
+                    <div
+                        class="absolute bottom-4 md:bottom-6 right-4 md:right-6 bg-white/10 backdrop-blur-md p-3 md:p-4 rounded-lg shadow-lg z-20 max-w-[200px] md:max-w-xs">
+                        <div class="flex items-center mb-1 md:mb-2">
+                            <div class="w-2 h-2 md:w-3 md:h-3 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+                            <p class="text-white font-medium text-xs md:text-sm">Available Now</p>
+                        </div>
+                        <p class="text-white/80 text-xs md:text-sm">Our agents are online and ready to help you find
+                            your dream property</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -mr-32 -mt-32 opacity-70"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl -ml-40 -mb-40 opacity-70">
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+
+            <!-- Enhanced Contact Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
+                <!-- Contact Form - Now with enhanced styling -->
+                <div
+                    class="lg:col-span-3 bg-white rounded-2xl shadow-xl p-6 md:p-8 transform hover:shadow-2xl transition-all duration-500 relative overflow-hidden">
+                    <!-- Decorative corner accent -->
+                    <div class="absolute top-0 right-0 w-24 h-24">
+                        <div class="absolute transform rotate-45 bg-accent/10 w-32 h-32 -right-16 -top-16"></div>
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-primary mb-6 relative z-10">Send Us a Message</h3>
+
+                    <form class="space-y-6 relative z-10">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="group">
+                                <label
+                                    class="block text-sm font-medium text-secondary mb-2 group-focus-within:text-accent transition-colors duration-200">Full
+                                    Name</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <i
+                                            class="fas fa-user text-gray-400 group-focus-within:text-accent transition-colors duration-200"></i>
+                                    </div>
+                                    <input type="text"
+                                        class="w-full pl-10 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent bg-gray-50 hover:bg-gray-100 focus:bg-white transition-all duration-200"
+                                        placeholder="John Doe">
+                                </div>
+                            </div>
+                            <div class="group">
+                                <label
+                                    class="block text-sm font-medium text-secondary mb-2 group-focus-within:text-accent transition-colors duration-200">Email
+                                    Address</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <i
+                                            class="fas fa-envelope text-gray-400 group-focus-within:text-accent transition-colors duration-200"></i>
+                                    </div>
+                                    <input type="email"
+                                        class="w-full pl-10 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent bg-gray-50 hover:bg-gray-100 focus:bg-white transition-all duration-200"
+                                        placeholder="john@example.com">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <label
+                                class="block text-sm font-medium text-secondary mb-2 group-focus-within:text-accent transition-colors duration-200">Phone
+                                Number</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i
+                                        class="fas fa-phone text-gray-400 group-focus-within:text-accent transition-colors duration-200"></i>
+                                </div>
+                                <input type="tel"
+                                    class="w-full pl-10 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent bg-gray-50 hover:bg-gray-100 focus:bg-white transition-all duration-200"
+                                    placeholder="+1 (123) 456-7890">
+                            </div>
+                        </div>
+                        <div class="group">
+                            <label
+                                class="block text-sm font-medium text-secondary mb-2 group-focus-within:text-accent transition-colors duration-200">Subject</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i
+                                        class="fas fa-tag text-gray-400 group-focus-within:text-accent transition-colors duration-200"></i>
+                                </div>
+                                <select
+                                    class="w-full pl-10 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent bg-gray-50 hover:bg-gray-100 focus:bg-white transition-all duration-200 appearance-none">
+                                    <option>Property Inquiry</option>
+                                    <option>Schedule Viewing</option>
+                                    <option>Pricing Information</option>
+                                    <option>General Question</option>
+                                </select>
+                                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                    <i class="fas fa-chevron-down text-gray-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <label
+                                class="block text-sm font-medium text-secondary mb-2 group-focus-within:text-accent transition-colors duration-200">Message</label>
+                            <div class="relative">
+                                <div class="absolute top-3 left-0 pl-3 flex items-start pointer-events-none">
+                                    <i
+                                        class="fas fa-comment text-gray-400 group-focus-within:text-accent transition-colors duration-200"></i>
+                                </div>
+                                <textarea
+                                    class="w-full pl-10 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent bg-gray-50 hover:bg-gray-100 focus:bg-white transition-all duration-200 h-32"
+                                    placeholder="Tell us about your requirements..."></textarea>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-gradient-to-r from-accent to-accent/80 text-white px-8 py-4 rounded-lg hover:shadow-lg hover:shadow-accent/30 transition-all duration-300 shadow-md flex items-center justify-center group">
+                            <span class="mr-2">Send Message</span>
+                            <i
+                                class="fas fa-paper-plane transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Information - Now with enhanced styling -->
+                <div class="lg:col-span-2 space-y-6">
+                    <!-- Contact Info Card -->
+                    <div
+                        class="bg-white rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-500 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24">
+                            <div class="absolute transform rotate-45 bg-primary/10 w-32 h-32 -right-16 -top-16"></div>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-primary mb-6 relative z-10">Contact Information</h3>
+
+                        <div class="space-y-6 relative z-10">
+                            <div
+                                class="flex items-start transform hover:translate-x-2 transition-transform duration-300">
+                                <div class="bg-accent/20 p-3 rounded-full mr-4 flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-accent"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-primary">Our Office</p>
+                                    <p class="text-secondary">123 Property Lane, Real Estate City, 10001</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-start transform hover:translate-x-2 transition-transform duration-300">
+                                <div class="bg-accent/20 p-3 rounded-full mr-4 flex-shrink-0">
+                                    <i class="fas fa-phone-alt text-accent"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-primary">Phone</p>
+                                    <p class="text-secondary">+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-start transform hover:translate-x-2 transition-transform duration-300">
+                                <div class="bg-accent/20 p-3 rounded-full mr-4 flex-shrink-0">
+                                    <i class="fas fa-envelope text-accent"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-primary">Email</p>
+                                    <p class="text-secondary">info@villhouse.com</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-start transform hover:translate-x-2 transition-transform duration-300">
+                                <div class="bg-accent/20 p-3 rounded-full mr-4 flex-shrink-0">
+                                    <i class="fas fa-clock text-accent"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-primary">Working Hours</p>
+                                    <p class="text-secondary">Monday - Friday: 9AM - 6PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map with enhanced styling -->
+                    <div
+                        class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 h-[300px] relative">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent z-10 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+                            <a href="https://maps.google.com" target="_blank"
+                                class="bg-white/20 backdrop-blur-md text-white px-4 py-2 rounded-lg hover:bg-white hover:text-primary transition-all duration-300">
+                                <i class="fas fa-directions mr-2"></i>Get Directions
+                            </a>
+                        </div>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.3059353029!2d-74.25986548248684!3d40.69714941512199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1659123456789!5m2!1sen!2s"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-b from-primary via-primary/95 to-primary/90 text-white pt-20 pb-8 relative overflow-hidden">
+        <!-- Enhanced Decorative Elements -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl -mr-48 -mt-48 opacity-20 animate-pulse"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -ml-48 -mb-48 opacity-15"></div>
+        <div class="absolute top-1/2 left-1/4 w-64 h-64 bg-accent/5 rounded-full blur-3xl opacity-10"></div>
+        
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <!-- Footer Top Section with Logo and Newsletter -->
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 mb-16 pb-16 border-b border-white/10">
+                <!-- Logo and Description with Enhanced Styling -->
+                <div class="lg:col-span-2">
+                    <div class="mb-8 transform hover:scale-105 transition-transform duration-300 inline-block">
+                        <a href="#" class="inline-block relative group">
+                            <span class="text-3xl font-bold text-white">Vill<span class="text-accent group-hover:text-white transition-colors duration-300">House</span></span>
+                            <span class="absolute -bottom-2 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+                        </a>
+                    </div>
+                    <p class="text-gray-300 mb-8 text-sm sm:text-base leading-relaxed backdrop-blur-sm bg-primary/30 p-4 rounded-lg border border-white/5 shadow-xl">
+                        Your trusted partner in finding the perfect property. We make real estate simple, efficient, and
+                        enjoyable. With over 10 years of experience, we've helped thousands of clients find their dream homes.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#" class="bg-white/10 hover:bg-accent hover:scale-110 h-12 w-12 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg shadow-black/5 group">
+                            <i class="fab fa-facebook-f group-hover:animate-bounce"></i>
+                        </a>
+                        <a href="#" class="bg-white/10 hover:bg-accent hover:scale-110 h-12 w-12 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg shadow-black/5 group">
+                            <i class="fab fa-twitter group-hover:animate-bounce"></i>
+                        </a>
+                        <a href="#" class="bg-white/10 hover:bg-accent hover:scale-110 h-12 w-12 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg shadow-black/5 group">
+                            <i class="fab fa-instagram group-hover:animate-bounce"></i>
+                        </a>
+                        <a href="#" class="bg-white/10 hover:bg-accent hover:scale-110 h-12 w-12 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg shadow-black/5 group">
+                            <i class="fab fa-linkedin-in group-hover:animate-bounce"></i>
+                        </a>
+                        <a href="#" class="bg-white/10 hover:bg-accent hover:scale-110 h-12 w-12 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg shadow-black/5 group">
+                            <i class="fab fa-youtube group-hover:animate-bounce"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links with Enhanced Styling -->
+                <div class="lg:col-span-1">
+                    <h3 class="text-xl font-bold mb-8 relative inline-block">
+                        Quick Links
+                        <span class="absolute -bottom-2 left-0 w-16 h-1 bg-accent rounded-full"></span>
+                    </h3>
+                    <ul class="space-y-5">
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-accent transition-colors duration-300 flex items-center group">
+                                <span class="bg-white/5 p-2 rounded-lg mr-3 group-hover:bg-accent/20 transition-colors duration-300">
+                                    <i class="fas fa-home text-accent"></i>
+                                </span>
+                                <span class="group-hover:translate-x-1 transition-transform duration-300">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#properties" class="text-gray-300 hover:text-accent transition-colors duration-300 flex items-center group">
+                                <span class="bg-white/5 p-2 rounded-lg mr-3 group-hover:bg-accent/20 transition-colors duration-300">
+                                    <i class="fas fa-building text-accent"></i>
+                                </span>
+                                <span class="group-hover:translate-x-1 transition-transform duration-300">Properties</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#features" class="text-gray-300 hover:text-accent transition-colors duration-300 flex items-center group">
+                                <span class="bg-white/5 p-2 rounded-lg mr-3 group-hover:bg-accent/20 transition-colors duration-300">
+                                    <i class="fas fa-star text-accent"></i>
+                                </span>
+                                <span class="group-hover:translate-x-1 transition-transform duration-300">Features</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#testimonials" class="text-gray-300 hover:text-accent transition-colors duration-300 flex items-center group">
+                                <span class="bg-white/5 p-2 rounded-lg mr-3 group-hover:bg-accent/20 transition-colors duration-300">
+                                    <i class="fas fa-comment text-accent"></i>
+                                </span>
+                                <span class="group-hover:translate-x-1 transition-transform duration-300">Testimonials</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="text-gray-300 hover:text-accent transition-colors duration-300 flex items-center group">
+                                <span class="bg-white/5 p-2 rounded-lg mr-3 group-hover:bg-accent/20 transition-colors duration-300">
+                                    <i class="fas fa-envelope text-accent"></i>
+                                </span>
+                                <span class="group-hover:translate-x-1 transition-transform duration-300">Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="lg:col-span-1">
+                    <h3 class="text-xl font-bold mb-8 relative inline-block">
+                        Contact Us
+                        <span class="absolute -bottom-2 left-0 w-16 h-1 bg-accent rounded-full"></span>
+                    </h3>
+                    <ul class="space-y-5">
+                        <li class="flex items-start group">
+                            <div class="bg-white/10 p-2 rounded-lg mr-3 flex-shrink-0 group-hover:bg-accent transition-colors duration-300">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <span class="text-gray-300 group-hover:text-white transition-colors duration-300">123 Property Lane, Real Estate City, 10001</span>
+                        </li>
+                        <li class="flex items-center group">
+                            <div class="bg-white/10 p-2 rounded-lg mr-3 flex-shrink-0 group-hover:bg-accent transition-colors duration-300">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <span class="text-gray-300 group-hover:text-white transition-colors duration-300">+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center group">
+                            <div class="bg-white/10 p-2 rounded-lg mr-3 flex-shrink-0 group-hover:bg-accent transition-colors duration-300">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <span class="text-gray-300 group-hover:text-white transition-colors duration-300">info@villhouse.com</span>
+                        </li>
+                        <li class="flex items-center group">
+                            <div class="bg-white/10 p-2 rounded-lg mr-3 flex-shrink-0 group-hover:bg-accent transition-colors duration-300">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <span class="text-gray-300 group-hover:text-white transition-colors duration-300">Mon-Fri: 9AM - 6PM</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Download App Section -->
+                <div class="lg:col-span-1">
+                    <h3 class="text-xl font-bold mb-8 relative inline-block">
+                        Mobile App
+                        <span class="absolute -bottom-2 left-0 w-16 h-1 bg-accent rounded-full"></span>
+                    </h3>
+                    <div class="bg-gradient-to-br from-white/10 to-white/5 p-5 rounded-xl border border-white/10 backdrop-blur-sm shadow-xl">
+                        <p class="text-white mb-4 text-sm">Download our mobile app for a seamless property browsing experience.</p>
+                        <div class="space-y-3">
+                            <a href="#" class="flex items-center bg-black hover:bg-gray-900 p-2 rounded-lg transition-all duration-300 group">
+                                <div class="mr-3 text-2xl">
+                                    <i class="fab fa-apple text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-gray-400">Download on the</div>
+                                    <div class="text-sm font-semibold text-white group-hover:text-accent transition-colors duration-300">App Store</div>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center bg-black hover:bg-gray-900 p-2 rounded-lg transition-all duration-300 group">
+                                <div class="mr-3 text-2xl">
+                                    <i class="fab fa-google-play text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-gray-400">Get it on</div>
+                                    <div class="text-sm font-semibold text-white group-hover:text-accent transition-colors duration-300">Google Play</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="mt-4 flex justify-center">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://villhouse.com/app" alt="QR Code" class="w-20 h-20 rounded-lg border-2 border-white/20 p-1 bg-white">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom Section -->
+            <div class="flex flex-col md:flex-row justify-between items-center py-6 border-t border-white/10">
+                <div class="flex flex-col sm:flex-row items-center mb-4 md:mb-0">
+                    <p class="text-gray-400 text-sm">© 2023 <span class="text-accent">VillHouse</span>. All rights reserved.</p>
+                    <span class="hidden sm:inline-block mx-2 text-gray-500">|</span>
+                    <p class="text-gray-400 text-sm">Designed with <i class="fas fa-heart text-red-500 mx-1 animate-pulse"></i> by <a href="#" class="text-accent hover:underline">VillHouse Team</a></p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300 text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300 text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300 text-sm">Cookie Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300 text-sm">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>   
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-6 right-6 bg-accent text-white h-12 w-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="movCoursel.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
