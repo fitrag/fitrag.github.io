@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concy - Modern Programming Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#1E40AF',
+                        dark: '#1E293B',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'gradient-x': 'gradient-x 3s ease infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'bounce-slow': 'bounce 2s infinite',
+                    },
+                    keyframes: {
+                        'gradient-x': {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/movCarousel.css">
+    <link rel="stylesheet" href="css/lazyload.css">
+</head>
+
+<body class="bg-light">
+    <!-- Navigation -->
+    <nav
+        class="bg-white/95 backdrop-blur-lg fixed w-full z-20 transition-all duration-300 border-b border-gray-200/20 supports-backdrop-blur:bg-white/60 shadow-sm shadow-gray-200/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <div class="flex items-center group">
+                            <div class="relative mr-2 transform transition-all duration-300 group-hover:scale-110">
+                                <div
+                                    class="w-10 h-10 bg-gradient-to-br from-blue-500 via-primary to-indigo-600 rounded-lg flex items-center justify-center transform rotate-12 shadow-lg group-hover:shadow-blue-500/30">
+                                    <div
+                                        class="w-8 h-8 bg-white rounded-md flex items-center justify-center transform -rotate-12 group-hover:bg-blue-50 transition-colors duration-300">
+                                        <i
+                                            class="fas fa-code text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-primary to-indigo-600 text-lg"></i>
+                                    </div>
+                                </div>
+                                <div class="absolute -top-1 -right-1 w-2 h-2 bg-blue-400 rounded-full animate-pulse">
+                                </div>
+                                <!-- Added sparkle effect -->
+                                <div class="absolute -top-2 -right-2 text-yellow-400 animate-pulse-slow opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <i class="fas fa-sparkles text-xs"></i>
+                                </div>
+                            </div>
+                            <span
+                                class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-primary to-indigo-600 animate-gradient-x relative">
+                                Concy
+                                <!-- Added underline effect on hover -->
+                                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-indigo-500 group-hover:w-full transition-all duration-300"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-2">
+                    <a href="index.html"
+                        class="text-dark hover:text-primary px-4 py-2 text-sm font-medium relative group overflow-hidden">
+                        <span class="relative z-10">Home</span>
+                        <span
+                            class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-primary transform translate-y-1 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300"></span>
+                        <span
+                            class="absolute inset-0 bg-gradient-to-r from-blue-400/10 to-primary/10 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 origin-left transition-all duration-300 rounded-md"></span>
+                    </a>
+                    <a href="#services"
+                        class="text-dark hover:text-primary px-4 py-2 text-sm font-medium relative group overflow-hidden">
+                        <span class="relative z-10">Services</span>
+                        <span
+                            class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-primary transform translate-y-1 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300"></span>
+                        <span
+                            class="absolute inset-0 bg-gradient-to-r from-blue-400/10 to-primary/10 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 origin-left transition-all duration-300 rounded-md"></span>
+                    </a>
+                    <a href="#projects"
+                        class="text-dark hover:text-primary px-4 py-2 text-sm font-medium relative group overflow-hidden">
+                        <span class="relative z-10">Projects</span>
+                        <span
+                            class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-primary transform translate-y-1 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300"></span>
+                        <span
+                            class="absolute inset-0 bg-gradient-to-r from-blue-400/10 to-primary/10 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 origin-left transition-all duration-300 rounded-md"></span>
+                    </a>
+                    <a href="#team"
+                        class="text-dark hover:text-primary px-4 py-2 text-sm font-medium relative group overflow-hidden">
+                        <span class="relative z-10">Team</span>
+                        <span
+                            class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-primary transform translate-y-1 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300"></span>
+                        <span
+                            class="absolute inset-0 bg-gradient-to-r from-blue-400/10 to-primary/10 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 origin-left transition-all duration-300 rounded-md"></span>
+                    </a>
+                    <a href="#contact"
+                        class="text-dark hover:text-primary px-4 py-2 text-sm font-medium relative group overflow-hidden">
+                        <span class="relative z-10">Contact</span>
+                        <span
+                            class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-primary transform translate-y-1 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300"></span>
+                        <span
+                            class="absolute inset-0 bg-gradient-to-r from-blue-400/10 to-primary/10 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 origin-left transition-all duration-300 rounded-md"></span>
+                    </a>
+                    <a href="#" class="ml-4 relative group">
+                        <span
+                            class="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full blur opacity-60 group-hover:opacity-100 transition duration-300 group-hover:duration-200 animate-pulse-slow"></span>
+                        <span
+                            class="relative flex items-center py-2.5 px-6 bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 rounded-full text-sm font-medium text-white transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-blue-600/50 group-hover:translate-y-[-2px]">
+                            <span class="mr-1.5">Get Started</span>
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-300"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button"
+                        class="relative w-10 h-10 flex items-center justify-center text-gray-500 hover:text-primary focus:outline-none overflow-hidden group">
+                        <span
+                            class="absolute inset-0 bg-blue-100/0 group-hover:bg-blue-100/80 rounded-full transform scale-0 group-hover:scale-100 transition-all duration-300"></span>
+                        <svg class="h-6 w-6 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white/95 backdrop-blur-xl shadow-lg border-t border-gray-200/20">
+            <div class="px-4 pt-4 pb-5 space-y-3">
+                <a href="index.html"
+                    class="block px-4 py-2.5 rounded-lg text-base font-medium text-dark hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-primary transition-all duration-200">Home</a>
+                <a href="#services"
+                    class="block px-4 py-2.5 rounded-lg text-base font-medium text-dark hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-primary transition-all duration-200">Services</a>
+                <a href="#projects"
+                    class="block px-4 py-2.5 rounded-lg text-base font-medium text-dark hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-primary transition-all duration-200">Projects</a>
+                <a href="#team"
+                    class="block px-4 py-2.5 rounded-lg text-base font-medium text-dark hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-primary transition-all duration-200">Team</a>
+                <a href="#contact"
+                    class="block px-4 py-2.5 rounded-lg text-base font-medium text-dark hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-primary transition-all duration-200">Contact</a>
+                <a href="#"
+                    class="mt-4 block text-center px-4 py-3 rounded-lg text-base font-medium bg-gradient-to-r from-blue-500 to-indigo-600 text-white hover:from-blue-600 hover:to-indigo-700 transition-all duration-300 shadow-md shadow-blue-500/20">Get
+                    Started</a>
+            </div>
+        </div>
+    </nav>
+
+   <!-- Breadcrumb Section -->
+    <section class="relative bg-gradient-to-r from-dark to-gray-800 pt-40 py-16 overflow-hidden">
+        <!-- Background patterns and decorative elements -->
+        <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 20px 20px, rgba(255, 255, 255, 0.05) 2px, transparent 0); background-size: 24px 24px;"></div>
+        
+        <!-- Animated gradient blobs -->
+        <div class="absolute top-0 left-1/4 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-1/4 w-32 h-32 bg-indigo-500/10 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col items-center">
+                <!-- Page title -->
+                <h1 class="text-3xl md:text-4xl font-bold text-white mb-4 text-center">E-Commerce Platform Redesign</h1>
+                
+                <!-- Breadcrumb navigation -->
+                <nav class="flex items-center justify-center space-x-2 text-sm text-gray-300">
+                    <a href="index.html" class="hover:text-blue-400 transition-colors duration-300 flex items-center">
+                        <i class="fas fa-home mr-1"></i>
+                        <span>Home</span>
+                    </a>
+                    <span class="text-gray-500">
+                        <i class="fas fa-chevron-right text-xs"></i>
+                    </span>
+                    <a href="projects.html" class="hover:text-blue-400 transition-colors duration-300">
+                        <span>Projects</span>
+                    </a>
+                    <span class="text-gray-500">
+                        <i class="fas fa-chevron-right text-xs"></i>
+                    </span>
+                    <span class="text-blue-400">E-Commerce Platform Redesign</span>
+                </nav>
+                
+                <!-- Project meta information -->
+                <div class="flex flex-wrap justify-center gap-4 mt-6">
+                    <div class="flex items-center text-gray-300 text-sm">
+                        <span class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400 mr-2">
+                            <i class="fas fa-calendar-alt"></i>
+                        </span>
+                        <span>Completed: March 2023</span>
+                    </div>
+                    <div class="flex items-center text-gray-300 text-sm">
+                        <span class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400 mr-2">
+                            <i class="fas fa-tag"></i>
+                        </span>
+                        <span>Category: Web Development</span>
+                    </div>
+                    <div class="flex items-center text-gray-300 text-sm">
+                        <span class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400 mr-2">
+                            <i class="fas fa-user-tie"></i>
+                        </span>
+                        <span>Client: TechRetail Inc.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details Section -->
+    <section class="py-20 bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Main content with sidebar layout -->
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Main content area (2/3 width) -->
+                <div class="lg:w-2/3">
+                    <!-- Project overview -->
+                    <div class="bg-white rounded-2xl shadow-lg shadow-gray-200/50 overflow-hidden mb-10">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" 
+                                 alt="E-Commerce Platform Screenshot" 
+                                 class="lazy w-full h-96 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent flex items-end">
+                                <div class="p-8">
+                                    <div class="inline-block px-3 py-1 bg-blue-500/80 backdrop-blur-sm rounded-full text-white text-sm font-medium mb-3">
+                                        Web Development
+                                    </div>
+                                    <h2 class="text-3xl font-bold text-white">E-Commerce Platform Redesign</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-dark mb-4">Project Overview</h3>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                TechRetail Inc. approached us with a challenge to revamp their outdated e-commerce platform. 
+                                The existing system was struggling with performance issues, poor mobile experience, and declining 
+                                conversion rates. Our team was tasked with creating a modern, responsive, and high-performing 
+                                e-commerce solution that would enhance user experience and drive sales.
+                            </p>
+                            
+                            <div class="flex flex-wrap gap-3 mb-8">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium">React.js</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium">Node.js</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium">MongoDB</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium">AWS</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium">Stripe API</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium">Tailwind CSS</span>
+                            </div>
+                            
+                            <div class="border-t border-gray-100 pt-6">
+                                <h4 class="text-lg font-semibold text-dark mb-4">The Challenge</h4>
+                                <ul class="space-y-3 text-gray-600">
+                                    <li class="flex items-start">
+                                        <span class="text-blue-500 mr-2"><i class="fas fa-circle-check"></i></span>
+                                        <span>Improve site performance with page load times under 2 seconds</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-blue-500 mr-2"><i class="fas fa-circle-check"></i></span>
+                                        <span>Create a fully responsive design that works seamlessly across all devices</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-blue-500 mr-2"><i class="fas fa-circle-check"></i></span>
+                                        <span>Implement a modern UI/UX that aligns with current e-commerce best practices</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-blue-500 mr-2"><i class="fas fa-circle-check"></i></span>
+                                        <span>Integrate with multiple payment gateways and shipping providers</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-blue-500 mr-2"><i class="fas fa-circle-check"></i></span>
+                                        <span>Enhance the product discovery and recommendation system</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Solution & Implementation -->
+                    <div class="bg-white rounded-2xl shadow-lg shadow-gray-200/50 overflow-hidden mb-10">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-dark mb-6">Our Solution</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                                <div class="bg-blue-50 rounded-xl p-6 border border-blue-100">
+                                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-500 mb-4">
+                                        <i class="fas fa-bolt text-xl"></i>
+                                    </div>
+                                    <h4 class="text-lg font-semibold text-dark mb-2">Performance Optimization</h4>
+                                    <p class="text-gray-600">Implemented code splitting, lazy loading, and image optimization to achieve sub-2-second load times.</p>
+                                </div>
+                                
+                                <div class="bg-blue-50 rounded-xl p-6 border border-blue-100">
+                                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-500 mb-4">
+                                        <i class="fas fa-mobile-alt text-xl"></i>
+                                    </div>
+                                    <h4 class="text-lg font-semibold text-dark mb-2">Responsive Design</h4>
+                                    <p class="text-gray-600">Created a mobile-first design approach ensuring perfect display across all device sizes.</p>
+                                </div>
+                                
+                                <div class="bg-blue-50 rounded-xl p-6 border border-blue-100">
+                                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-500 mb-4">
+                                        <i class="fas fa-shopping-cart text-xl"></i>
+                                    </div>
+                                    <h4 class="text-lg font-semibold text-dark mb-2">Streamlined Checkout</h4>
+                                    <p class="text-gray-600">Reduced checkout steps from 5 to 3, implementing one-click purchasing for returning customers.</p>
+                                </div>
+                                
+                                <div class="bg-blue-50 rounded-xl p-6 border border-blue-100">
+                                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-500 mb-4">
+                                        <i class="fas fa-brain text-xl"></i>
+                                    </div>
+                                    <h4 class="text-lg font-semibold text-dark mb-2">AI-Powered Recommendations</h4>
+                                    <p class="text-gray-600">Integrated machine learning algorithms to provide personalized product recommendations.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="border-t border-gray-100 pt-8 mt-8">
+                                <h4 class="text-lg font-semibold text-dark mb-4">Implementation Process</h4>
+                                <div class="relative pl-8 pb-8 border-l-2 border-blue-200">
+                                    <div class="absolute left-[-8px] top-0 w-4 h-4 rounded-full bg-blue-500"></div>
+                                    <h5 class="text-md font-semibold text-dark mb-2">Discovery & Planning</h5>
+                                    <p class="text-gray-600 mb-6">Conducted extensive user research and competitive analysis to identify key improvement areas.</p>
+                                </div>
+                                
+                                <div class="relative pl-8 pb-8 border-l-2 border-blue-200">
+                                    <div class="absolute left-[-8px] top-0 w-4 h-4 rounded-full bg-blue-500"></div>
+                                    <h5 class="text-md font-semibold text-dark mb-2">Design & Prototyping</h5>
+                                    <p class="text-gray-600 mb-6">Created wireframes and interactive prototypes, conducting user testing to refine the experience.</p>
+                                </div>
+                                
+                                <div class="relative pl-8 pb-8 border-l-2 border-blue-200">
+                                    <div class="absolute left-[-8px] top-0 w-4 h-4 rounded-full bg-blue-500"></div>
+                                    <h5 class="text-md font-semibold text-dark mb-2">Development</h5>
+                                    <p class="text-gray-600 mb-6">Built the platform using React.js for the frontend and Node.js for the backend, with MongoDB as the database.</p>
+                                </div>
+                                
+                                <div class="relative pl-8">
+                                    <div class="absolute left-[-8px] top-0 w-4 h-4 rounded-full bg-blue-500"></div>
+                                    <h5 class="text-md font-semibold text-dark mb-2">Testing & Deployment</h5>
+                                    <p class="text-gray-600">Conducted thorough testing across devices and browsers before deploying to AWS infrastructure.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Results & Gallery -->
+                    <div class="bg-white rounded-2xl shadow-lg shadow-gray-200/50 overflow-hidden mb-10">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-dark mb-6">Results & Impact</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                                <div class="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl p-6 text-white">
+                                    <div class="text-4xl font-bold mb-2">47%</div>
+                                    <p class="text-blue-100">Increase in conversion rate</p>
+                                </div>
+                                
+                                <div class="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl p-6 text-white">
+                                    <div class="text-4xl font-bold mb-2">68%</div>
+                                    <p class="text-blue-100">Improvement in page load speed</p>
+                                </div>
+                                
+                                <div class="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl p-6 text-white">
+                                    <div class="text-4xl font-bold mb-2">3.2x</div>
+                                    <p class="text-blue-100">Increase in mobile sales</p>
+                                </div>
+                            </div>
+                            
+                            <p class="text-gray-600 mb-8">
+                                The redesigned platform has significantly improved TechRetail's online presence and business metrics. 
+                                The streamlined checkout process and mobile optimization have directly contributed to higher conversion rates, 
+                                while the improved performance has reduced bounce rates and increased average session duration.
+                            </p>
+                            
+                            <h4 class="text-lg font-semibold text-dark mb-4">Project Gallery</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" 
+                                     alt="E-commerce dashboard" 
+                                     class="lazy rounded-lg w-full h-48 object-cover">
+                                <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1336&q=80" 
+                                     alt="Mobile app view" 
+                                     class="lazy rounded-lg w-full h-48 object-cover">
+                                <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" 
+                                     alt="Checkout process" 
+                                     class="lazy rounded-lg w-full h-48 object-cover">
+                                <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" 
+                                     alt="Analytics dashboard" 
+                                     class="lazy rounded-lg w-full h-48 object-cover">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Client Testimonial -->
+                    <div class="bg-white rounded-2xl shadow-lg shadow-gray-200/50 overflow-hidden">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-dark mb-6">Client Testimonial</h3>
+                            
+                            <div class="bg-blue-50 rounded-xl p-6 border border-blue-100 relative">
+                                <div class="text-blue-500 absolute -top-3 -left-3 bg-white p-2 rounded-full shadow-md">
+                                    <i class="fas fa-quote-left text-xl"></i>
+                                </div>
+                                <p class="text-gray-600 italic mb-4">
+                                    "The Concy team delivered beyond our expectations. Their attention to detail and technical expertise transformed our outdated platform into a modern, high-performing e-commerce site. The results speak for themselves - increased conversions, better user engagement, and a significant boost in mobile sales. We couldn't be happier with the outcome."
+                                </p>
+                                <div class="flex items-center">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4 border-2 border-white shadow-md lazy">
+                                    <div>
+                                        <h5 class="font-semibold text-dark">Michael Thompson</h5>
+                                        <p class="text-sm text-gray-500">CTO, TechRetail Inc.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sidebar (1/3 width) -->
+                <div class="lg:w-1/3">
+                    <!-- Project Information Card -->
+                    <div class="bg-white rounded-2xl shadow-lg shadow-gray-200/50 overflow-hidden mb-8 sticky top-24">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-dark mb-4">Project Information</h3>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center text-blue-500 mr-4 flex-shrink-0">
+                                        <i class="fas fa-calendar-alt"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-medium text-gray-500">Project Duration</h4>
+                                        <p class="text-dark font-medium">4 Months (Nov 2022 - Mar 2023)</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center text-blue-500 mr-4 flex-shrink-0">
+                                        <i class="fas fa-user-tie"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-medium text-gray-500">Client</h4>
+                                        <p class="text-dark font-medium">TechRetail Inc.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center text-blue-500 mr-4 flex-shrink-0">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-medium text-gray-500">Location</h4>
+                                        <p class="text-dark font-medium">San Francisco, CA</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center text-blue-500 mr-4 flex-shrink-0">
+                                        <i class="fas fa-tag"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-medium text-gray-500">Category</h4>
+                                        <p class="text-dark font-medium">Web Development, E-Commerce</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center text-blue-500 mr-4 flex-shrink-0">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-medium text-gray-500">Team Size</h4>
+                                        <p class="text-dark font-medium">6 Specialists</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8 pt-6 border-t border-gray-100">
+                                <h4 class="text-lg font-semibold text-dark mb-3">Project Team</h4>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <div class="flex items-center bg-blue-50 rounded-full px-3 py-1.5 text-sm">
+                                        <span class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 mr-2">
+                                            <i class="fas fa-code text-xs"></i>
+                                        </span>
+                                        <span class="text-gray-700">2 Developers</span>
+                                    </div>
+                                    <div class="flex items-center bg-blue-50 rounded-full px-3 py-1.5 text-sm">
+                                        <span class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 mr-2">
+                                            <i class="fas fa-paint-brush text-xs"></i>
+                                        </span>
+                                        <span class="text-gray-700">1 Designer</span>
+                                    </div>
+                                    <div class="flex items-center bg-blue-50 rounded-full px-3 py-1.5 text-sm">
+                                        <span class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 mr-2">
+                                            <i class="fas fa-database text-xs"></i>
+                                        </span>
+                                        <span class="text-gray-700">1 Database Expert</span>
+                                    </div>
+                                    <div class="flex items-center bg-blue-50 rounded-full px-3 py-1.5 text-sm">
+                                        <span class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 mr-2">
+                                            <i class="fas fa-tasks text-xs"></i>
+                                        </span>
+                                        <span class="text-gray-700">1 Project Manager</span>
+                                    </div>
+                                    <div class="flex items-center bg-blue-50 rounded-full px-3 py-1.5 text-sm">
+                                        <span class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 mr-2">
+                                            <i class="fas fa-vial text-xs"></i>
+                                        </span>
+                                        <span class="text-gray-700">1 QA Specialist</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6 pt-6 border-t border-gray-100">
+                                <a href="#" class="block w-full py-3 px-4 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-medium rounded-lg text-center hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    Visit Live Project
+                                </a>
+                                <div class="grid grid-cols-2 gap-3 mt-3">
+                                    <a href="#" class="py-3 px-4 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-lg text-center transition-all duration-300 text-sm flex items-center justify-center">
+                                        <i class="fas fa-file-pdf mr-2 text-red-500"></i>
+                                        Case Study PDF
+                                    </a>
+                                    <a href="#contact" class="py-3 px-4 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-lg text-center transition-all duration-300 text-sm flex items-center justify-center">
+                                        <i class="fas fa-envelope mr-2 text-blue-500"></i>
+                                        Contact Us
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative bg-gradient-to-br from-dark to-gray-900 text-white py-16 overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute top-0 left-0 w-64 h-64 bg-blue-900/10 rounded-full opacity-20 -translate-y-1/2 blur-3xl">
+        </div>
+        <div
+            class="absolute bottom-0 right-0 w-64 h-64 bg-indigo-900/10 rounded-full opacity-20 translate-y-1/2 blur-3xl">
+        </div>
+
+        <!-- Subtle grid pattern overlay -->
+        <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
+
+        <!-- Animated dots -->
+        <div class="absolute top-1/4 right-1/4 w-2 h-2 bg-blue-400 rounded-full opacity-20 animate-pulse-slow"></div>
+        <div class="absolute bottom-1/3 left-1/3 w-2 h-2 bg-indigo-400 rounded-full opacity-20 animate-pulse-slow">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Top section with logo and newsletter -->
+            <div
+                class="flex flex-col lg:flex-row justify-between items-start lg:items-center pb-10 mb-10 border-b border-gray-700/50">
+                <div class="mb-8 lg:mb-0">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 flex items-center">
+                            <div class="flex items-center">
+                                <div class="relative mr-2">
+                                    <div
+                                        class="w-10 h-10 bg-gradient-to-br from-blue-500 via-primary to-indigo-600 rounded-lg flex items-center justify-center transform rotate-12 shadow-lg">
+                                        <div
+                                            class="w-8 h-8 bg-white rounded-md flex items-center justify-center transform -rotate-12">
+                                            <i
+                                                class="fas fa-code text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-primary to-indigo-600 text-lg"></i>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="absolute -top-1 -right-1 w-2 h-2 bg-blue-400 rounded-full animate-pulse">
+                                    </div>
+                                </div>
+                                <span
+                                    class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-primary to-indigo-600 animate-gradient-x">Concy</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mt-4 max-w-md">Transforming ideas into digital reality with innovative
+                        software solutions that drive business growth.</p>
+                </div>
+
+                <div class="w-full lg:w-auto">
+                    <h4 class="text-lg font-semibold mb-3 text-white">Subscribe to our newsletter</h4>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <input type="email" placeholder="Your email address"
+                            class="px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 text-gray-300 placeholder-gray-500 w-full sm:w-64">
+                        <button
+                            class="px-5 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-medium rounded-lg hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 whitespace-nowrap">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main footer content -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                <div>
+                    <h4 class="text-lg font-semibold mb-5 flex items-center text-white">
+                        <span
+                            class="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 mr-3">
+                            <i class="fas fa-code"></i>
+                        </span>
+                        Services
+                    </h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#"
+                                class="text-gray-400 hover:text-blue-400 transition duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                                <span>Web Development</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-400 hover:text-blue-400 transition duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                                <span>Mobile App Development</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-400 hover:text-blue-400 transition duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                                <span>Custom Software</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-400 hover:text-blue-400 transition duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                                <span>Cloud Solutions</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-400 hover:text-blue-400 transition duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                                <span>AI & Machine Learning</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-5 flex items-center text-white">
+                        <span
+                            class="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 mr-3">
+                            <i class="fas fa-building"></i>
+                        </span>
+                        Company
+                    </h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#"
+                                class="text-gray-400 hover:text-blue-400 transition duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                                <span>About Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-400 hover:text-blue-400 transition duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                                <span>Our Team</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-400 hover:text-blue-400 transition duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                                <span>Careers</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-400 hover:text-blue-400 transition duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                                <span>Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-400 hover:text-blue-400 transition duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                                <span>Contact Us</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-5 flex items-center text-white">
+                        <span
+                            class="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 mr-3">
+                            <i class="fas fa-book"></i>
+                        </span>
+                        Resources
+                    </h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#"
+                                class="text-gray-400 hover:text-blue-400 transition duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                                <span>Documentation</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-400 hover:text-blue-400 transition duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                                <span>Support</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-400 hover:text-blue-400 transition duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                                <span>Privacy Policy</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-400 hover:text-blue-400 transition duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                                <span>Terms of Service</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-400 hover:text-blue-400 transition duration-300 flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                                <span>FAQ</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-5 flex items-center text-white">
+                        <span
+                            class="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 mr-3">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </span>
+                        Contact Us
+                    </h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="text-blue-400 mr-3 mt-1">
+                                <i class="fas fa-map-pin"></i>
+                            </div>
+                            <span class="text-gray-400">123 Tech Street, Silicon Valley, CA 94043</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="text-blue-400 mr-3 mt-1">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <span class="text-gray-400">info@concytech.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="text-blue-400 mr-3 mt-1">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <span class="text-gray-400">+1 (555) 123-4567</span>
+                        </li>
+                    </ul>
+
+                    <div class="mt-6">
+                        <div class="flex space-x-3">
+                            <a href="#"
+                                class="w-9 h-9 rounded-lg bg-gray-800 hover:bg-blue-500 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#"
+                                class="w-9 h-9 rounded-lg bg-gray-800 hover:bg-blue-500 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#"
+                                class="w-9 h-9 rounded-lg bg-gray-800 hover:bg-blue-500 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#"
+                                class="w-9 h-9 rounded-lg bg-gray-800 hover:bg-blue-500 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#"
+                                class="w-9 h-9 rounded-lg bg-gray-800 hover:bg-blue-500 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom section with copyright -->
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2023 Concy. All rights reserved.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#" class="text-gray-500 hover:text-blue-400 text-sm transition duration-300">Privacy
+                        Policy</a>
+                    <span class="text-gray-700">•</span>
+                    <a href="#" class="text-gray-500 hover:text-blue-400 text-sm transition duration-300">Terms of
+                        Service</a>
+                    <span class="text-gray-700">•</span>
+                    <a href="#" class="text-gray-500 hover:text-blue-400 text-sm transition duration-300">Cookie
+                        Policy</a>
+                </div>
+            </div>
+
+            <!-- Designer credit -->
+            <div class="mt-6 text-center">
+                <p class="text-gray-600 text-xs">Designed and developed with <span class="text-red-400">❤️</span> by
+                    Concy Team</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top"
+        class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 z-20">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/movCoursel.js"></script>
+    <script src="js/lazyload.js"></script>
+    <!-- JavaScript -->
+    <script>
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // FAQ accordion
+        const faqButtons = document.querySelectorAll('.faq-button');
+
+        faqButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const icon = button.querySelector('i.fa-chevron-down');
+                const iconContainer = button.querySelector('.ml-4');
+
+                // Toggle answer visibility
+                answer.classList.toggle('hidden');
+
+                // Toggle icon and background
+                if (answer.classList.contains('hidden')) {
+                    icon.classList.remove('rotate-180');
+                    iconContainer.classList.remove('bg-primary');
+                    iconContainer.classList.remove('text-white');
+                    iconContainer.classList.add('bg-gray-100');
+                } else {
+                    icon.classList.add('rotate-180');
+                    iconContainer.classList.add('bg-primary');
+                    iconContainer.classList.add('text-white');
+                    iconContainer.classList.remove('bg-gray-100');
+                }
+            });
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                if (this.getAttribute('href') === '#') return;
+
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Form validation
+        const contactForm = document.querySelector('#contact form');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Simple validation
+                const name = this.querySelector('#name').value;
+                const email = this.querySelector('#email').value;
+                const subject = this.querySelector('#subject').value;
+                const message = this.querySelector('#message').value;
+
+                if (!name || !email || !subject || !message) {
+                    alert('Please fill in all fields');
+                    return;
+                }
+
+                // Email validation
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    alert('Please enter a valid email address');
+                    return;
+                }
+
+                // Here you would typically send the form data to your server
+                alert('Thank you for your message! We will get back to you soon.');
+                this.reset();
+            });
+        }
+
+        // Newsletter form validation
+        const newsletterForm = document.querySelector('footer form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const emailInput = this.querySelector('input[type="email"]');
+                const email = emailInput.value;
+
+                // Simple email validation
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!email || !emailRegex.test(email)) {
+                    alert('Please enter a valid email address');
+                    return;
+                }
+
+                // Here you would typically send the subscription to your server
+                alert('Thank you for subscribing to our newsletter!');
+                emailInput.value = '';
+            });
+        }
+
+        // Add animation to footer links
+        const footerLinks = document.querySelectorAll('footer a');
+        footerLinks.forEach(link => {
+            link.addEventListener('mouseenter', function () {
+                this.querySelector('i')?.classList.add('animate-bounce');
+            });
+            link.addEventListener('mouseleave', function () {
+                this.querySelector('i')?.classList.remove('animate-bounce');
+            });
+        });
+
+        
+    </script>
+</body>
+
+</html>
