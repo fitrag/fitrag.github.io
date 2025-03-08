@@ -1,0 +1,13 @@
+.testimonials-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.testimonial-slide {
+    flex-shrink: 0;
+}
+
+.testimonials-slider {
+    overflow: hidden;
+}
