@@ -225,7 +225,7 @@
                     </div>
 
                     <!-- Floating elements -->
-                    <div class="absolute -top-10 -right-10 z-20">
+                    <div class="absolute -bottom-10 right-1/4 md:-top-10 md:-right-10 z-20">
                         <div class="bg-white p-4 rounded-xl shadow-lg flex items-center">
                             <div class="bg-blue-100 p-2 rounded-lg mr-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary" fill="none"
@@ -241,7 +241,7 @@
                         </div>
                     </div>
 
-                    <div class="absolute -bottom-5 -left-5 z-20">
+                    <div class="absolute hidden md:inline-block md:-bottom-5 md:-left-5 z-20">
                         <div class="bg-white p-4 rounded-xl shadow-lg">
                             <div class="flex items-center justify-center mb-2">
                                 <div class="h-16 w-16 rounded-full bg-primary flex items-center justify-center">
@@ -320,13 +320,13 @@
                     </div>
 
                     <!-- Floating profile card -->
-                    <div class="absolute -bottom-6 -left-6 bg-primary rounded-lg shadow-xl">
+                    <div class="hidden md:inline-block absolute -bottom-6 -left-6 bg-primary rounded-lg shadow-xl">
                         <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
                             alt="Founder" class="w-42 h-42 object-cover border-5 border-primary lazy">
                     </div>
 
                     <!-- Stats card -->
-                    <div class="absolute -top-6 -right-6 bg-primary text-white p-4 rounded-lg shadow-xl">
+                    <div class="absolute top-2/4 right-1/3 md:-top-6 md:-right-6 bg-primary text-white p-4 rounded-lg shadow-xl">
                         <div class="flex items-center">
                             <div class="mr-3">
                                 <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
@@ -1214,7 +1214,7 @@
         </div>
 
         <div class="container mx-auto px-6 relative z-10">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-10 mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 md:gap-2 xl:gap-10 mb-12">
                 <!-- Company Info -->
                 <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="0"
                     class="bg-dark/50 backdrop-blur-sm p-6 rounded-xl border border-gray-800 hover:border-primary/30 transition-all duration-300 transform hover:-translate-y-1">
@@ -1324,35 +1324,35 @@
                     <ul class="space-y-4">
                         <li class="flex items-start group">
                             <div
-                                class="w-10 h-10 rounded-lg bg-gray-800 group-hover:bg-primary flex items-center justify-center mr-4 transition-colors duration-300">
+                                class="w-10 h-10 rounded-lg flex-none bg-gray-800 group-hover:bg-primary flex items-center justify-center mr-4 transition-colors duration-300">
                                 <i
                                     class="fas fa-map-marker-alt text-primary group-hover:text-white transition-colors duration-300"></i>
                             </div>
-                            <span class="text-gray-400">123 Fitness Street, Gym City, GC 12345</span>
+                            <span class="md:text-sm text-gray-400">123 Fitness Street, Gym City, GC 12345</span>
                         </li>
                         <li class="flex items-start group">
                             <div
-                                class="w-10 h-10 rounded-lg bg-gray-800 group-hover:bg-primary flex items-center justify-center mr-4 transition-colors duration-300">
+                                class="w-10 h-10 rounded-lg flex-none bg-gray-800 group-hover:bg-primary flex items-center justify-center mr-4 transition-colors duration-300">
                                 <i
                                     class="fas fa-phone text-primary group-hover:text-white transition-colors duration-300"></i>
                             </div>
-                            <span class="text-gray-400">(123) 456-7890</span>
+                            <span class="md:text-sm text-gray-400">(123) 456-7890</span>
                         </li>
                         <li class="flex items-start group">
                             <div
-                                class="w-10 h-10 rounded-lg bg-gray-800 group-hover:bg-primary flex items-center justify-center mr-4 transition-colors duration-300">
+                                class="w-10 h-10 rounded-lg flex-none bg-gray-800 group-hover:bg-primary flex items-center justify-center mr-4 transition-colors duration-300">
                                 <i
                                     class="fas fa-envelope text-primary group-hover:text-white transition-colors duration-300"></i>
                             </div>
-                            <span class="text-gray-400">info@gymhealth.com</span>
+                            <span class="md:text-sm text-gray-400">info@gymhealth.com</span>
                         </li>
                         <li class="flex items-start group">
                             <div
-                                class="w-10 h-10 rounded-lg bg-gray-800 group-hover:bg-primary flex items-center justify-center mr-4 transition-colors duration-300">
+                                class="w-10 h-10 rounded-lg flex-none bg-gray-800 group-hover:bg-primary flex items-center justify-center mr-4 transition-colors duration-300">
                                 <i
                                     class="fas fa-clock text-primary group-hover:text-white transition-colors duration-300"></i>
                             </div>
-                            <span class="text-gray-400">Mon-Fri: 6:00 AM - 10:00 PM<br>Sat-Sun: 8:00 AM - 8:00 PM</span>
+                            <span class="md:text-sm text-gray-400">Mon-Fri: 6:00 AM - 10:00 PM<br>Sat-Sun: 8:00 AM - 8:00 PM</span>
                         </li>
                     </ul>
                 </div>
