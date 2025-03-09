@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymHealth - Transform Your Body, Transform Your Life</title>
+    <link href="dist/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+</head>
+
+<body class="bg-light text-dark font-sans">
+    <!-- Navigation -->
+    <nav class="bg-dark shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center py-5">
+                <div class="flex items-center">
+                    <div class="flex items-center">
+                        <div class="mr-2 relative">
+                            <div
+                                class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center transform rotate-45">
+                                <i class="fas fa-dumbbell text-white transform -rotate-45 text-lg"></i>
+                            </div>
+                            <div class="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full border-2 border-dark">
+                            </div>
+                        </div>
+                        <div class="text-2xl font-bold tracking-tight">
+                            <span class="text-primary">Gym</span><span class="text-light">Health</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center">
+                    <div class="flex space-x-1">
+                        <a href="#home"
+                            class="text-light hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-300 relative group">
+                            <span class="relative z-10">• Home</span>
+                            <span
+                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                        </a>
+                        <a href="#about"
+                            class="text-light hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-300 relative group">
+                            <span class="relative z-10">About us</span>
+                            <span
+                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                        </a>
+                        <a href="#services"
+                            class="text-light hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-300 relative group">
+                            <span class="relative z-10">Services</span>
+                            <span
+                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                        </a>
+                        <a href="#trainers"
+                            class="text-light hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-300 relative group">
+                            <span class="relative z-10">Team</span>
+                            <span
+                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                        </a>
+                        <a href="#testimonials"
+                            class="text-light hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-300 relative group">
+                            <span class="relative z-10">Testimonial</span>
+                            <span
+                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                        </a>
+                        <a href="#pricing"
+                            class="text-light hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-300 relative group">
+                            <span class="relative z-10">Pricing</span>
+                            <span
+                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                        </a>
+                    </div>
+                    <a href="#contact"
+                        class="bg-primary hover:bg-opacity-90 text-light px-5 py-2 rounded-md text-sm font-medium transition duration-300 ml-8">Contact
+                        us</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="text-light focus:outline-none" id="mobile-menu-button">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-dark text-light py-20 relative overflow-hidden">
+        <!-- Background pattern -->
+        <div class="absolute inset-0 z-0 opacity-8">
+            <div class="absolute top-0 left-0 w-full h-full">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <pattern id="gym-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                            <path d="M0 20 L40 20 M20 0 L20 40" stroke="currentColor" stroke-width="2"
+                                class="text-primary" />
+                            <circle cx="20" cy="20" r="4" fill="currentColor" class="text-primary" />
+                        </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#gym-pattern)" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Fitness-themed icons scattered in background -->
+        <div class="absolute inset-0 z-0 opacity-10">
+            <i class="fas fa-dumbbell text-4xl absolute top-1/4 left-1/4"></i>
+            <i class="fas fa-heartbeat text-4xl absolute top-1/3 right-1/3"></i>
+            <i class="fas fa-running text-4xl absolute bottom-1/4 right-1/4"></i>
+            <i class="fas fa-bicycle text-4xl absolute bottom-1/3 left-1/3"></i>
+            <i class="fas fa-stopwatch text-4xl absolute top-1/2 left-1/5"></i>
+            <i class="fas fa-medal text-4xl absolute bottom-1/2 right-1/5"></i>
+        </div>
+
+        <!-- Decorative dots -->
+        <div class="absolute top-20 left-1/4 w-4 h-4 bg-primary rounded-full"></div>
+        <div class="absolute bottom-20 right-1/4 w-4 h-4 bg-primary rounded-full"></div>
+
+        <div class="container mx-auto px-6 pt-16">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-12 md:mb-0" data-aos="fade-right" data-aos-duration="1000">
+                    <!-- Added animated badge -->
+                    <div class="inline-block px-4 py-1 bg-white/20 bg-opacity-20 rounded-full mb-4">
+                        <p class="text-primary text-sm font-medium tracking-wider uppercase flex items-center">
+                            <span class="w-2 h-2 bg-primary rounded-full mr-2 animate-pulse"></span>
+                            Premium Fitness Experience
+                        </p>
+                    </div>
+
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                        Transform Your <span class="text-primary relative inline-block">
+                            Fitness Journey
+                            <svg class="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 10"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0,5 Q50,9 100,5 T200,5" stroke="currentColor" stroke-width="2" fill="none"
+                                    class="text-primary" />
+                            </svg>
+                        </span>
+                    </h1>
+
+                    <p class="text-xl mb-8 text-gray-300 max-w-lg leading-relaxed">
+                        Join our community of fitness enthusiasts and let our expert trainers guide you to achieve your
+                        health and fitness goals.
+                    </p>
+
+                    <!-- Enhanced buttons with better styling -->
+                    <div class="flex flex-wrap gap-4 mb-10">
+                        <a href="#pricing"
+                            class="group bg-primary hover:bg-opacity-90 text-light px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg flex items-center relative overflow-hidden">
+                            <!-- Shiny effect overlay -->
+                            <span
+                                class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 opacity-25"></span>
+                            <span class="relative z-10">Start Your Journey</span>
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform relative z-10"
+                                viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        <a href="#about"
+                            class="border-2 border-primary text-primary hover:bg-primary hover:text-light px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden">
+                            <!-- Shiny effect overlay -->
+                            <span
+                                class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent -translate-x-full hover:translate-x-full transition-transform duration-1000 opacity-25"></span>
+                            <span class="relative z-10">Learn More</span>
+                        </a>
+                    </div>
+
+                    <!-- Enhanced rating section with better styling -->
+                    <div
+                        class="flex items-center p-4 bg-dark bg-opacity-50 backdrop-filter backdrop-blur-sm rounded-lg">
+                        <div class="flex -space-x-3 mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User"
+                                class="lazy w-12 h-12 rounded-full border-2 border-primary">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User"
+                                class="lazy w-12 h-12 rounded-full border-2 border-primary">
+                            <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="User"
+                                class="lazy w-12 h-12 rounded-full border-2 border-primary">
+                        </div>
+                        <div>
+                            <div class="flex items-center">
+                                <span class="font-bold text-2xl text-primary mr-2">4.9</span>
+                                <div class="flex text-primary">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-300">Based on 400+ member reviews</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2 relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <!-- Main image with play button overlay -->
+                    <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl group">
+                        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1075&q=80"
+                            alt="Gym Training"
+                            class="lazy w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+
+                        <!-- Play button with pulse effect -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <a href="#" class="relative inline-flex">
+                                <!-- Outer pulse animation -->
+                                <span
+                                    class="animate-ping absolute inline-flex h-16 w-16 rounded-full bg-primary opacity-30"></span>
+                                <!-- Inner pulse animation -->
+                                <span
+                                    class="animate-ping absolute inline-flex h-16 w-16 rounded-full bg-primary opacity-50"
+                                    style="animation-delay: 0.5s"></span>
+                                <!-- Play button -->
+                                <span
+                                    class="relative inline-flex items-center justify-center h-16 w-16 rounded-full bg-primary text-white shadow-lg transform transition-transform duration-300 hover:scale-110">
+                                    <i class="fas fa-play text-xl ml-1"></i>
+                                </span>
+                            </a>
+                        </div>
+
+                        <!-- Overlay gradient -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-dark/40 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300">
+                        </div>
+                    </div>
+
+                    <!-- Floating elements -->
+                    <div class="absolute -top-10 -right-10 z-20">
+                        <div class="bg-white p-4 rounded-xl shadow-lg flex items-center">
+                            <div class="bg-blue-100 p-2 rounded-lg mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-gray-800">Target achieved</p>
+                                <p class="text-xs text-gray-500">Fitness goals met</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="absolute -bottom-5 -left-5 z-20">
+                        <div class="bg-white p-4 rounded-xl shadow-lg">
+                            <div class="flex items-center justify-center mb-2">
+                                <div class="h-16 w-16 rounded-full bg-primary flex items-center justify-center">
+                                    <i class="fas fa-dumbbell text-2xl text-white"></i>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-sm font-medium text-gray-800">Personal Training</p>
+                                <div class="flex justify-center mt-1">
+                                    <div class="w-6 h-1 bg-primary rounded"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Trusted Brands Section -->
+    <section class="py-12 bg-primary text-light border-t border-primary-dark overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-8" data-aos="fade-up" data-aos-duration="800">
+                <h3 class="text-2xl font-bold text-light mb-2">Trusted by Athletes Worldwide</h3>
+                <div class="flex flex-col md:flex-row items-center justify-center">
+                    <div class="flex text-orange-300">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-sm text-light ml-2">Rated 4.9/5 based on 2,800+ athlete reviews</p>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16" data-aos="fade-up"
+                data-aos-duration="800" data-aos-delay="100">
+                <!-- Brand logos with white color for better visibility on primary background -->
+                <div class="flex items-center justify-center w-24 h-12">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Under_armour_logo.svg"
+                        alt="Under Armour"
+                        class="lazy w-[70px] md:w-[80px] opacity-80 hover:opacity-100 transition-opacity brightness-0 invert object-contain">
+                </div>
+                <div class="flex items-center justify-center w-24 h-12">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike"
+                        class="lazy w-[70px] md:w-[80px] opacity-80 hover:opacity-100 transition-opacity brightness-0 invert object-contain">
+                </div>
+                <div class="flex items-center justify-center w-24 h-12">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Adidas_Logo.svg/1280px-Adidas_Logo.svg.png"
+                        alt="Adidas"
+                        class="lazy w-[70px] md:w-[80px] opacity-80 hover:opacity-100 transition-opacity brightness-0 invert object-contain">
+                </div>
+                <div class="flex items-center justify-center w-24 h-12">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Reebok_2019_logo.svg" alt="Reebok"
+                        class="lazy w-[70px] md:w-[80px] opacity-80 hover:opacity-100 transition-opacity brightness-0 invert object-contain">
+                </div>
+                <div class="flex items-center justify-center w-24 h-12">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/f/fd/Myprotein_logo_2023.png" alt="MyProtein"
+                        class="lazy w-[70px] md:w-[80px] opacity-80 hover:opacity-100 transition-opacity brightness-0 invert object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-30 bg-white text-dark overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 relative" data-aos="fade-right" data-aos-duration="1000">
+                    <!-- Main image with overlay and decorative elements -->
+                    <div class="relative rounded-lg overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                            alt="About GymHealth" class="w-full h-full object-cover lazy">
+                        <!-- Overlay gradient -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/50 to-transparent"></div>
+                    </div>
+
+                    <!-- Floating profile card -->
+                    <div class="absolute -bottom-6 -left-6 bg-primary rounded-lg shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                            alt="Founder" class="w-42 h-42 object-cover border-5 border-primary lazy">
+                    </div>
+
+                    <!-- Stats card -->
+                    <div class="absolute -top-6 -right-6 bg-primary text-white p-4 rounded-lg shadow-xl">
+                        <div class="flex items-center">
+                            <div class="mr-3">
+                                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                                    alt="Client" class="w-12 h-12 rounded-full border-2 border-white object-cover lazy">
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">3000<span class="text-accent">+</span></h3>
+                                <p class="text-sm text-white/80">Satisfied Clients</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="inline-block px-4 py-1 bg-primary/10 rounded-full mb-4">
+                        <p class="text-primary text-sm font-medium tracking-wider uppercase">ABOUT US</p>
+                    </div>
+
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Transforming Lives Through <span
+                            class="text-primary">Fitness Excellence</span></h2>
+
+                    <p class="text-xl mb-6 text-gray-700">Founded in 2010, GymHealth has been helping people transform
+                        their lives through fitness for over a decade.</p>
+
+                    <p class="mb-8 text-gray-600">Our mission is to provide a welcoming environment where everyone,
+                        regardless of their fitness level, can work towards their health goals with the support of our
+                        community and expert staff.</p>
+
+                    <a href="#contact"
+                        class="group inline-flex items-center bg-primary hover:bg-opacity-90 text-light px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg relative overflow-hidden">
+                        <span
+                            class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 opacity-25"></span>
+                        <span class="relative z-10">Learn More</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 relative z-10" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-20 bg-white overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Stat Item 1 -->
+                <div class="flex flex-col items-center text-center" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-delay="0">
+                    <div class="bg-primary/10 rounded-full p-5 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-primary" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-5xl font-bold text-dark mb-2"><span class="stats-counter">40</span></h3>
+                    <p class="text-gray-600">Fitness Community</p>
+                </div>
+
+                <!-- Stat Item 2 -->
+                <div class="flex flex-col items-center text-center" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-delay="100">
+                    <div class="bg-primary/10 rounded-full p-5 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-primary" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                        </svg>
+                    </div>
+                    <h3 class="text-5xl font-bold text-dark mb-2"><span class="stats-counter">1000</span></h3>
+                    <p class="text-gray-600">Completed workouts</p>
+                </div>
+
+                <!-- Stat Item 3 -->
+                <div class="flex flex-col items-center text-center" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-delay="200">
+                    <div class="bg-primary/10 rounded-full p-5 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-primary" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-5xl font-bold text-dark mb-2"><span class="stats-counter">500</span></h3>
+                    <p class="text-gray-600">Supported locations</p>
+                </div>
+
+                <!-- Stat Item 4 -->
+                <div class="flex flex-col items-center text-center" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-delay="300">
+                    <div class="bg-primary/10 rounded-full p-5 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-primary" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
+                    </div>
+                    <h3 class="text-5xl font-bold text-dark mb-2"><span class="stats-counter">2004</span></h3>
+                    <p class="text-gray-600">Year founded</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-light relative overflow-hidden">
+        <!-- Decorative background icons -->
+        <div class="absolute top-20 left-10 text-primary/5 transform -rotate-12">
+            <i class="fas fa-dumbbell text-9xl"></i>
+        </div>
+        <div class="absolute bottom-20 right-10 text-primary/5 transform rotate-12">
+            <i class="fas fa-heartbeat text-9xl"></i>
+        </div>
+        <div class="absolute top-1/2 left-1/4 text-primary/5 transform -translate-y-1/2">
+            <i class="fas fa-apple-alt text-7xl"></i>
+        </div>
+        <div class="absolute top-1/3 right-1/4 text-primary/5 transform">
+            <i class="fas fa-running text-8xl"></i>
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <div class="text-center mb-12 md:mb-16" data-aos="fade-up" data-aos-duration="800">
+                <div class="inline-block px-4 py-1 bg-primary/10 rounded-full mb-4">
+                    <p class="text-primary text-sm font-medium tracking-wider uppercase">OUR SERVICES</p>
+                </div>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">Don't Let Fitness Goals Remain<br
+                        class="hidden sm:block">Dreams, Start Today</h2>
+                <div class="w-16 md:w-24 h-1 bg-primary mx-auto mt-4 md:mt-6 rounded-full"></div>
+            </div>
+
+            <div class="space-y-4 sm:space-y-6">
+                <!-- Service Item 1 -->
+                <div class="flex flex-col sm:flex-row items-start sm:items-center bg-white rounded-lg border border-gray-100 shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden"
+                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="0">
+                    <div class="w-full sm:w-auto flex justify-center sm:justify-start p-4 sm:p-6">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 text-primary flex items-center justify-center">
+                            <i class="fas fa-dumbbell text-3xl sm:text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="flex-grow p-4 sm:p-6 text-center sm:text-left">
+                        <h3 class="text-lg sm:text-xl font-bold mb-2">Personal Training</h3>
+                        <p class="text-gray-600 text-sm sm:text-base">One-on-one sessions with our expert trainers
+                            tailored to your specific goals and needs.</p>
+                    </div>
+                    <div class="w-full sm:w-auto flex justify-center sm:justify-start p-4 sm:p-6">
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fas fa-chevron-right text-xl sm:text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Item 2 -->
+                <div class="flex flex-col sm:flex-row items-start sm:items-center bg-white rounded-lg border border-gray-100 shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden"
+                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <div class="w-full sm:w-auto flex justify-center sm:justify-start p-4 sm:p-6">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 text-primary flex items-center justify-center">
+                            <i class="fas fa-users text-3xl sm:text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="flex-grow p-4 sm:p-6 text-center sm:text-left">
+                        <h3 class="text-lg sm:text-xl font-bold mb-2">Group Fitness Classes</h3>
+                        <p class="text-gray-600 text-sm sm:text-base">Energetic and motivating classes including HIIT,
+                            Yoga, Zumba, Spinning, and more.</p>
+                    </div>
+                    <div class="w-full sm:w-auto flex justify-center sm:justify-start p-4 sm:p-6">
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fas fa-chevron-right text-xl sm:text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Service Item 3 -->
+                <div class="flex flex-col sm:flex-row items-start sm:items-center bg-white rounded-lg border border-gray-100 shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden"
+                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <div class="w-full sm:w-auto flex justify-center sm:justify-start p-4 sm:p-6">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 text-primary flex items-center justify-center">
+                            <i class="fas fa-heartbeat text-3xl sm:text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="flex-grow p-4 sm:p-6 text-center sm:text-left">
+                        <h3 class="text-lg sm:text-xl font-bold mb-2">Personalized Nutrition Plans</h3>
+                        <p class="text-gray-600 text-sm sm:text-base">Tailored nutrition plans to support your fitness
+                            goals and dietary needs.</p>
+                    </div>
+                    <div class="w-full sm:w-auto flex justify-center sm:justify-start p-4 sm:p-6">
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fas fa-chevron-right text-xl sm:text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Service Item 4 -->
+                <div class="flex flex-col sm:flex-row items-start sm:items-center bg-white rounded-lg border border-gray-100 shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden"
+                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <div class="w-full sm:w-auto flex justify-center sm:justify-start p-4 sm:p-6">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 text-primary flex items-center justify-center">
+                            <i class="fas fa-heartbeat text-3xl sm:text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="flex-grow p-4 sm:p-6 text-center sm:text-left">
+                        <h3 class="text-lg sm:text-xl font-bold mb-2">Personalized Nutrition Plans</h3>
+                        <p class="text-gray-600 text-sm sm:text-base">Tailored nutrition plans to support your fitness
+                            goals and dietary needs.</p>
+                    </div>
+                    <div class="w-full sm:w-auto flex justify-center sm:justify-start p-4 sm:p-6">
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fas fa-chevron-right text-xl sm:text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainers Section -->
+    <section id="trainers" class="py-20 bg-white text-dark relative overflow-hidden">
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="800">
+                <div class="inline-block px-4 py-1 bg-primary/10 rounded-full mb-4">
+                    <p class="text-primary text-sm font-medium tracking-wider uppercase">OUR TEAMS</p>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-bold">Meet the fitness experts behind our<br>successful training
+                    programs</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+                <!-- Team Member 1 -->
+                <div class="flex flex-col items-center text-center group" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-delay="0">
+                    <div
+                        class="w-34 h-34 lg:w-40 lg:h-40 rounded-full overflow-hidden mb-4 relative shadow-lg transform transition-transform duration-300 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-primary/10 rounded-full scale-110 group-hover:scale-100 transition-transform duration-300">
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                            alt="Kevin Smith" class="lazy w-full h-full object-cover relative z-10">
+                    </div>
+                    <h3 class="text-lg font-bold">Kevin Smith</h3>
+                    <p class="text-gray-600">Founder & Head Coach</p>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="flex flex-col items-center text-center group" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-delay="100">
+                    <div
+                        class="w-34 h-34 lg:w-40 lg:h-40 rounded-full overflow-hidden mb-4 relative shadow-lg transform transition-transform duration-300 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-primary/10 rounded-full scale-110 group-hover:scale-100 transition-transform duration-300">
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                            alt="David Daily" class="lazy w-full h-full object-cover relative z-10">
+                    </div>
+                    <h3 class="text-lg font-bold">David Daily</h3>
+                    <p class="text-gray-600">Head of Nutrition</p>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="flex flex-col items-center text-center group" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-delay="200">
+                    <div
+                        class="w-34 h-34 lg:w-40 lg:h-40 rounded-full overflow-hidden mb-4 relative shadow-lg transform transition-transform duration-300 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-primary/10 rounded-full scale-110 group-hover:scale-100 transition-transform duration-300">
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                            alt="Taylor Johnson" class="lazy w-full h-full object-cover relative z-10">
+                    </div>
+                    <h3 class="text-lg font-bold">Taylor Johnson</h3>
+                    <p class="text-gray-600">Head of Marketing</p>
+                </div>
+
+                <!-- Team Member 4 -->
+                <div class="flex flex-col items-center text-center group" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-delay="300">
+                    <div
+                        class="w-34 h-34 lg:w-40 lg:h-40 rounded-full overflow-hidden mb-4 relative shadow-lg transform transition-transform duration-300 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-primary/10 rounded-full scale-110 group-hover:scale-100 transition-transform duration-300">
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1609899537878-88d5ba429bdb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                            alt="Emma Wilson" class="lazy w-full h-full object-cover relative z-10">
+                    </div>
+                    <h3 class="text-lg font-bold">Emma Wilson</h3>
+                    <p class="text-gray-600">Yoga Specialist</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Preview Section -->
+    <section class="py-20 text-light relative overflow-hidden">
+        <!-- Background image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1075&q=80"
+                alt="Fitness Training Background" class="w-full h-full object-cover lazy">
+            <div class="absolute inset-0 bg-dark/60"></div>
+        </div>
+
+        <!-- Background decorative elements -->
+        <div
+            class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-primary/20 to-transparent opacity-30 z-10">
+        </div>
+        <div class="absolute bottom-0 right-0 text-primary/5 transform rotate-12 z-10">
+            <i class="fas fa-dumbbell text-9xl"></i>
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 relative z-20">
+            <div class="text-center mb-12 md:mb-16" data-aos="fade-up" data-aos-duration="800">
+                <div class="inline-block px-4 py-1 bg-primary/20 backdrop-blur-sm rounded-full mb-4">
+                    <p class="text-primary text-sm font-medium tracking-wider uppercase">WATCH & LEARN</p>
+                </div>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white">See Our Training in Action
+                </h2>
+                <div class="w-16 md:w-24 h-1 bg-primary mx-auto mt-4 md:mt-6 rounded-full"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+                <!-- Video preview container with glassmorphism -->
+                <div class="relative rounded-xl overflow-hidden">
+                    <!-- Play button with pulse effect -->
+                    <div class="py-20 flex items-center justify-center">
+                        <a href="#"
+                            class="relative inline-flex group-hover:scale-110 transition-transform duration-300">
+                            <!-- Outer pulse animation -->
+                            <span
+                                class="animate-ping absolute inline-flex h-20 w-20 rounded-full bg-primary opacity-30"></span>
+                            <!-- Inner pulse animation -->
+                            <span class="animate-ping absolute inline-flex h-20 w-20 rounded-full bg-primary opacity-50"
+                                style="animation-delay: 0.5s"></span>
+                            <!-- Play button with glassmorphism -->
+                            <span
+                                class="relative inline-flex items-center justify-center h-20 w-20 rounded-full bg-primary/80 backdrop-blur-sm text-white shadow-lg">
+                                <i class="fas fa-play text-2xl ml-1"></i>
+                            </span>
+                        </a>
+                    </div>
+
+                    <!-- Video info overlay with glassmorphism -->
+                    <div class="p-6 bg-dark/30 backdrop-blur-sm border-t border-white/10 rounded-xl">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-1">Transform Your Body</h3>
+                                <p class="text-gray-300 text-sm">See how our expert trainers can help you achieve your
+                                    fitness goals</p>
+                            </div>
+                            <div class="flex items-center">
+                                <span
+                                    class="bg-primary/20 backdrop-blur-sm text-primary px-3 py-1 rounded-full text-sm font-medium">3:45</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video features with glassmorphism -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10">
+                    <div class="flex items-start bg-white/5 backdrop-blur-sm p-4 rounded-lg border border-white/10">
+                        <div class="bg-primary/20 p-3 rounded-lg mr-4">
+                            <i class="fas fa-video text-primary text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white mb-1">HD Quality</h3>
+                            <p class="text-gray-300 text-sm">Crystal clear video tutorials</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start bg-white/5 backdrop-blur-sm p-4 rounded-lg border border-white/10">
+                        <div class="bg-primary/20 p-3 rounded-lg mr-4">
+                            <i class="fas fa-user-friends text-primary text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white mb-1">Expert Trainers</h3>
+                            <p class="text-gray-300 text-sm">Learn from certified professionals</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start bg-white/5 backdrop-blur-sm p-4 rounded-lg border border-white/10">
+                        <div class="bg-primary/20 p-3 rounded-lg mr-4">
+                            <i class="fas fa-sync-alt text-primary text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white mb-1">Weekly Updates</h3>
+                            <p class="text-gray-300 text-sm">New workout videos every week</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white relative overflow-hidden">
+        <!-- Background pattern -->
+        <div class="absolute inset-0 opacity-10 z-0">
+            <div class="absolute inset-0 bg-repeat"
+                style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9ImN1cnJlbnRDb2xvciIvPjwvc3ZnPg==');">
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <div class="text-center mb-12 md:mb-16" data-aos="fade-up" data-aos-duration="800">
+                <div class="inline-block px-4 py-1 bg-primary/10 rounded-full mb-4">
+                    <p class="text-primary text-sm font-medium tracking-wider uppercase">CLIENTS TESTIMONIAL</p>
+                </div>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
+                    GymHealth Transformation Stories
+                </h2>
+                <div class="w-16 md:w-24 h-1 bg-primary mx-auto mt-4 md:mt-6 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="0">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-20 h-20 rounded-full overflow-hidden mb-4 border-2 border-primary">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Marvin McKinney"
+                                class="w-full h-full object-cover lazy">
+                        </div>
+                        <div class="flex text-yellow-400 mb-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="text-lg font-bold">Marvin McKinney</h3>
+                        <p class="text-gray-600 text-sm mb-4">Software Development Manager</p>
+                        <p class="text-gray-600">
+                            GymHealth transformed my life completely. Their personalized training program helped me lose
+                            30 pounds in just 3 months. The trainers are knowledgeable and supportive.
+                        </p>
+                        <div class="mt-6 text-primary text-4xl">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-20 h-20 rounded-full overflow-hidden mb-4 border-2 border-primary">
+                            <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Robert Fox"
+                                class="w-full h-full object-cover lazy">
+                        </div>
+                        <div class="flex text-yellow-400 mb-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="text-lg font-bold">Robert Fox</h3>
+                        <p class="text-gray-600 text-sm mb-4">IT Consulting</p>
+                        <p class="text-gray-600">
+                            As someone with a busy schedule, GymHealth's flexible training options have been a
+                            game-changer. Their nutrition plans complement my workouts perfectly, and I've seen amazing
+                            results.
+                        </p>
+                        <div class="mt-6 text-primary text-4xl">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-20 h-20 rounded-full overflow-hidden mb-4 border-2 border-primary">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jane Cooper"
+                                class="w-full h-full object-cover lazy">
+                        </div>
+                        <div class="flex text-yellow-400 mb-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="text-lg font-bold">Jane Cooper</h3>
+                        <p class="text-gray-600 text-sm mb-4">UI/UX Designer</p>
+                        <p class="text-gray-600">
+                            The community at GymHealth is what keeps me coming back. The trainers create a supportive
+                            environment, and I've made great progress with my fitness goals while making new friends.
+                        </p>
+                        <div class="mt-6 text-primary text-4xl">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-white relative overflow-hidden">
+        <!-- Background pattern -->
+        <div class="absolute inset-0 opacity-15 z-0">
+            <div class="absolute inset-0 bg-repeat"
+                style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9ImN1cnJlbnRDb2xvciIvPjwvc3ZnPg==');">
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <div class="text-center mb-12 md:mb-16" data-aos="fade-up" data-aos-duration="800">
+                <div class="inline-block px-4 py-1 bg-primary/10 rounded-full mb-4">
+                    <p class="text-primary text-sm font-medium tracking-wider uppercase">MEMBERSHIP PLANS</p>
+                </div>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
+                    Choose the Perfect Plan for Your Fitness Journey
+                </h2>
+                <div class="w-16 md:w-24 h-1 bg-primary mx-auto mt-4 md:mt-6 rounded-full"></div>
+
+                <!-- Pricing Toggle Switch -->
+                <div class="flex items-center justify-center mt-8 mb-8">
+                    <span class="text-gray-600 font-medium mr-3">Monthly</span>
+                    <label class="relative inline-block w-14 h-7 cursor-pointer">
+                        <input type="checkbox" id="pricing-toggle" class="sr-only peer">
+                        <div
+                            class="w-14 h-7 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-7 peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary">
+                        </div>
+                    </label>
+                    <span class="text-gray-600 font-medium ml-3">Yearly</span>
+                    <span
+                        class="ml-2 inline-flex items-center justify-center px-2 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary">Save
+                        20%</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Basic Plan - Added shiny hover effect -->
+                <div class="bg-white/80 backdrop-blur-sm rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col relative group"
+                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="250">
+                    <!-- Shiny effect overlay -->
+                    <div
+                        class="absolute -inset-0 opacity-0 group-hover:opacity-30 group-hover:duration-1000 duration-200 bg-gradient-to-r from-transparent via-white to-transparent skew-x-[-20deg] group-hover:translate-x-[200%] ease-out transition-all z-10 pointer-events-none">
+                    </div>
+
+                    <div class="p-8 bg-gray-100/80 relative">
+                        <h3 class="text-xl font-bold mb-2">Basic Plan - Starter</h3>
+                        <p class="text-gray-600 text-sm mb-6">Our fitness center offers a range of pricing plans
+                            tailored for beginners</p>
+                        <div class="flex items-baseline">
+                            <span class="text-4xl font-bold monthly-price">$999</span>
+                            <span class="text-4xl font-bold yearly-price hidden">$9,590</span>
+                            <span class="text-gray-500 ml-2 billing-period">/monthly</span>
+                        </div>
+                    </div>
+
+                    <div class="p-8 flex-grow">
+                        <h4 class="font-semibold mb-4">Services Include:</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 rounded-full bg-primary flex items-center justify-center mr-3">
+                                    <i class="fas fa-check text-white text-xs"></i>
+                                </div>
+                                <span>Gym Access</span>
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 rounded-full bg-primary flex items-center justify-center mr-3">
+                                    <i class="fas fa-check text-white text-xs"></i>
+                                </div>
+                                <span>Basic Equipment</span>
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 rounded-full bg-primary flex items-center justify-center mr-3">
+                                    <i class="fas fa-check text-white text-xs"></i>
+                                </div>
+                                <span>Fitness Assessment</span>
+                            </li>
+                        </ul>
+                        <p class="text-sm text-gray-500 mt-6">Perfect for individuals just starting their fitness
+                            journey</p>
+                    </div>
+
+                    <div class="p-6 mt-auto">
+                        <a href="#contact"
+                            class="block w-full py-3 px-6 text-center bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-lg font-semibold transition-colors duration-300">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Standard Plan - Highlighted - Added shiny hover effect -->
+                <div class="bg-primary text-white rounded-lg overflow-hidden shadow-xl transform scale-105 z-10 flex flex-col relative group"
+                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <!-- Shiny effect overlay -->
+                    <div
+                        class="absolute -inset-0 opacity-0 group-hover:opacity-30 group-hover:duration-1000 duration-200 bg-gradient-to-r from-transparent via-white to-transparent skew-x-[-20deg] group-hover:translate-x-[200%] ease-out transition-all z-10 pointer-events-none">
+                    </div>
+
+                    <div class="p-8 relative">
+                        <h3 class="text-xl font-bold mb-2">Standard Plan - Growth</h3>
+                        <p class="text-white/80 text-sm mb-6">Our fitness center offers a range of pricing plans
+                            tailored for enthusiasts</p>
+                        <div class="flex items-baseline">
+                            <span class="text-4xl font-bold monthly-price">$1999</span>
+                            <span class="text-4xl font-bold yearly-price hidden">$19,190</span>
+                            <span class="text-white/80 ml-2 billing-period">/monthly</span>
+                        </div>
+                    </div>
+
+                    <div class="p-8 flex-grow">
+                        <h4 class="font-semibold mb-4">Services Include:</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 rounded-full bg-white flex items-center justify-center mr-3">
+                                    <i class="fas fa-check text-primary text-xs"></i>
+                                </div>
+                                <span>All Basic Features</span>
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 rounded-full bg-white flex items-center justify-center mr-3">
+                                    <i class="fas fa-check text-primary text-xs"></i>
+                                </div>
+                                <span>Personal Training (2x/month)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 rounded-full bg-white flex items-center justify-center mr-3">
+                                    <i class="fas fa-check text-primary text-xs"></i>
+                                </div>
+                                <span>Nutrition Consultation</span>
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 rounded-full bg-white flex items-center justify-center mr-3">
+                                    <i class="fas fa-check text-primary text-xs"></i>
+                                </div>
+                                <span>Group Classes</span>
+                            </li>
+                        </ul>
+                        <p class="text-sm text-white/80 mt-6">Perfect for fitness enthusiasts looking to level up</p>
+                    </div>
+
+                    <div class="p-6 mt-auto">
+                        <a href="#contact"
+                            class="block w-full py-3 px-6 text-center bg-white text-primary hover:bg-gray-100 rounded-lg font-semibold transition-colors duration-300">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Premium Plan - Added shiny hover effect -->
+                <div class="bg-white/80 backdrop-blur-sm rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col relative group"
+                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="250">
+                    <!-- Shiny effect overlay -->
+                    <div
+                        class="absolute -inset-0 opacity-0 group-hover:opacity-30 group-hover:duration-1000 duration-200 bg-gradient-to-r from-transparent via-white to-transparent skew-x-[-20deg] group-hover:translate-x-[200%] ease-out transition-all z-10 pointer-events-none">
+                    </div>
+
+                    <div class="p-8 bg-gray-100/80 relative">
+                        <h3 class="text-xl font-bold mb-2">Premium Plan - Pro</h3>
+                        <p class="text-gray-600 text-sm mb-6">Our fitness center offers a range of pricing plans
+                            tailored for athletes</p>
+                        <div class="flex items-baseline">
+                            <span class="text-4xl font-bold monthly-price">$2999</span>
+                            <span class="text-4xl font-bold yearly-price hidden">$28,790</span>
+                            <span class="text-gray-500 ml-2 billing-period">/monthly</span>
+                        </div>
+                    </div>
+
+                    <div class="p-8 flex-grow">
+                        <h4 class="font-semibold mb-4">Services Include:</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 rounded-full bg-primary flex items-center justify-center mr-3">
+                                    <i class="fas fa-check text-white text-xs"></i>
+                                </div>
+                                <span>All Standard Features</span>
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 rounded-full bg-primary flex items-center justify-center mr-3">
+                                    <i class="fas fa-check text-white text-xs"></i>
+                                </div>
+                                <span>Unlimited Personal Training</span>
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 rounded-full bg-primary flex items-center justify-center mr-3">
+                                    <i class="fas fa-check text-white text-xs"></i>
+                                </div>
+                                <span>Advanced Performance Tracking</span>
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 rounded-full bg-primary flex items-center justify-center mr-3">
+                                    <i class="fas fa-check text-white text-xs"></i>
+                                </div>
+                                <span>VIP Locker Room Access</span>
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 rounded-full bg-primary flex items-center justify-center mr-3">
+                                    <i class="fas fa-check text-white text-xs"></i>
+                                </div>
+                                <span>Recovery & Spa Services</span>
+                            </li>
+                        </ul>
+                        <p class="text-sm text-gray-500 mt-6">Perfect for serious athletes and fitness professionals</p>
+                    </div>
+
+                    <div class="p-6 mt-auto">
+                        <a href="#contact"
+                            class="block w-full py-3 px-6 text-center bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-lg font-semibold transition-colors duration-300">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-dark relative overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-primary"></div>
+        <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/4"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-primary/5 rounded-full translate-y-1/3 -translate-x-1/4">
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row gap-10 items-stretch">
+                <!-- Left Column - Contact Info -->
+                <div class="w-full lg:w-1/2" data-aos="fade-right" data-aos-duration="800">
+                    <div class="h-full flex flex-col justify-center">
+                        <div class="mb-4">
+                            <span class="text-primary font-medium">Contact Us</span>
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+                            Get in Touch Let's Start the Conversation
+                        </h2>
+                        <p class="text-gray-400 mb-8">
+                            We're here to help you find the right fitness solutions for your needs.
+                            Whether you're looking to start your fitness journey or seeking personalized training,
+                            our team is ready to assist you.
+                        </p>
+
+                        <!-- Phone -->
+                        <div
+                            class="bg-dark/50 backdrop-blur-sm p-6 rounded-xl border border-gray-800 hover:border-primary/30 transition-all duration-300 mb-4 flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mr-4">
+                                <i class="fas fa-phone text-primary"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">Gives us a Call</p>
+                                <p class="text-white font-semibold">123-456-7890</p>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div
+                            class="bg-dark/50 backdrop-blur-sm p-6 rounded-xl border border-gray-800 hover:border-primary/30 transition-all duration-300 flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-primary"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">Send me Mail</p>
+                                <p class="text-white font-semibold">info@gymhealth.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Contact Form -->
+                <div class="w-full lg:w-1/2" data-aos="fade-left" data-aos-duration="800">
+                    <div class="bg-white backdrop-blur-sm rounded-xl p-8 shadow-xl border border-gray-100">
+                        <h3 class="text-xl font-bold text-dark mb-2 flex items-center">
+                            <span class="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center mr-3">
+                                <i class="fas fa-envelope text-primary"></i>
+                            </span>
+                            Send us a Message
+                        </h3>
+                        <p class="text-gray-600 mb-6">Feel free to reach out to us with any questions, inquiries, or
+                            staffing requirements you may have. Our experienced team is ready to help.</p>
+
+                        <form class="space-y-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div class="relative group">
+                                    <label for="firstName"
+                                        class="absolute left-4 top-3 text-sm text-gray-500 transition-all duration-300 group-focus-within:text-primary group-focus-within:text-xs group-focus-within:-top-2 group-focus-within:bg-white group-focus-within:px-1 z-10">First
+                                        Name</label>
+                                    <input type="text" id="firstName"
+                                        class="w-full px-4 pt-3 pb-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 bg-transparent">
+                                </div>
+                                <div class="relative group">
+                                    <label for="lastName"
+                                        class="absolute left-4 top-3 text-sm text-gray-500 transition-all duration-300 group-focus-within:text-primary group-focus-within:text-xs group-focus-within:-top-2 group-focus-within:bg-white group-focus-within:px-1 z-10">Last
+                                        Name</label>
+                                    <input type="text" id="lastName"
+                                        class="w-full px-4 pt-3 pb-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 bg-transparent">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div class="relative group">
+                                    <label for="email"
+                                        class="absolute left-4 top-3 text-sm text-gray-500 transition-all duration-300 group-focus-within:text-primary group-focus-within:text-xs group-focus-within:-top-2 group-focus-within:bg-white group-focus-within:px-1 z-10">Email</label>
+                                    <input type="email" id="email"
+                                        class="w-full px-4 pt-3 pb-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 bg-transparent">
+                                </div>
+                                <div class="relative group">
+                                    <label for="phone"
+                                        class="absolute left-4 top-3 text-sm text-gray-500 transition-all duration-300 group-focus-within:text-primary group-focus-within:text-xs group-focus-within:-top-2 group-focus-within:bg-white group-focus-within:px-1 z-10">Phone</label>
+                                    <input type="tel" id="phone"
+                                        class="w-full px-4 pt-3 pb-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 bg-transparent">
+                                </div>
+                            </div>
+
+                            <div class="relative group">
+                                <label for="subject"
+                                    class="absolute left-4 top-3 text-sm text-gray-500 transition-all duration-300 group-focus-within:text-primary group-focus-within:text-xs group-focus-within:-top-2 group-focus-within:bg-white group-focus-within:px-1 z-10">Subject</label>
+                                <input type="text" id="subject"
+                                    class="w-full px-4 pt-3 pb-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 bg-transparent">
+                            </div>
+
+                            <div class="relative group">
+                                <label for="message"
+                                    class="absolute left-4 top-3 text-sm text-gray-500 transition-all duration-300 group-focus-within:text-primary group-focus-within:text-xs group-focus-within:-top-2 group-focus-within:bg-white group-focus-within:px-1 z-10">Message</label>
+                                <textarea id="message" rows="4"
+                                    class="w-full px-4 pt-3 pb-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 bg-transparent"></textarea>
+                            </div>
+
+                            <div class="text-right">
+                                <button type="submit"
+                                    class="group bg-primary hover:bg-opacity-90 text-light px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg flex items-center relative overflow-hidden text-right">
+                                    <!-- Shiny effect overlay -->
+                                    <span
+                                        class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 opacity-25"></span>
+                                    <span class="relative z-10">Start Your Journey</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform relative z-10"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary relative overflow-hidden">
+        <!-- Background decorative elements with pulse animation -->
+        <div
+            class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/4 animate-pulse-slow">
+        </div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-white/5 rounded-full translate-y-1/3 -translate-x-1/4 animate-pulse-slow"
+            style="animation-delay: 1s;"></div>
+
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+                    Ready To Take Your Fitness To<br>The Next Level
+                </h2>
+                <p class="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+                    Effective fitness strategies not only elevate your physical capabilities but also drive
+                    targeted results, enhance your overall experience.
+                </p>
+                <a href="#contact"
+                    class="inline-flex items-center bg-white text-primary hover:bg-gray-100 transition-colors duration-300 font-semibold rounded-full px-8 py-4">
+                    Free Consultation
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-16 relative overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-primary"></div>
+        <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/4"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-primary/5 rounded-full translate-y-1/3 -translate-x-1/4">
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-10 mb-12">
+                <!-- Company Info -->
+                <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="0"
+                    class="bg-dark/50 backdrop-blur-sm p-6 rounded-xl border border-gray-800 hover:border-primary/30 transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="flex items-center mb-6">
+                        <div class="text-3xl font-bold tracking-tight">
+                            <span class="text-primary">Gym</span><span class="text-light">Health</span>
+                        </div>
+                    </div>
+                    <p class="mb-6 text-gray-400">Transforming lives through fitness and wellness since 2010. Join our
+                        community and start your journey to a healthier you.</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary flex items-center justify-center text-light transition-all duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary flex items-center justify-center text-light transition-all duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary flex items-center justify-center text-light transition-all duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary flex items-center justify-center text-light transition-all duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="100"
+                    class="bg-dark/50 backdrop-blur-sm p-6 rounded-xl border border-gray-800 hover:border-primary/30 transition-all duration-300 transform hover:-translate-y-1">
+                    <h4 class="text-xl font-bold mb-6 flex items-center">
+                        <span class="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center mr-3">
+                            <i class="fas fa-link text-primary"></i>
+                        </span>
+                        Quick Links
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home"
+                                class="hover:text-primary transition-colors duration-300 flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2 text-primary"></i> Home</a></li>
+                        <li><a href="#about"
+                                class="hover:text-primary transition-colors duration-300 flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2 text-primary"></i> About Us</a></li>
+                        <li><a href="#services"
+                                class="hover:text-primary transition-colors duration-300 flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2 text-primary"></i> Services</a></li>
+                        <li><a href="#trainers"
+                                class="hover:text-primary transition-colors duration-300 flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2 text-primary"></i> Trainers</a></li>
+                        <li><a href="#pricing"
+                                class="hover:text-primary transition-colors duration-300 flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2 text-primary"></i> Pricing</a></li>
+                        <li><a href="#contact"
+                                class="hover:text-primary transition-colors duration-300 flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2 text-primary"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200"
+                    class="bg-dark/50 backdrop-blur-sm p-6 rounded-xl border border-gray-800 hover:border-primary/30 transition-all duration-300 transform hover:-translate-y-1">
+                    <h4 class="text-xl font-bold mb-6 flex items-center">
+                        <span class="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center mr-3">
+                            <i class="fas fa-dumbbell text-primary"></i>
+                        </span>
+                        Services
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="#services"
+                                class="hover:text-primary transition-colors duration-300 flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2 text-primary"></i> Personal Training</a>
+                        </li>
+                        <li><a href="#services"
+                                class="hover:text-primary transition-colors duration-300 flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2 text-primary"></i> Group Classes</a></li>
+                        <li><a href="#services"
+                                class="hover:text-primary transition-colors duration-300 flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2 text-primary"></i> Nutrition Planning</a>
+                        </li>
+                        <li><a href="#services"
+                                class="hover:text-primary transition-colors duration-300 flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2 text-primary"></i> Weight Loss Programs</a>
+                        </li>
+                        <li><a href="#services"
+                                class="hover:text-primary transition-colors duration-300 flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2 text-primary"></i> Strength Training</a>
+                        </li>
+                        <li><a href="#services"
+                                class="hover:text-primary transition-colors duration-300 flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2 text-primary"></i> Yoga & Meditation</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Us -->
+                <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="300"
+                    class="bg-dark/50 backdrop-blur-sm p-6 rounded-xl border border-gray-800 hover:border-primary/30 transition-all duration-300 transform hover:-translate-y-1">
+                    <h4 class="text-xl font-bold mb-6 flex items-center">
+                        <span class="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center mr-3">
+                            <i class="fas fa-headset text-primary"></i>
+                        </span>
+                        Contact Us
+                    </h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start group">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-gray-800 group-hover:bg-primary flex items-center justify-center mr-4 transition-colors duration-300">
+                                <i
+                                    class="fas fa-map-marker-alt text-primary group-hover:text-white transition-colors duration-300"></i>
+                            </div>
+                            <span class="text-gray-400">123 Fitness Street, Gym City, GC 12345</span>
+                        </li>
+                        <li class="flex items-start group">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-gray-800 group-hover:bg-primary flex items-center justify-center mr-4 transition-colors duration-300">
+                                <i
+                                    class="fas fa-phone text-primary group-hover:text-white transition-colors duration-300"></i>
+                            </div>
+                            <span class="text-gray-400">(123) 456-7890</span>
+                        </li>
+                        <li class="flex items-start group">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-gray-800 group-hover:bg-primary flex items-center justify-center mr-4 transition-colors duration-300">
+                                <i
+                                    class="fas fa-envelope text-primary group-hover:text-white transition-colors duration-300"></i>
+                            </div>
+                            <span class="text-gray-400">info@gymhealth.com</span>
+                        </li>
+                        <li class="flex items-start group">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-gray-800 group-hover:bg-primary flex items-center justify-center mr-4 transition-colors duration-300">
+                                <i
+                                    class="fas fa-clock text-primary group-hover:text-white transition-colors duration-300"></i>
+                            </div>
+                            <span class="text-gray-400">Mon-Fri: 6:00 AM - 10:00 PM<br>Sat-Sun: 8:00 AM - 8:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="max-w-4xl mx-auto mb-12 bg-gray-800/50 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-gray-700"
+                data-aos="fade-up" data-aos-duration="800">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
+                    <div class="w-full md:w-1/2 text-center md:text-left mb-4 md:mb-0">
+                        <h4 class="text-lg sm:text-xl font-bold mb-2">Subscribe to Our Newsletter</h4>
+                        <p class="text-gray-400 text-sm sm:text-base">Get the latest fitness tips, special offers, and
+                            updates</p>
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <form class="flex flex-col sm:flex-row w-full gap-2 sm:gap-0">
+                            <input type="email" placeholder="Enter your email"
+                                class="w-full px-4 py-3 bg-dark border border-gray-700 rounded-lg sm:rounded-r-none focus:outline-none focus:border-primary">
+                            <button type="submit"
+                                class="w-full sm:w-auto bg-primary hover:bg-primary/80 text-white px-6 py-3 rounded-lg sm:rounded-l-none transition-colors duration-300">
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 pt-8 text-center" data-aos="fade-up" data-aos-duration="800">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500">&copy; 2023 GymHealth. All rights reserved.</p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-500 hover:text-primary transition-colors duration-300">Privacy
+                            Policy</a>
+                        <a href="#" class="text-gray-500 hover:text-primary transition-colors duration-300">Terms of
+                            Service</a>
+                        <a href="#" class="text-gray-500 hover:text-primary transition-colors duration-300">Cookie
+                            Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button with Scroll Progress -->
+    <a href="#"
+        class="back-to-top fixed bottom-8 right-8 bg-primary text-light w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-secondary transition z-40 overflow-hidden hidden">
+        <div class="scroll-progress-border absolute inset-0 rounded-full border-2 border-white/30"></div>
+        <div class="scroll-progress absolute bottom-0 left-0 w-full bg-white/30 h-1"></div>
+        <div class="flex flex-col items-center justify-center">
+            <i class="fas fa-chevron-up scroll-icon"></i>
+            <i class="fas fa-rocket scroll-icon-rocket hidden"></i>
+            <span class="scroll-percentage text-xs font-bold mt-0.5 z-10">0%</span>
+        </div>
+    </a>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div
+        class="mobile-menu fixed inset-0 bg-dark/95 backdrop-blur-sm z-50 flex items-center justify-center transform transition-all duration-500 opacity-0 pointer-events-none scale-95">
+        <button
+            class="absolute top-6 right-6 text-light focus:outline-none hover:text-primary transition-colors duration-300 mobile-close-btn">
+            <i class="fas fa-times text-3xl"></i>
+        </button>
+
+        <div class="w-full max-w-md px-6">
+            <!-- Logo in mobile menu -->
+            <div
+                class="flex items-center justify-center mb-10 transform transition-all duration-500 translate-y-8 opacity-0 menu-item">
+                <div class="mr-3 relative">
+                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center transform rotate-45">
+                        <i class="fas fa-dumbbell text-white transform -rotate-45 text-xl"></i>
+                    </div>
+                    <div class="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full border-2 border-dark"></div>
+                </div>
+                <div class="text-3xl font-bold tracking-tight">
+                    <span class="text-primary">Gym</span><span class="text-light">Health</span>
+                </div>
+            </div>
+
+            <ul class="text-center space-y-6">
+                <li class="transform transition-all duration-500 translate-y-8 opacity-0 menu-item">
+                    <a href="#home"
+                        class="text-2xl text-light hover:text-primary transition-colors duration-300 relative inline-block group">
+                        <span>Home</span>
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                </li>
+                <li class="transform transition-all duration-500 translate-y-8 opacity-0 menu-item">
+                    <a href="#about"
+                        class="text-2xl text-light hover:text-primary transition-colors duration-300 relative inline-block group">
+                        <span>About</span>
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                </li>
+                <li class="transform transition-all duration-500 translate-y-8 opacity-0 menu-item">
+                    <a href="#services"
+                        class="text-2xl text-light hover:text-primary transition-colors duration-300 relative inline-block group">
+                        <span>Services</span>
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                </li>
+                <li class="transform transition-all duration-500 translate-y-8 opacity-0 menu-item">
+                    <a href="#trainers"
+                        class="text-2xl text-light hover:text-primary transition-colors duration-300 relative inline-block group">
+                        <span>Trainers</span>
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                </li>
+                <li class="transform transition-all duration-500 translate-y-8 opacity-0 menu-item">
+                    <a href="#pricing"
+                        class="text-2xl text-light hover:text-primary transition-colors duration-300 relative inline-block group">
+                        <span>Pricing</span>
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                </li>
+                <li class="transform transition-all duration-500 translate-y-8 opacity-0 menu-item">
+                    <a href="#contact"
+                        class="text-2xl text-light hover:text-primary transition-colors duration-300 relative inline-block group">
+                        <span>Contact</span>
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Contact buttons -->
+            <div
+                class="mt-10 flex flex-col space-y-4 transform transition-all duration-500 translate-y-8 opacity-0 menu-item">
+                <a href="#contact"
+                    class="bg-primary hover:bg-primary-dark text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 text-center relative overflow-hidden group">
+                    <span
+                        class="absolute -inset-0 opacity-0 group-hover:opacity-30 group-hover:duration-1000 duration-200 bg-gradient-to-r from-transparent via-white to-transparent skew-x-[-20deg] group-hover:translate-x-[200%] ease-out transition-all z-10 pointer-events-none"></span>
+                    <span class="relative z-20">Get Started</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- JavaScript for interactions -->
+    <script src="dist/js/main.js"></script>
+    <script>
+        AOS.init({
+            once: true, // Whether animation should happen only once - while scrolling down
+            mirror: false, // Whether elements should animate out while scrolling past them
+            offset: 120, // Offset (in px) from the original trigger point
+            easing: 'ease-out-cubic', // Default easing for AOS animations
+        });
+    </script>
+</body>
+
+</html>
