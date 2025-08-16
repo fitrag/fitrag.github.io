@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Image Prompt Crafter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              'base': '#0D1117',
+              'surface': '#161B22',
+              'muted': '#8B949E',
+              'primary': '#22d3ee',
+              'primary-hover': '#5ee6f8',
+              'secondary': '#a855f7',
+              'border': '#30363D',
+            },
+            animation: {
+              'fade-in': 'fade-in 0.6s ease-out forwards',
+              'fade-in-stagger': 'fade-in 0.6s ease-out forwards',
+              'gradient-bg': 'gradient-bg 20s ease infinite',
+            },
+            keyframes: {
+              'fade-in': {
+                '0%': { opacity: 0, transform: 'translateY(15px) scale(0.98)' },
+                '100%': { opacity: 1, transform: 'translateY(0) scale(1)' },
+              },
+              'gradient-bg': {
+                '0%, 100%': { backgroundPosition: '0% 50%' },
+                '50%': { backgroundPosition: '100% 50%' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+<link rel="stylesheet" href="/index.css">
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react": "https://esm.sh/react@^19.1.1",
+    "@google/genai": "https://esm.sh/@google/genai@^1.14.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/promptgen/assets/index-vutCQFpB.js"></script>
+</head>
+  <body class="bg-base">
+    <div id="root"></div>
+  </body>
+</html>
