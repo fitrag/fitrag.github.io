@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-g" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Microstock Keyword Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-in-out',
+              'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: 0 },
+                '100%': { opacity: 1 },
+              },
+              pulseGlow: {
+                  '0%, 100%': { borderColor: 'rgba(255, 255, 255, 0.4)' },
+                  '50%': { borderColor: 'rgba(255, 255, 255, 1)' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+<link rel="stylesheet" href="/index.css">
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.15.0",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.417.0"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/keygentitle/assets/index-Dcj7QKIq.js"></script>
+</head>
+  <body class="bg-gray-50">
+    <div id="root"></div>
+  </body>
+</html>
