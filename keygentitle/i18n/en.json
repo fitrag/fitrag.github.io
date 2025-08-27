@@ -1,0 +1,119 @@
+{
+    "header": {
+        "getStarted": "Get Started",
+        "getStartedTooltip": "Go to Generator",
+        "switchLanguageTooltip": "Switch Language"
+    },
+    "footer": {
+        "copyright": "© {year} Keyword AI. All Rights Reserved.",
+        "createdBy": "Created by Fadila Fitra Kusuma Jaya"
+    },
+    "landing": {
+        "heroTitle": "Elevate Your Microstock Game",
+        "heroSubtitle": "Instantly generate dozens of high-traffic, relevant keywords for platforms like Adobe Stock, Freepik, and Vecteezy.",
+        "getStartedButton": "Get Started for Free",
+        "tourButton": "Take a quick tour",
+        "howItWorksTitle": "A Simple 3-Step Process",
+        "step1Title": "1. Enter Your Titles",
+        "step1Description": "Provide one or more titles for your images, vectors, or videos. Each title on a new line.",
+        "step2Title": "2. Generate Keywords",
+        "step2Description": "Our AI analyzes your titles and generates a targeted list of SEO-friendly keywords in seconds.",
+        "step3Title": "3. Copy & Use",
+        "step3Description": "Easily copy keywords for a single title or all of them at once to use in your microstock metadata.",
+        "featuresTitle": "Why Choose Keyword AI?",
+        "feature1Title": "AI-Powered Precision",
+        "feature1Description": "Leverage the Gemini model to find relevant, high-traffic keywords that humans might miss.",
+        "feature2Title": "Bulk Processing",
+        "feature2Description": "Save hours of work by generating keywords for multiple assets simultaneously.",
+        "feature3Title": "Optimized for Microstock",
+        "feature3Description": "Keywords are tailored for top platforms, helping your content get discovered faster."
+    },
+    "tour": {
+        "step1Title": "Welcome to Keyword AI!",
+        "step1Content": "This quick tour will show you how to get the most out of our tool.",
+        "step2Title": "A Simple Process",
+        "step2Content": "Generating keywords is as easy as 1-2-3. Follow these steps to success.",
+        "step3Title": "Powerful Features",
+        "step3Content": "Discover why our AI-powered generator is the best choice for your microstock needs.",
+        "step4Title": "Ready to Start?",
+        "step4Content": "Click here to head over to the generator and create your first set of keywords!",
+        "next": "Next",
+        "finish": "Finish",
+        "prev": "Previous step",
+        "close": "Close tour"
+    },
+    "sidebar": {
+        "generator": "Generator",
+        "history": "History",
+        "settings": "Settings",
+        "openMenu": "Open menu",
+        "closeMenu": "Close menu"
+    },
+    "generator": {
+        "title": "Keyword Generator",
+        "subtitle": "Let our AI do the heavy lifting.",
+        "errorNoTitle": "Please enter at least one title to generate keywords.",
+        "errorInvalidCount": "Please enter a keyword count between 5 and 50.",
+        "errorFailed": "Failed to generate keywords. Please try again later.",
+        "errorNoApiKey": "Gemini API key is not set. Please add it in the Settings tab."
+    },
+    "keywordInput": {
+        "label": "Titles",
+        "description": "Enter one or more titles, separated by a new line.",
+        "placeholder": "e.g., A happy golden retriever playing in a sunny field\nA futuristic cityscape at night with flying cars",
+        "countLabel": "Keywords Per Title",
+        "buttonGenerating": "Generating...",
+        "buttonGenerate": "Generate Keywords"
+    },
+    "keywordDisplay": {
+        "title": "Generated Keywords",
+        "copyButton": "Copy",
+        "copiedButton": "Copied!",
+        "copyAllButton": "Copy All Keywords"
+    },
+    "history": {
+        "title": "Generation History",
+        "clearAllButton": "Clear All",
+        "viewButton": "View",
+        "viewButtonTooltip": "View these keywords",
+        "deleteButtonTooltip": "Delete this entry",
+        "confirmClearAllTitle": "Are you sure?",
+        "confirmClearAllText": "This will permanently delete your entire generation history!",
+        "confirmDeleteItemTitle": "Delete this entry?",
+        "confirmDeleteItemText": "You won't be able to revert this!",
+        "confirmDeleteButton": "Yes, delete it!",
+        "cancelButton": "Cancel",
+        "modalTitle": "History Details",
+        "useInGeneratorButton": "Use in Generator",
+        "metaTitle": "title",
+        "metaTitles": "titles",
+        "metaKeyword": "keyword",
+        "metaKeywords": "keywords"
+    },
+    "settings": {
+        "title": "Settings",
+        "description": "Configure your application preferences and API settings here.",
+        "apiKeyLabel": "Gemini API Key",
+        "apiKeyDescription": "Your API key is stored locally in your browser and is never sent to our servers.",
+        "apiKeyPlaceholder": "Enter your Gemini API key",
+        "apiKeySaveButton": "Save",
+        "apiKeySaved": "Saved!",
+        "securityWarningTitle": "Security Notice",
+        "securityWarning": "Storing your API key in the browser is not recommended for production applications. For personal use, ensure you understand the risks and protect your key.",
+        "apiKeyHistoryTitle": "API Key History",
+        "apiKeyHistoryDescription": "Recently used keys are stored here for your convenience. The active key is used for generating keywords.",
+        "lastUsedLabel": "Last Used",
+        "activeKeyLabel": "Active",
+        "useKeyButton": "Use",
+        "deleteApiKeyTooltip": "Delete this key from history",
+        "confirmDeleteApiKeyTitle": "Delete this API key?",
+        "confirmDeleteApiKeyText": "The key will be removed from your history, but will remain active if it is the current key.",
+        "clearApiHistoryButton": "Clear History",
+        "confirmClearApiHistoryTitle": "Clear API key history?",
+        "confirmClearApiHistoryText": "This will not delete the currently active key.",
+        "noApiHistory": "No previously used API keys found."
+    },
+    "modal": {
+        "close": "Close"
+    }
+}

@@ -1,0 +1,119 @@
+{
+    "header": {
+        "getStarted": "Mulai",
+        "getStartedTooltip": "Buka Generator",
+        "switchLanguageTooltip": "Ganti Bahasa"
+    },
+    "footer": {
+        "copyright": "© {year} Keyword AI. Semua Hak Dilindungi.",
+        "createdBy": "Dibuat oleh Fadila Fitra Kusuma Jaya"
+    },
+    "landing": {
+        "heroTitle": "Tingkatkan Level Microstock Anda",
+        "heroSubtitle": "Hasilkan puluhan kata kunci relevan dengan lalu lintas tinggi secara instan untuk platform seperti Adobe Stock, Freepik, dan Vecteezy.",
+        "getStartedButton": "Mulai Gratis",
+        "tourButton": "Ikuti tur singkat",
+        "howItWorksTitle": "Proses 3 Langkah Sederhana",
+        "step1Title": "1. Masukkan Judul Anda",
+        "step1Description": "Berikan satu atau lebih judul untuk gambar, vektor, atau video Anda. Pisahkan setiap judul dengan baris baru.",
+        "step2Title": "2. Hasilkan Kata Kunci",
+        "step2Description": "AI kami akan menganalisis judul Anda dan menghasilkan daftar kata kunci SEO yang ditargetkan dalam hitungan detik.",
+        "step3Title": "3. Salin & Gunakan",
+        "step3Description": "Salin kata kunci dengan mudah untuk satu judul atau semuanya sekaligus untuk digunakan di metadata microstock Anda.",
+        "featuresTitle": "Mengapa Memilih Keyword AI?",
+        "feature1Title": "Presisi Berbasis AI",
+        "feature1Description": "Manfaatkan model Gemini untuk menemukan kata kunci relevan dengan lalu lintas tinggi yang mungkin terlewatkan oleh manusia.",
+        "feature2Title": "Proses Massal",
+        "feature2Description": "Hemat waktu berjam-jam dengan menghasilkan kata kunci untuk beberapa aset secara bersamaan.",
+        "feature3Title": "Dioptimalkan untuk Microstock",
+        "feature3Description": "Kata kunci disesuaikan untuk platform teratas, membantu konten Anda ditemukan lebih cepat."
+    },
+    "tour": {
+        "step1Title": "Selamat Datang di Keyword AI!",
+        "step1Content": "Tur singkat ini akan menunjukkan cara memaksimalkan alat kami.",
+        "step2Title": "Proses yang Sederhana",
+        "step2Content": "Menghasilkan kata kunci semudah 1-2-3. Ikuti langkah-langkah ini untuk sukses.",
+        "step3Title": "Fitur-fitur Unggulan",
+        "step3Content": "Temukan mengapa generator berbasis AI kami adalah pilihan terbaik untuk kebutuhan microstock Anda.",
+        "step4Title": "Siap untuk Memulai?",
+        "step4Content": "Klik di sini untuk menuju ke generator dan buat set kata kunci pertama Anda!",
+        "next": "Lanjut",
+        "finish": "Selesai",
+        "prev": "Langkah sebelumnya",
+        "close": "Tutup tur"
+    },
+    "sidebar": {
+        "generator": "Generator",
+        "history": "Riwayat",
+        "settings": "Pengaturan",
+        "openMenu": "Buka menu",
+        "closeMenu": "Tutup menu"
+    },
+    "generator": {
+        "title": "Generator Kata Kunci",
+        "subtitle": "Biarkan AI kami yang bekerja keras.",
+        "errorNoTitle": "Silakan masukkan setidaknya satu judul untuk menghasilkan kata kunci.",
+        "errorInvalidCount": "Silakan masukkan jumlah kata kunci antara 5 dan 50.",
+        "errorFailed": "Gagal menghasilkan kata kunci. Silakan coba lagi nanti.",
+        "errorNoApiKey": "Kunci API Gemini belum diatur. Silakan tambahkan di tab Pengaturan."
+    },
+    "keywordInput": {
+        "label": "Judul",
+        "description": "Masukkan satu atau lebih judul, pisahkan dengan baris baru.",
+        "placeholder": "contoh: Anjing golden retriever bahagia bermain di padang yang cerah\nPemandangan kota futuristik di malam hari dengan mobil terbang",
+        "countLabel": "Kata Kunci per Judul",
+        "buttonGenerating": "Menghasilkan...",
+        "buttonGenerate": "Hasilkan Kata Kunci"
+    },
+    "keywordDisplay": {
+        "title": "Kata Kunci yang Dihasilkan",
+        "copyButton": "Salin",
+        "copiedButton": "Tersalin!",
+        "copyAllButton": "Salin Semua Kata Kunci"
+    },
+    "history": {
+        "title": "Riwayat Generasi",
+        "clearAllButton": "Hapus Semua",
+        "viewButton": "Lihat",
+        "viewButtonTooltip": "Lihat kata kunci ini",
+        "deleteButtonTooltip": "Hapus entri ini",
+        "confirmClearAllTitle": "Apakah Anda yakin?",
+        "confirmClearAllText": "Ini akan menghapus seluruh riwayat generasi Anda secara permanen!",
+        "confirmDeleteItemTitle": "Hapus entri ini?",
+        "confirmDeleteItemText": "Tindakan ini tidak dapat dibatalkan!",
+        "confirmDeleteButton": "Ya, hapus!",
+        "cancelButton": "Batal",
+        "modalTitle": "Detail Riwayat",
+        "useInGeneratorButton": "Gunakan di Generator",
+        "metaTitle": "judul",
+        "metaTitles": "judul",
+        "metaKeyword": "kata kunci",
+        "metaKeywords": "kata kunci"
+    },
+    "settings": {
+        "title": "Pengaturan",
+        "description": "Konfigurasikan preferensi aplikasi dan pengaturan API Anda di sini.",
+        "apiKeyLabel": "Kunci API Gemini",
+        "apiKeyDescription": "Kunci API Anda disimpan secara lokal di browser Anda dan tidak pernah dikirim ke server kami.",
+        "apiKeyPlaceholder": "Masukkan kunci API Gemini Anda",
+        "apiKeySaveButton": "Simpan",
+        "apiKeySaved": "Tersimpan!",
+        "securityWarningTitle": "Pemberitahuan Keamanan",
+        "securityWarning": "Menyimpan kunci API Anda di browser tidak disarankan untuk aplikasi produksi. Untuk penggunaan pribadi, pastikan Anda memahami risikonya dan melindungi kunci Anda.",
+        "apiKeyHistoryTitle": "Riwayat Kunci API",
+        "apiKeyHistoryDescription": "Kunci yang baru saja digunakan disimpan di sini untuk kemudahan Anda. Kunci yang aktif digunakan untuk menghasilkan kata kunci.",
+        "lastUsedLabel": "Terakhir Digunakan",
+        "activeKeyLabel": "Aktif",
+        "useKeyButton": "Gunakan",
+        "deleteApiKeyTooltip": "Hapus kunci ini dari riwayat",
+        "confirmDeleteApiKeyTitle": "Hapus kunci API ini?",
+        "confirmDeleteApiKeyText": "Kunci ini akan dihapus dari riwayat Anda, tetapi akan tetap aktif jika merupakan kunci saat ini.",
+        "clearApiHistoryButton": "Hapus Riwayat",
+        "confirmClearApiHistoryTitle": "Hapus riwayat kunci API?",
+        "confirmClearApiHistoryText": "Tindakan ini tidak akan menghapus kunci yang sedang aktif.",
+        "noApiHistory": "Tidak ditemukan riwayat penggunaan kunci API."
+    },
+    "modal": {
+        "close": "Tutup"
+    }
+}
