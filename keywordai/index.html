@@ -1,92 +1,103 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Generator Judul & Keyword Microstock AI</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Telah Pindah - Moward Studio</title>
+    
+    <!-- Tailwind CSS v4 CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Konfigurasi Tailwind (Opsional, untuk kustomisasi) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Inter untuk tampilan font yang lebih modern -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script>
-      // Atur mode gelap Tailwind ke 'class' untuk mengaktifkan toggling manual
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            keyframes: {
-              'fade-in-up': {
-                '0%': { opacity: '0', transform: 'translateY(20px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              },
-            },
-            animation: {
-              'fade-in-up': 'fade-in-up 0.4s ease-out forwards',
-            },
-          }
-        }
-      }
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
     <style>
-      /* --- Custom Scrollbar --- */
-      
-      /* For Firefox */
-      /* Ini perlu berada pada selektor yang mencakup semua elemen yang dapat di-scroll. '*' adalah pilihan yang luas namun efektif di sini. */
-      * {
-        scrollbar-width: thin;
-        scrollbar-color: #cbd5e1 transparent; /* thumb(slate-300), track(transparent) */
-      }
-
-      .dark * {
-        scrollbar-color: #475569 transparent; /* thumb(slate-600), track(transparent) */
-      }
-
-      /* For Webkit-based browsers (Chrome, Safari, Edge, etc.) */
-      ::-webkit-scrollbar {
-        width: 10px;
-        height: 10px;
-      }
-
-      ::-webkit-scrollbar-track {
-        background-color: transparent;
-      }
-
-      ::-webkit-scrollbar-thumb {
-        background-clip: padding-box;
-        border: 2px solid transparent;
-        border-radius: 5px;
-        background-color: #e2e8f0; /* slate-200 */
-      }
-
-      .dark ::-webkit-scrollbar-thumb {
-        background-color: #334155; /* slate-700 */
-      }
-
-      ::-webkit-scrollbar-thumb:hover {
-        background-color: #cbd5e1; /* slate-300 */
-      }
-      
-      .dark ::-webkit-scrollbar-thumb:hover {
-        background-color: #475569; /* slate-600 */
-      }
+        /* Memastikan font Inter digunakan */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
     </style>
-
-<link rel="stylesheet" href="/index.css">
-  <script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
-    "react": "https://esm.sh/react@^19.1.0",
-    "react/": "https://esm.sh/react@^19.1.0/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.9.0",
-    "browser-image-compression": "https://esm.sh/browser-image-compression@^2.0.2"
-  }
-}
-</script>
-  <script type="module" crossorigin src="/keywordai/assets/index-Di4l8tFP.js"></script>
 </head>
-  <body style="font-family: 'Inter', sans-serif;">
-    <div id="root"></div>
-  </body>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center p-4">
+
+    <!-- Kontainer Utama -->
+    <div class="bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl p-8 md:p-12 max-w-2xl w-full text-center border border-white/20">
+        
+        <!-- Ikon/Animasi -->
+        <div class="flex justify-center mb-6">
+            <div class="relative">
+                <div class="w-24 h-24 bg-blue-500 rounded-full flex items-center justify-center animate-pulse">
+                    <!-- Ikon Arrow Right dari Heroicons -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-12 h-12 text-white">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                </div>
+                <div class="absolute inset-0 w-24 h-24 bg-blue-500 rounded-full animate-ping opacity-20"></div>
+            </div>
+        </div>
+
+        <!-- Judul Utama -->
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+            Kami Telah Pindah!
+        </h1>
+
+        <!-- Pesan Deskriptif -->
+        <p class="text-lg text-gray-200 mb-8">
+            Website kami telah pindah ke alamat yang baru dan lebih baik. Kami akan segera mengalihkan Anda.
+        </p>
+
+        <!-- Kotak Alamat Baru -->
+        <div class="bg-white/20 rounded-xl p-4 mb-8">
+            <p class="text-sm text-gray-300 mb-1">Alamat baru kami adalah:</p>
+            <a href="https://meta.mowardstudio.com" target="_blank" class="text-xl md:text-2xl font-semibold text-blue-300 hover:text-white transition-colors duration-300 break-all">
+                https://meta.mowardstudio.com
+            </a>
+        </div>
+        
+        <!-- Tombol Call-to-Action -->
+        <a href="https://meta.mowardstudio.com" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+            Kunjungi Situs Baru Sekarang
+        </a>
+
+        <!-- Pesan Countdown -->
+        <p class="text-sm text-gray-400 mt-8">
+            Anda akan dialihkan secara otomatis dalam <span id="redirect-counter" class="font-bold text-white">10</span> detik.
+        </p>
+    </div>
+
+    <!-- JavaScript untuk Countdown dan Redirect Otomatis -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const newUrl = 'https://meta.mowardstudio.com';
+            let countdownSeconds = 10;
+            const counterElement = document.getElementById('redirect-counter');
+
+            const countdownInterval = setInterval(() => {
+                countdownSeconds--;
+                counterElement.textContent = countdownSeconds;
+
+                if (countdownSeconds <= 0) {
+                    clearInterval(countdownInterval);
+                    window.location.href = newUrl;
+                }
+            }, 1000); // Update setiap 1 detik
+        });
+    </script>
+
+</body>
 </html>
