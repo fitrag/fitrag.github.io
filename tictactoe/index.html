@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Tic Tac Toe</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #1e1e2e 0%, #2d1b4e 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      padding: 20px;
+    }
+    
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 10px rgba(139, 92, 246, 0.5);
+    }
+    
+    .status {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      color: #a78bfa;
+      min-height: 30px;
+    }
+    
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 25px;
+    }
+    
+    .cell {
+      width: 90px;
+      height: 90px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(139, 92, 246, 0.3);
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      backdrop-filter: blur(5px);
+    }
+    
+    .cell:hover:not(.taken) {
+      background: rgba(139, 92, 246, 0.2);
+      border-color: rgba(139, 92, 246, 0.6);
+      transform: scale(1.05);
+    }
+    
+    .cell.taken {
+      cursor: not-allowed;
+    }
+    
+    .cell.x {
+      color: #ef4444;
+      text-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+    }
+    
+    .cell.o {
+      color: #22c55e;
+      text-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+    }
+    
+    .cell.winner {
+      animation: pulse 0.5s ease infinite alternate;
+      background: rgba(139, 92, 246, 0.3);
+    }
+    
+    @keyframes pulse {
+      from { transform: scale(1); }
+      to { transform: scale(1.1); }
+    }
+    
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    button {
+      padding: 12px 25px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-weight: 600;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(139, 92, 246, 0.4);
+    }
+    
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    
+    .score-board {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 20px;
+      padding: 15px 30px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .score-item {
+      text-align: center;
+    }
+    
+    .score-label {
+      font-size: 0.8rem;
+      color: #a78bfa;
+      margin-bottom: 5px;
+    }
+    
+    .score-value {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    
+    .score-value.player { color: #ef4444; }
+    .score-value.bot { color: #22c55e; }
+    .score-value.draw { color: #fbbf24; }
+    
+    .difficulty {
+      margin-bottom: 20px;
+    }
+    
+    .difficulty select {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 10px;
+      border: 2px solid rgba(139, 92, 246, 0.3);
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      cursor: pointer;
+    }
+    
+    .difficulty select option {
+      background: #1e1e2e;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎮 Tic Tac Toe</h1>
+  
+  <div class="score-board">
+    <div class="score-item">
+      <div class="score-label">Kamu (❌)</div>
+      <div class="score-value player" id="playerScore">0</div>
+    </div>
+    <div class="score-item">
+      <div class="score-label">Seri</div>
+      <div class="score-value draw" id="drawScore">0</div>
+    </div>
+    <div class="score-item">
+      <div class="score-label">Bot (⭕)</div>
+      <div class="score-value bot" id="botScore">0</div>
+    </div>
+  </div>
+  
+  <div class="status" id="status">Giliran kamu!</div>
+  
+  <div class="board" id="board">
+    <div class="cell" data-index="0"></div>
+    <div class="cell" data-index="1"></div>
+    <div class="cell" data-index="2"></div>
+    <div class="cell" data-index="3"></div>
+    <div class="cell" data-index="4"></div>
+    <div class="cell" data-index="5"></div>
+    <div class="cell" data-index="6"></div>
+    <div class="cell" data-index="7"></div>
+    <div class="cell" data-index="8"></div>
+  </div>
+  
+  <div class="buttons">
+    <button class="btn-primary" onclick="resetGame()">🔄 Main Lagi</button>
+    <button class="btn-secondary" onclick="shareScore()">📤 Share Score</button>
+  </div>
+  
+  <script src="https://telegram.org/js/games.js"></script>
+  <script>
+    const board = ['', '', '', '', '', '', '', '', ''];
+    const cells = document.querySelectorAll('.cell');
+    const statusEl = document.getElementById('status');
+    let isPlayerTurn = true;
+    let gameOver = false;
+    let scores = { player: 0, bot: 0, draw: 0 };
+    
+    const winPatterns = [
+      [0, 1, 2], [3, 4, 5], [6, 7, 8],
+      [0, 3, 6], [1, 4, 7], [2, 5, 8],
+      [0, 4, 8], [2, 4, 6]
+    ];
+    
+    function checkWinner(b) {
+      for (const [a, c, d] of winPatterns) {
+        if (b[a] && b[a] === b[c] && b[a] === b[d]) {
+          return { winner: b[a], pattern: [a, c, d] };
+        }
+      }
+      return null;
+    }
+    
+    function isBoardFull(b) {
+      return b.every(cell => cell !== '');
+    }
+    
+    function getBotMove(b) {
+      // Try to win
+      for (let i = 0; i < 9; i++) {
+        if (b[i] === '') {
+          const test = [...b];
+          test[i] = 'O';
+          if (checkWinner(test)) return i;
+        }
+      }
+      
+      // Block player
+      for (let i = 0; i < 9; i++) {
+        if (b[i] === '') {
+          const test = [...b];
+          test[i] = 'X';
+          if (checkWinner(test)) return i;
+        }
+      }
+      
+      // Take center
+      if (b[4] === '') return 4;
+      
+      // Take corner
+      const corners = [0, 2, 6, 8].filter(i => b[i] === '');
+      if (corners.length) return corners[Math.floor(Math.random() * corners.length)];
+      
+      // Take any
+      const available = b.map((v, i) => v === '' ? i : -1).filter(i => i !== -1);
+      return available[Math.floor(Math.random() * available.length)];
+    }
+    
+    function updateBoard() {
+      cells.forEach((cell, i) => {
+        cell.textContent = board[i] === 'X' ? '❌' : board[i] === 'O' ? '⭕' : '';
+        cell.className = 'cell';
+        if (board[i]) {
+          cell.classList.add('taken');
+          cell.classList.add(board[i].toLowerCase());
+        }
+      });
+    }
+    
+    function highlightWinner(pattern) {
+      pattern.forEach(i => cells[i].classList.add('winner'));
+    }
+    
+    function updateScores() {
+      document.getElementById('playerScore').textContent = scores.player;
+      document.getElementById('botScore').textContent = scores.bot;
+      document.getElementById('drawScore').textContent = scores.draw;
+    }
+    
+    function handleClick(index) {
+      if (gameOver || !isPlayerTurn || board[index] !== '') return;
+      
+      // Player move
+      board[index] = 'X';
+      updateBoard();
+      
+      const result = checkWinner(board);
+      if (result) {
+        gameOver = true;
+        scores.player++;
+        updateScores();
+        statusEl.textContent = '🎉 Kamu Menang!';
+        highlightWinner(result.pattern);
+        setTelegramScore(scores.player);
+        return;
+      }
+      
+      if (isBoardFull(board)) {
+        gameOver = true;
+        scores.draw++;
+        updateScores();
+        statusEl.textContent = '🤝 Seri!';
+        return;
+      }
+      
+      // Bot turn
+      isPlayerTurn = false;
+      statusEl.textContent = 'Bot berpikir...';
+      
+      setTimeout(() => {
+        const botMove = getBotMove(board);
+        board[botMove] = 'O';
+        updateBoard();
+        
+        const botResult = checkWinner(board);
+        if (botResult) {
+          gameOver = true;
+          scores.bot++;
+          updateScores();
+          statusEl.textContent = '😅 Bot Menang!';
+          highlightWinner(botResult.pattern);
+          return;
+        }
+        
+        if (isBoardFull(board)) {
+          gameOver = true;
+          scores.draw++;
+          updateScores();
+          statusEl.textContent = '🤝 Seri!';
+          return;
+        }
+        
+        isPlayerTurn = true;
+        statusEl.textContent = 'Giliran kamu!';
+      }, 500);
+    }
+    
+    function resetGame() {
+      board.fill('');
+      gameOver = false;
+      isPlayerTurn = true;
+      statusEl.textContent = 'Giliran kamu!';
+      updateBoard();
+    }
+    
+    function shareScore() {
+      if (typeof TelegramGameProxy !== 'undefined') {
+        TelegramGameProxy.shareScore();
+      } else {
+        alert('Share hanya tersedia di dalam Telegram');
+      }
+    }
+    
+    function setTelegramScore(score) {
+      // Score will be set by the bot via API
+      console.log('Score to set:', score);
+    }
+    
+    // Initialize
+    cells.forEach((cell, i) => {
+      cell.addEventListener('click', () => handleClick(i));
+    });
+    
+    updateBoard();
+  </script>
+</body>
+</html>
