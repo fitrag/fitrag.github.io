@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Penjual - NexaMarket</title>
+  <meta name="description" content="Dashboard penjual untuk mengelola produk dan transaksi.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <style>
+    :root {
+      --primary-500: #a855f7;
+      --primary-600: #9333ea;
+      --primary-700: #7c3aed;
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-card: #161620;
+      --bg-hover: #222230;
+      --text-primary: #ffffff;
+      --text-secondary: #a1a1aa;
+      --text-muted: #71717a;
+      --border-color: #27273a;
+      --border-hover: #3f3f5a;
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --radius-lg: 0.75rem;
+      --radius-xl: 1rem;
+      --sidebar-width: 280px;
+    }
+    
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background-color: var(--bg-primary); color: var(--text-primary); line-height: 1.6; }
+    
+    .icon { width: 20px; height: 20px; flex-shrink: 0; }
+    .icon-lg { width: 24px; height: 24px; }
+    
+    .dashboard { display: flex; min-height: 100vh; }
+    
+    .sidebar { position: fixed; left: 0; top: 0; bottom: 0; width: var(--sidebar-width); background-color: var(--bg-secondary); border-right: 1px solid var(--border-color); z-index: 1000; transform: translateX(-100%); transition: transform 0.3s; display: flex; flex-direction: column; }
+    .sidebar.active { transform: translateX(0); }
+    @media (min-width: 1024px) { .sidebar { position: relative; transform: translateX(0); } }
+    
+    .sidebar-overlay { display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 999; }
+    .sidebar-overlay.active { display: block; }
+    @media (min-width: 1024px) { .sidebar-overlay { display: none !important; } }
+    
+    .sidebar-header { padding: var(--space-6); border-bottom: 1px solid var(--border-color); }
+    .sidebar-logo { display: flex; align-items: center; gap: var(--space-3); font-size: 1.25rem; font-weight: 700; color: var(--text-primary); text-decoration: none; }
+    .sidebar-logo-icon { width: 36px; height: 36px; background: linear-gradient(135deg, var(--primary-600), var(--primary-700)); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; }
+    
+    .sidebar-nav { flex: 1; padding: var(--space-4); overflow-y: auto; }
+    .sidebar-menu { list-style: none; }
+    .sidebar-item { margin-bottom: var(--space-1); }
+    .sidebar-link { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3) var(--space-4); border-radius: var(--radius-lg); color: var(--text-secondary); font-size: 0.875rem; font-weight: 500; text-decoration: none; transition: all 0.2s; }
+    .sidebar-link:hover { background-color: var(--bg-hover); color: var(--text-primary); }
+    .sidebar-link.active { background: linear-gradient(135deg, rgba(168,85,247,0.15), rgba(124,58,237,0.1)); color: var(--primary-500); }
+    .sidebar-link.active .icon { color: var(--primary-500); }
+    
+    .main-content { flex: 1; min-height: 100vh; }
+    
+    .topbar { position: sticky; top: 0; z-index: 100; background-color: rgba(10,10,15,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); padding: var(--space-4) var(--space-6); }
+    .topbar-content { display: flex; align-items: center; justify-content: space-between; }
+    .topbar-left { display: flex; align-items: center; gap: var(--space-4); }
+    .menu-toggle { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; color: var(--text-primary); background: none; border: none; cursor: pointer; border-radius: var(--radius-lg); }
+    .menu-toggle:hover { background-color: var(--bg-hover); }
+    @media (min-width: 1024px) { .menu-toggle { display: none; } }
+    .topbar-title { font-size: 1.25rem; font-weight: 600; }
+    .topbar-right { display: flex; align-items: center; gap: var(--space-4); }
+    .seller-name { display: none; font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); }
+    @media (min-width: 640px) { .seller-name { display: block; } }
+    .btn-logout { display: flex; align-items: center; gap: var(--space-2); padding: var(--space-2) var(--space-4); background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); color: var(--text-primary); font-size: 0.875rem; font-weight: 500; cursor: pointer; transition: all 0.2s; }
+    .btn-logout:hover { background-color: rgba(239,68,68,0.1); border-color: rgba(239,68,68,0.3); color: #ef4444; }
+    
+    .content { padding: var(--space-6); }
+    @media (min-width: 768px) { .content { padding: var(--space-8); } }
+    
+    .stats-grid { display: grid; gap: var(--space-6); margin-bottom: var(--space-8); }
+    @media (min-width: 640px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .stats-grid { grid-template-columns: repeat(3, 1fr); } }
+    .stat-card { background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: var(--space-6); transition: all 0.3s; }
+    .stat-card:hover { border-color: var(--border-hover); box-shadow: 0 0 40px rgba(168,85,247,0.1); }
+    .stat-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: var(--space-4); }
+    .stat-icon { width: 48px; height: 48px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: var(--primary-500); }
+    .stat-icon.purple { background-color: rgba(168,85,247,0.15); }
+    .stat-icon.blue { background-color: rgba(59,130,246,0.15); color: #3b82f6; }
+    .stat-icon.green { background-color: rgba(34,197,94,0.15); color: #22c55e; }
+    .stat-label { font-size: 0.875rem; color: var(--text-secondary); margin-bottom: var(--space-1); }
+    .stat-value { font-size: 1.875rem; font-weight: 700; }
+    .stat-change { display: flex; align-items: center; gap: var(--space-1); font-size: 0.875rem; margin-top: var(--space-2); color: #86efac; }
+    
+    .charts-grid { display: grid; gap: var(--space-6); margin-bottom: var(--space-8); }
+    @media (min-width: 1024px) { .charts-grid { grid-template-columns: repeat(2, 1fr); } }
+    .chart-card { background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: var(--space-6); }
+    .chart-header { margin-bottom: var(--space-6); }
+    .chart-title { font-size: 1.125rem; font-weight: 600; margin-bottom: var(--space-1); }
+    .chart-caption { font-size: 0.875rem; color: var(--text-muted); }
+    .chart-container { position: relative; height: 250px; }
+    
+    .table-card { background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); overflow: hidden; }
+    .table-header { display: flex; align-items: center; justify-content: space-between; padding: var(--space-5) var(--space-6); border-bottom: 1px solid var(--border-color); }
+    .table-title { font-size: 1.125rem; font-weight: 600; }
+    .table-wrapper { overflow-x: auto; }
+    .data-table { width: 100%; border-collapse: collapse; }
+    .data-table th, .data-table td { padding: var(--space-4) var(--space-6); text-align: left; font-size: 0.875rem; }
+    .data-table th { font-weight: 500; color: var(--text-secondary); background-color: var(--bg-hover); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; }
+    .data-table td { border-bottom: 1px solid var(--border-color); color: var(--text-primary); }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:hover td { background-color: var(--bg-hover); }
+    .status-badge { display: inline-flex; align-items: center; gap: 4px; padding: var(--space-1) var(--space-3); font-size: 0.75rem; font-weight: 500; border-radius: var(--radius-full); }
+    .status-success { background-color: rgba(34,197,94,0.15); color: #86efac; }
+    .status-pending { background-color: rgba(245,158,11,0.15); color: #fcd34d; }
+    .status-failed { background-color: rgba(239,68,68,0.15); color: #fca5a5; }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="sidebar-logo">
+          <div class="sidebar-logo-icon"><i data-lucide="zap" class="icon"></i></div>
+          <span>NexaMarket</span>
+        </a>
+      </div>
+      <nav class="sidebar-nav">
+        <ul class="sidebar-menu">
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link active">
+              <i data-lucide="layout-dashboard" class="icon"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link">
+              <i data-lucide="package" class="icon"></i>
+              <span>Produk</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link">
+              <i data-lucide="credit-card" class="icon"></i>
+              <span>Transaksi</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link">
+              <i data-lucide="bar-chart-3" class="icon"></i>
+              <span>Laporan</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link">
+              <i data-lucide="settings" class="icon"></i>
+              <span>Pengaturan</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-content">
+          <div class="topbar-left">
+            <button class="menu-toggle" id="menuToggle"><i data-lucide="menu" class="icon-lg"></i></button>
+            <h1 class="topbar-title">Dashboard</h1>
+          </div>
+          <div class="topbar-right">
+            <span class="seller-name">Ahmad Fauzi</span>
+            <button class="btn-logout" onclick="handleLogout()">
+              <i data-lucide="log-out" class="icon"></i>
+              <span>Logout</span>
+            </button>
+          </div>
+        </div>
+      </header>
+      
+      <div class="content">
+        <!-- STATS -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-header">
+              <div>
+                <div class="stat-label">Total Penjualan</div>
+                <div class="stat-value">Rp 12.5M</div>
+                <div class="stat-change"><i data-lucide="trending-up" class="icon"></i><span>+12.5% dari bulan lalu</span></div>
+              </div>
+              <div class="stat-icon purple"><i data-lucide="wallet" class="icon-lg"></i></div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-header">
+              <div>
+                <div class="stat-label">Total Transaksi</div>
+                <div class="stat-value">1,284</div>
+                <div class="stat-change"><i data-lucide="trending-up" class="icon"></i><span>+8.2% dari bulan lalu</span></div>
+              </div>
+              <div class="stat-icon blue"><i data-lucide="bar-chart-2" class="icon-lg"></i></div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-header">
+              <div>
+                <div class="stat-label">Produk Terjual</div>
+                <div class="stat-value">3,456</div>
+                <div class="stat-change"><i data-lucide="trending-up" class="icon"></i><span>+15.3% dari bulan lalu</span></div>
+              </div>
+              <div class="stat-icon green"><i data-lucide="shopping-cart" class="icon-lg"></i></div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- CHARTS -->
+        <div class="charts-grid">
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3 class="chart-title">Penjualan 1 Bulan Terakhir</h3>
+              <p class="chart-caption">Grafik total penjualan harian dalam 30 hari terakhir</p>
+            </div>
+            <div class="chart-container">
+              <canvas id="chartMonth"></canvas>
+            </div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3 class="chart-title">Penjualan 1 Minggu Terakhir</h3>
+              <p class="chart-caption">Grafik total penjualan per hari dalam seminggu terakhir</p>
+            </div>
+            <div class="chart-container">
+              <canvas id="chartWeek"></canvas>
+            </div>
+          </div>
+        </div>
+        
+        <!-- TRANSACTIONS TABLE -->
+        <div class="table-card">
+          <div class="table-header">
+            <h3 class="table-title">Transaksi Terbaru</h3>
+          </div>
+          <div class="table-wrapper">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Produk</th>
+                  <th>Email</th>
+                  <th>Nomor HP</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>DE-1709701200000</td>
+                  <td>AI Prompt Pack</td>
+                  <td>customer1@email.com</td>
+                  <td>081234567890</td>
+                  <td><span class="status-badge status-success"><i data-lucide="check-circle" class="icon"></i>Sukses</span></td>
+                </tr>
+                <tr>
+                  <td>DE-1709701100000</td>
+                  <td>E-Book Digital Marketing</td>
+                  <td>customer2@email.com</td>
+                  <td>081234567891</td>
+                  <td><span class="status-badge status-success"><i data-lucide="check-circle" class="icon"></i>Sukses</span></td>
+                </tr>
+                <tr>
+                  <td>DE-1709701000000</td>
+                  <td>Video Course Web Development</td>
+                  <td>customer3@email.com</td>
+                  <td>081234567892</td>
+                  <td><span class="status-badge status-pending"><i data-lucide="clock" class="icon"></i>Pending</span></td>
+                </tr>
+                <tr>
+                  <td>DE-1709700900000</td>
+                  <td>AI Prompt Pack</td>
+                  <td>customer4@email.com</td>
+                  <td>081234567893</td>
+                  <td><span class="status-badge status-success"><i data-lucide="check-circle" class="icon"></i>Sukses</span></td>
+                </tr>
+                <tr>
+                  <td>DE-1709700800000</td>
+                  <td>E-Book Digital Marketing</td>
+                  <td>customer5@email.com</td>
+                  <td>081234567894</td>
+                  <td><span class="status-badge status-failed"><i data-lucide="x-circle" class="icon"></i>Gagal</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+    
+    // Sidebar Toggle
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    const menuToggle = document.getElementById('menuToggle');
+    
+    function openSidebar() {
+      sidebar.classList.add('active');
+      sidebarOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeSidebar() {
+      sidebar.classList.remove('active');
+      sidebarOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.contains('active') ? closeSidebar() : openSidebar();
+    });
+    sidebarOverlay.addEventListener('click', closeSidebar);
+    
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024) closeSidebar();
+    });
+    
+    document.querySelectorAll('.sidebar-link').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        if (window.innerWidth < 1024) closeSidebar();
+      });
+    });
+    
+    // Logout
+    function handleLogout() {
+      if (confirm('Apakah Anda yakin ingin logout?')) {
+        alert('Logout berhasil! (Demo)');
+        window.location.href = 'index.html';
+      }
+    }
+    
+    // Chart.js Configuration
+    Chart.defaults.color = '#a1a1aa';
+    Chart.defaults.borderColor = '#27273a';
+    Chart.defaults.font.family = "'Inter', sans-serif";
+    
+    function getLast30Days() {
+      const labels = [];
+      for (let i = 29; i >= 0; i--) {
+        const date = new Date();
+        date.setDate(date.getDate() - i);
+        labels.push(date.getDate() + '/' + (date.getMonth() + 1));
+      }
+      return labels;
+    }
+    
+    function getLast7Days() {
+      const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+      const labels = [];
+      for (let i = 6; i >= 0; i--) {
+        const date = new Date();
+        date.setDate(date.getDate() - i);
+        labels.push(days[date.getDay()]);
+      }
+      return labels;
+    }
+    
+    function generateRandomData(count, min, max) {
+      return Array.from({ length: count }, () => Math.floor(Math.random() * (max - min + 1)) + min);
+    }
+    
+    // Monthly Chart
+    const ctxMonth = document.getElementById('chartMonth').getContext('2d');
+    const gradientMonth = ctxMonth.createLinearGradient(0, 0, 0, 250);
+    gradientMonth.addColorStop(0, 'rgba(168, 85, 247, 0.3)');
+    gradientMonth.addColorStop(1, 'rgba(168, 85, 247, 0)');
+    
+    new Chart(ctxMonth, {
+      type: 'line',
+      data: {
+        labels: getLast30Days(),
+        datasets: [{
+          label: 'Penjualan (Rp)',
+          data: generateRandomData(30, 500000, 2000000),
+          borderColor: '#a855f7',
+          backgroundColor: gradientMonth,
+          borderWidth: 2,
+          fill: true,
+          tension: 0.4,
+          pointBackgroundColor: '#a855f7',
+          pointBorderColor: '#fff',
+          pointBorderWidth: 2,
+          pointRadius: 3,
+          pointHoverRadius: 5
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#161620',
+            titleColor: '#fff',
+            bodyColor: '#a1a1aa',
+            borderColor: '#27273a',
+            borderWidth: 1,
+            padding: 12,
+            callbacks: {
+              label: function(context) {
+                return 'Rp ' + context.parsed.y.toLocaleString('id-ID');
+              }
+            }
+          }
+        },
+        scales: {
+          x: { grid: { display: false }, ticks: { maxTicksLimit: 10 } },
+          y: { grid: { color: '#27273a' }, ticks: { callback: function(value) { return 'Rp ' + (value / 1000000).toFixed(1) + 'M'; } } }
+        }
+      }
+    });
+    
+    // Weekly Chart
+    const ctxWeek = document.getElementById('chartWeek').getContext('2d');
+    new Chart(ctxWeek, {
+      type: 'bar',
+      data: {
+        labels: getLast7Days(),
+        datasets: [{
+          label: 'Penjualan (Rp)',
+          data: generateRandomData(7, 800000, 2500000),
+          backgroundColor: [
+            'rgba(168, 85, 247, 0.8)',
+            'rgba(168, 85, 247, 0.8)',
+            'rgba(168, 85, 247, 0.8)',
+            'rgba(168, 85, 247, 0.8)',
+            'rgba(168, 85, 247, 0.8)',
+            'rgba(168, 85, 247, 0.8)',
+            'rgba(168, 85, 247, 1)'
+          ],
+          borderColor: '#a855f7',
+          borderWidth: 1,
+          borderRadius: 6,
+          borderSkipped: false
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#161620',
+            titleColor: '#fff',
+            bodyColor: '#a1a1aa',
+            borderColor: '#27273a',
+            borderWidth: 1,
+            padding: 12,
+            callbacks: {
+              label: function(context) {
+                return 'Rp ' + context.parsed.y.toLocaleString('id-ID');
+              }
+            }
+          }
+        },
+        scales: {
+          x: { grid: { display: false } },
+          y: { grid: { color: '#27273a' }, ticks: { callback: function(value) { return 'Rp ' + (value / 1000000).toFixed(1) + 'M'; } } }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
