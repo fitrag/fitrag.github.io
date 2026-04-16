@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeID - Nonton Anime Subtitle Indonesia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        accent: {
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(14, 165, 233, 0.15);
+        }
+        .anime-card-img {
+            transition: all 0.3s ease;
+        }
+        .anime-card:hover .anime-card-img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-white font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-slate-900/80 backdrop-blur-lg border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-2">
+                    <i data-lucide="play-circle" class="w-8 h-8 text-primary-500"></i>
+                    <span class="text-2xl font-bold bg-gradient-to-r from-primary-400 to-accent-500 bg-clip-text text-transparent">AnimeID</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-slate-300 hover:text-white transition-colors">Beranda</a>
+                    <a href="#popular" class="text-slate-300 hover:text-white transition-colors">Populer</a>
+                    <a href="#latest" class="text-slate-300 hover:text-white transition-colors">Terbaru</a>
+                    <a href="#genres" class="text-slate-300 hover:text-white transition-colors">Genre</a>
+                    <a href="#features" class="text-slate-300 hover:text-white transition-colors">Fitur</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="text-slate-300 hover:text-white transition-colors">
+                        <i data-lucide="search" class="w-5 h-5"></i>
+                    </button>
+                    <button class="bg-primary-600 hover:bg-primary-700 px-4 py-2 rounded-lg font-medium transition-colors">
+                        Login
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg min-h-screen flex items-center pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <h1 class="text-5xl lg:text-7xl font-bold leading-tight">
+                        Nonton Anime
+                        <span class="bg-gradient-to-r from-primary-400 to-accent-500 bg-clip-text text-transparent">Subtitle Indonesia</span>
+                    </h1>
+                    <p class="text-xl text-slate-400 max-w-lg">
+                        Streaming anime favoritmu dengan kualitas terbaik, subtitle Indonesia akurat, dan update episode terbaru setiap hari. Gratis!
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-primary-600 hover:bg-primary-700 px-8 py-4 rounded-xl font-semibold text-lg transition-all flex items-center justify-center space-x-2">
+                            <i data-lucide="play" class="w-5 h-5"></i>
+                            <span>Mulai Nonton</span>
+                        </button>
+                        <button class="border border-slate-600 hover:border-slate-500 px-8 py-4 rounded-xl font-semibold text-lg transition-all flex items-center justify-center space-x-2">
+                            <i data-lucide="bookmark" class="w-5 h-5"></i>
+                            <span>Daftar Anime</span>
+                        </button>
+                    </div>
+                    <div class="flex items-center space-x-8 pt-4">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary-400">10K+</div>
+                            <div class="text-slate-400">Episode</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent-500">500+</div>
+                            <div class="text-slate-400">Judul Anime</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary-400">1M+</div>
+                            <div class="text-slate-400">Pengguna</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-accent-500/20 blur-3xl rounded-full"></div>
+                    <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?w=600&h=800&fit=crop" alt="Hero Anime" class="relative rounded-2xl shadow-2xl mx-auto object-cover h-[600px] w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Anime Section -->
+    <section id="popular" class="py-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Anime Populer</h2>
+                <p class="text-slate-400">Anime yang paling banyak ditonton minggu ini</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <!-- Anime Card 1 -->
+                <div class="anime-card card-hover bg-slate-800 rounded-xl overflow-hidden cursor-pointer group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1541562232579-512a21360020?w=300&h=450&fit=crop" alt="Anime" class="anime-card-img w-full h-64 object-cover">
+                        <div class="absolute top-2 right-2 bg-primary-600 px-2 py-1 rounded text-xs font-semibold">EP 12</div>
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <i data-lucide="play-circle" class="w-12 h-12 text-white"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold mb-1 truncate">One Piece</h3>
+                        <div class="flex items-center justify-between text-sm text-slate-400">
+                            <span>Action, Adventure</span>
+                            <div class="flex items-center space-x-1">
+                                <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-current"></i>
+                                <span>9.2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anime Card 2 -->
+                <div class="anime-card card-hover bg-slate-800 rounded-xl overflow-hidden cursor-pointer group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1560972550-aba3456b5564?w=300&h=450&fit=crop" alt="Anime" class="anime-card-img w-full h-64 object-cover">
+                        <div class="absolute top-2 right-2 bg-primary-600 px-2 py-1 rounded text-xs font-semibold">EP 24</div>
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <i data-lucide="play-circle" class="w-12 h-12 text-white"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold mb-1 truncate">Demon Slayer</h3>
+                        <div class="flex items-center justify-between text-sm text-slate-400">
+                            <span>Action, Fantasy</span>
+                            <div class="flex items-center space-x-1">
+                                <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-current"></i>
+                                <span>9.5</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anime Card 3 -->
+                <div class="anime-card card-hover bg-slate-800 rounded-xl overflow-hidden cursor-pointer group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1558679908-33e78c1d291b?w=300&h=450&fit=crop" alt="Anime" class="anime-card-img w-full h-64 object-cover">
+                        <div class="absolute top-2 right-2 bg-primary-600 px-2 py-1 rounded text-xs font-semibold">EP 12</div>
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <i data-lucide="play-circle" class="w-12 h-12 text-white"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold mb-1 truncate">Jujutsu Kaisen</h3>
+                        <div class="flex items-center justify-between text-sm text-slate-400">
+                            <span>Action, Supernatural</span>
+                            <div class="flex items-center space-x-1">
+                                <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-current"></i>
+                                <span>9.3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anime Card 4 -->
+                <div class="anime-card card-hover bg-slate-800 rounded-xl overflow-hidden cursor-pointer group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1560167016-015b6d2dc127?w=300&h=450&fit=crop" alt="Anime" class="anime-card-img w-full h-64 object-cover">
+                        <div class="absolute top-2 right-2 bg-primary-600 px-2 py-1 rounded text-xs font-semibold">EP 25</div>
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <i data-lucide="play-circle" class="w-12 h-12 text-white"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold mb-1 truncate">Attack on Titan</h3>
+                        <div class="flex items-center justify-between text-sm text-slate-400">
+                            <span>Action, Drama</span>
+                            <div class="flex items-center space-x-1">
+                                <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-current"></i>
+                                <span>9.7</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anime Card 5 -->
+                <div class="anime-card card-hover bg-slate-800 rounded-xl overflow-hidden cursor-pointer group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1581833971358-2c8b550f8af6?w=300&h=450&fit=crop" alt="Anime" class="anime-card-img w-full h-64 object-cover">
+                        <div class="absolute top-2 right-2 bg-primary-600 px-2 py-1 rounded text-xs font-semibold">EP 13</div>
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <i data-lucide="play-circle" class="w-12 h-12 text-white"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold mb-1 truncate">My Hero Academia</h3>
+                        <div class="flex items-center justify-between text-sm text-slate-400">
+                            <span>Action, Superhero</span>
+                            <div class="flex items-center space-x-1">
+                                <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-current"></i>
+                                <span>9.0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <button class="border border-primary-600 text-primary-400 hover:bg-primary-600 hover:text-white px-8 py-3 rounded-xl font-semibold transition-all">
+                    Lihat Semua Anime
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Episodes Section -->
+    <section id="latest" class="py-20 bg-slate-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between mb-12">
+                <div>
+                    <h2 class="text-4xl font-bold mb-2">Episode Terbaru</h2>
+                    <p class="text-slate-400">Update terbaru hari ini</p>
+                </div>
+                <div class="flex items-center space-x-2 text-primary-400">
+                    <i data-lucide="clock" class="w-5 h-5"></i>
+                    <span class="font-medium">Live Update</span>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Episode Item 1 -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover cursor-pointer group">
+                    <div class="flex">
+                        <div class="w-40 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1541562232579-512a21360020?w=200&h=150&fit=crop" alt="Episode" class="w-full h-40 object-cover">
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <i data-lucide="play" class="w-8 h-8 text-white"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1 p-4">
+                            <h3 class="font-semibold mb-2 line-clamp-2">One Piece Episode 1089</h3>
+                            <div class="flex items-center space-x-2 text-sm text-slate-400 mb-2">
+                                <i data-lucide="clock" class="w-4 h-4"></i>
+                                <span>2 jam yang lalu</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span class="bg-primary-600/20 text-primary-400 px-2 py-1 rounded text-xs">Subtitle Indonesia</span>
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">HD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Episode Item 2 -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover cursor-pointer group">
+                    <div class="flex">
+                        <div class="w-40 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1560972550-aba3456b5564?w=200&h=150&fit=crop" alt="Episode" class="w-full h-40 object-cover">
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <i data-lucide="play" class="w-8 h-8 text-white"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1 p-4">
+                            <h3 class="font-semibold mb-2 line-clamp-2">Demon Slayer Episode 24</h3>
+                            <div class="flex items-center space-x-2 text-sm text-slate-400 mb-2">
+                                <i data-lucide="clock" class="w-4 h-4"></i>
+                                <span>4 jam yang lalu</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span class="bg-primary-600/20 text-primary-400 px-2 py-1 rounded text-xs">Subtitle Indonesia</span>
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">HD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Episode Item 3 -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover cursor-pointer group">
+                    <div class="flex">
+                        <div class="w-40 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1558679908-33e78c1d291b?w=200&h=150&fit=crop" alt="Episode" class="w-full h-40 object-cover">
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <i data-lucide="play" class="w-8 h-8 text-white"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1 p-4">
+                            <h3 class="font-semibold mb-2 line-clamp-2">Jujutsu Kaisen Episode 12</h3>
+                            <div class="flex items-center space-x-2 text-sm text-slate-400 mb-2">
+                                <i data-lucide="clock" class="w-4 h-4"></i>
+                                <span>6 jam yang lalu</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span class="bg-primary-600/20 text-primary-400 px-2 py-1 rounded text-xs">Subtitle Indonesia</span>
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">HD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Episode Item 4 -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover cursor-pointer group">
+                    <div class="flex">
+                        <div class="w-40 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1560167016-015b6d2dc127?w=200&h=150&fit=crop" alt="Episode" class="w-full h-40 object-cover">
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <i data-lucide="play" class="w-8 h-8 text-white"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1 p-4">
+                            <h3 class="font-semibold mb-2 line-clamp-2">Attack on Titan Episode 25</h3>
+                            <div class="flex items-center space-x-2 text-sm text-slate-400 mb-2">
+                                <i data-lucide="clock" class="w-4 h-4"></i>
+                                <span>8 jam yang lalu</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span class="bg-primary-600/20 text-primary-400 px-2 py-1 rounded text-xs">Subtitle Indonesia</span>
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">HD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Episode Item 5 -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover cursor-pointer group">
+                    <div class="flex">
+                        <div class="w-40 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1581833971358-2c8b550f8af6?w=200&h=150&fit=crop" alt="Episode" class="w-full h-40 object-cover">
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <i data-lucide="play" class="w-8 h-8 text-white"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1 p-4">
+                            <h3 class="font-semibold mb-2 line-clamp-2">My Hero Academia Episode 13</h3>
+                            <div class="flex items-center space-x-2 text-sm text-slate-400 mb-2">
+                                <i data-lucide="clock" class="w-4 h-4"></i>
+                                <span>10 jam yang lalu</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span class="bg-primary-600/20 text-primary-400 px-2 py-1 rounded text-xs">Subtitle Indonesia</span>
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">HD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Episode Item 6 -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden card-hover cursor-pointer group">
+                    <div class="flex">
+                        <div class="w-40 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?w=200&h=150&fit=crop" alt="Episode" class="w-full h-40 object-cover">
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <i data-lucide="play" class="w-8 h-8 text-white"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1 p-4">
+                            <h3 class="font-semibold mb-2 line-clamp-2">Spy x Family Episode 12</h3>
+                            <div class="flex items-center space-x-2 text-sm text-slate-400 mb-2">
+                                <i data-lucide="clock" class="w-4 h-4"></i>
+                                <span>12 jam yang lalu</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span class="bg-primary-600/20 text-primary-400 px-2 py-1 rounded text-xs">Subtitle Indonesia</span>
+                                <span class="bg-slate-700 px-2 py-1 rounded text-xs">HD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Genres Section -->
+    <section id="genres" class="py-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Browse by Genre</h2>
+                <p class="text-slate-400">Temukan anime berdasarkan genre favoritmu</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <a href="#" class="bg-gradient-to-br from-red-600 to-red-800 p-6 rounded-xl text-center card-hover">
+                    <i data-lucide="zap" class="w-8 h-8 mx-auto mb-2"></i>
+                    <span class="font-semibold">Action</span>
+                </a>
+                <a href="#" class="bg-gradient-to-br from-blue-600 to-blue-800 p-6 rounded-xl text-center card-hover">
+                    <i data-lucide="heart" class="w-8 h-8 mx-auto mb-2"></i>
+                    <span class="font-semibold">Romance</span>
+                </a>
+                <a href="#" class="bg-gradient-to-br from-green-600 to-green-800 p-6 rounded-xl text-center card-hover">
+                    <i data-lucide="smile" class="w-8 h-8 mx-auto mb-2"></i>
+                    <span class="font-semibold">Comedy</span>
+                </a>
+                <a href="#" class="bg-gradient-to-br from-purple-600 to-purple-800 p-6 rounded-xl text-center card-hover">
+                    <i data-lucide="sparkles" class="w-8 h-8 mx-auto mb-2"></i>
+                    <span class="font-semibold">Fantasy</span>
+                </a>
+                <a href="#" class="bg-gradient-to-br from-yellow-600 to-yellow-800 p-6 rounded-xl text-center card-hover">
+                    <i data-lucide="brain" class="w-8 h-8 mx-auto mb-2"></i>
+                    <span class="font-semibold">Sci-Fi</span>
+                </a>
+                <a href="#" class="bg-gradient-to-br from-pink-600 to-pink-800 p-6 rounded-xl text-center card-hover">
+                    <i data-lucide="gamepad-2" class="w-8 h-8 mx-auto mb-2"></i>
+                    <span class="font-semibold">Game</span>
+                </a>
+                <a href="#" class="bg-gradient-to-br from-indigo-600 to-indigo-800 p-6 rounded-xl text-center card-hover">
+                    <i data-lucide="moon" class="w-8 h-8 mx-auto mb-2"></i>
+                    <span class="font-semibold">Horror</span>
+                </a>
+                <a href="#" class="bg-gradient-to-br from-orange-600 to-orange-800 p-6 rounded-xl text-center card-hover">
+                    <i data-lucide="music" class="w-8 h-8 mx-auto mb-2"></i>
+                    <span class="font-semibold">Music</span>
+                </a>
+                <a href="#" class="bg-gradient-to-br from-teal-600 to-teal-800 p-6 rounded-xl text-center card-hover">
+                    <i data-lucide="users" class="w-8 h-8 mx-auto mb-2"></i>
+                    <span class="font-semibold">Slice of Life</span>
+                </a>
+                <a href="#" class="bg-gradient-to-br from-cyan-600 to-cyan-800 p-6 rounded-xl text-center card-hover">
+                    <i data-lucide="target" class="w-8 h-8 mx-auto mb-2"></i>
+                    <span class="font-semibold">Sports</span>
+                </a>
+                <a href="#" class="bg-gradient-to-br from-violet-600 to-violet-800 p-6 rounded-xl text-center card-hover">
+                    <i data-lucide="shield" class="w-8 h-8 mx-auto mb-2"></i>
+                    <span class="font-semibold">Super Power</span>
+                </a>
+                <a href="#" class="bg-gradient-to-br from-rose-600 to-rose-800 p-6 rounded-xl text-center card-hover">
+                    <i data-lucide="graduation-cap" class="w-8 h-8 mx-auto mb-2"></i>
+                    <span class="font-semibold">School</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-slate-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Kenapa Memilih AnimeID?</h2>
+                <p class="text-slate-400">Fitur-fitur terbaik untuk pengalaman nonton anime yang maksimal</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-slate-800 p-8 rounded-2xl card-hover">
+                    <div class="w-14 h-14 bg-primary-600/20 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="video" class="w-7 h-7 text-primary-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Kualitas HD</h3>
+                    <p class="text-slate-400">Streaming dengan kualitas video HD hingga 4K untuk pengalaman menonton yang jernih dan memuaskan.</p>
+                </div>
+
+                <div class="bg-slate-800 p-8 rounded-2xl card-hover">
+                    <div class="w-14 h-14 bg-accent-600/20 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="languages" class="w-7 h-7 text-accent-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Subtitle Indonesia</h3>
+                    <p class="text-slate-400">Subtitle bahasa Indonesia yang akurat dan sinkron, dibuat oleh tim translator profesional.</p>
+                </div>
+
+                <div class="bg-slate-800 p-8 rounded-2xl card-hover">
+                    <div class="w-14 h-14 bg-primary-600/20 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="zap" class="w-7 h-7 text-primary-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Update Cepat</h3>
+                    <p class="text-slate-400">Episode baru tersedia beberapa jam setelah tayang di Jepang dengan subtitle Indonesia.</p>
+                </div>
+
+                <div class="bg-slate-800 p-8 rounded-2xl card-hover">
+                    <div class="w-14 h-14 bg-accent-600/20 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="smartphone" class="w-7 h-7 text-accent-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Mobile Friendly</h3>
+                    <p class="text-slate-400">Tampilan responsif yang optimal untuk semua device, dari smartphone hingga desktop.</p>
+                </div>
+
+                <div class="bg-slate-800 p-8 rounded-2xl card-hover">
+                    <div class="w-14 h-14 bg-primary-600/20 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="bookmark" class="w-7 h-7 text-primary-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Watchlist</h3>
+                    <p class="text-slate-400">Simpan anime favoritmu dalam watchlist dan dapatkan notifikasi saat episode baru rilis.</p>
+                </div>
+
+                <div class="bg-slate-800 p-8 rounded-2xl card-hover">
+                    <div class="w-14 h-14 bg-accent-600/20 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="gift" class="w-7 h-7 text-accent-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">100% Gratis</h3>
+                    <p class="text-slate-400">Nonton semua anime tanpa biaya subscription. Gratis sepenuhnya untuk semua pengguna.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary-600 to-accent-600">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl lg:text-5xl font-bold mb-6">Siap untuk Mulai Nonton?</h2>
+            <p class="text-xl text-white/80 mb-8">Bergabunglah dengan jutaan penggemar anime lainnya dan nikmati ribuan judul anime dengan subtitle Indonesia.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-primary-600 hover:bg-slate-100 px-8 py-4 rounded-xl font-semibold text-lg transition-all flex items-center justify-center space-x-2">
+                    <i data-lucide="user-plus" class="w-5 h-5"></i>
+                    <span>Daftar Sekarang</span>
+                </button>
+                <button class="border-2 border-white text-white hover:bg-white/10 px-8 py-4 rounded-xl font-semibold text-lg transition-all flex items-center justify-center space-x-2">
+                    <i data-lucide="download" class="w-5 h-5"></i>
+                    <span>Download App</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-1">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i data-lucide="play-circle" class="w-8 h-8 text-primary-500"></i>
+                        <span class="text-2xl font-bold bg-gradient-to-r from-primary-400 to-accent-500 bg-clip-text text-transparent">AnimeID</span>
+                    </div>
+                    <p class="text-slate-400 mb-4">Platform streaming anime subtitle Indonesia terbaik dengan koleksi terlengkap dan update tercepat.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                            <i data-lucide="facebook" class="w-6 h-6"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                            <i data-lucide="twitter" class="w-6 h-6"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                            <i data-lucide="instagram" class="w-6 h-6"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                            <i data-lucide="youtube" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4">Navigasi</h3>
+                    <ul class="space-y-2 text-slate-400">
+                        <li><a href="#home" class="hover:text-white transition-colors">Beranda</a></li>
+                        <li><a href="#popular" class="hover:text-white transition-colors">Populer</a></li>
+                        <li><a href="#latest" class="hover:text-white transition-colors">Terbaru</a></li>
+                        <li><a href="#genres" class="hover:text-white transition-colors">Genre</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4">Kategori</h3>
+                    <ul class="space-y-2 text-slate-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Action</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Romance</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Comedy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Fantasy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4">Informasi</h3>
+                    <ul class="space-y-2 text-slate-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Tentang Kami</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Kebijakan Privasi</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Syarat & Ketentuan</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 text-center text-slate-400">
+                <p>&copy; 2024 AnimeID. All rights reserved. Made with ❤️ for Anime Fans.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
